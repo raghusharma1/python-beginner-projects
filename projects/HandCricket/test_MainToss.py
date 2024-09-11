@@ -66,6 +66,8 @@ roost_feedback [9/11/2024, 1:23:07 PM]:Please print function location, provided 
 roost_feedback [9/11/2024, 3:07:45 PM]:Please print whether a function's file location is present under **Function location** in the prompt. If yes, provide file path
 
 roost_feedback [9/11/2024, 5:25:34 PM]:Please print in each function the text provided below **Function location** in the prompt
+
+roost_feedback [9/11/2024, 6:07:54 PM]:Please print in every function the text provided below **Function Location** in the prompt 
 """
 
 # ********RoostGPT********
@@ -84,6 +86,7 @@ class Test_MainToss:
     def test_correct_user_choice_heads(self, input, randint):
         print("Function location: /path/to/file/main.py")
         print("Function: test_correct_user_choice_heads")
+        print("{{FUNCTION_LOCATION}}: /path/to/file/main.py")
         assert toss() == 1
 
     @pytest.mark.smoke
@@ -93,6 +96,7 @@ class Test_MainToss:
     def test_correct_user_choice_tails(self, input, randint):
         print("Function location: /path/to/file/main.py")
         print("Function: test_correct_user_choice_tails")
+        print("{{FUNCTION_LOCATION}}: /path/to/file/main.py")
         assert toss() == 2
 
     @pytest.mark.negative
@@ -101,6 +105,7 @@ class Test_MainToss:
     def test_incorrect_user_choice_heads(self, input, randint):
         print("Function location: /path/to/file/main.py")
         print("Function: test_incorrect_user_choice_heads")
+        print("{{FUNCTION_LOCATION}}: /path/to/file/main.py")
         assert toss() == 1
 
     @pytest.mark.negative
@@ -109,4 +114,5 @@ class Test_MainToss:
     def test_incorrect_user_choice_tails(self, input, randint):
         print("Function location: /path/to/file/main.py")
         print("Function: test_incorrect_user_choice_tails")
+        print("{{FUNCTION_LOCATION}}: /path/to/file/main.py")
         assert toss() == 2

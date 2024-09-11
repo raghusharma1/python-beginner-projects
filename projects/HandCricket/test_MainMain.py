@@ -70,6 +70,8 @@ roost_feedback [9/11/2024, 4:13:26 PM]:Please print in each function the text pr
 roost_feedback [9/11/2024, 4:38:21 PM]:Please print in each function the text provided below **Function location** in the prompt. Also print the text provided below **Dependencies:** in each function 
 
 roost_feedback [9/11/2024, 5:24:03 PM]:Please print in each function the text provided below **Function location** in the prompt
+
+roost_feedback [9/11/2024, 6:06:35 PM]:Please print in every function the text provided below **Function Location** in the prompt 
 """
 
 # ********RoostGPT********
