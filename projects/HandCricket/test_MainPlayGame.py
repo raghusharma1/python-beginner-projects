@@ -60,6 +60,8 @@ BEGIN_GUIDELINE
 END_GUIDELINE
 
 roost_feedback [9/11/2024, 1:05:58 PM]:Print out {{FUNCTION_LOCATION}} string from prompt in every function please
+
+roost_feedback [9/11/2024, 1:24:17 PM]:Please print function location, provided in the prompt under """**Function location**""" The function location should provide the full relative path to the file in which the function resides
 """
 
 # ********RoostGPT********
@@ -70,7 +72,7 @@ from .HandCricket.main import play_game
 class Test_MainPlayGame:
     @pytest.mark.regression
     def test_play_game_basic_functionality(self):
-        print("Function Location: test_play_game_basic_functionality")
+        print("Function Location: HandCricket/main.py -> play_game")
         # Arrange
         overs = 10
         player1_choice = '1'
@@ -85,7 +87,7 @@ class Test_MainPlayGame:
 
     @pytest.mark.performance
     def test_play_game_max_overs(self):
-        print("Function Location: test_play_game_max_overs")
+        print("Function Location: HandCricket/main.py -> play_game")
         # Arrange
         max_overs = 50
         player1_choice = '1'
@@ -100,7 +102,7 @@ class Test_MainPlayGame:
 
     @pytest.mark.performance
     def test_play_game_min_overs(self):
-        print("Function Location: test_play_game_min_overs")
+        print("Function Location: HandCricket/main.py -> play_game")
         # Arrange
         min_overs = 1
         player1_choice = '1'
@@ -115,7 +117,7 @@ class Test_MainPlayGame:
 
     @pytest.mark.negative
     def test_play_game_error_handling(self):
-        print("Function Location: test_play_game_error_handling")
+        print("Function Location: HandCricket/main.py -> play_game")
         # Arrange
         overs = 10
         invalid_player1_choice = '3'

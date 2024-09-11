@@ -49,6 +49,8 @@ Security: The tests should check if any input manipulations can breach data inte
 END_GUIDELINE
 
 roost_feedback [9/11/2024, 1:07:13 PM]:Print out {{FUNCTION_LOCATION}} string from prompt in every function please
+
+roost_feedback [9/11/2024, 1:25:27 PM]:Please print function location, provided in the prompt under """**Function location**""" The function location should provide the full relative path to the file in which the function resides
 """
 
 # ********RoostGPT********
@@ -63,7 +65,7 @@ class Test_MainUserTurn:
     @patch('builtins.input', side_effect=[1, 1])
     @pytest.mark.regression
     def test_player_batting_and_gets_out(self):
-        print("FUNCTION_LOCATION: test_player_batting_and_gets_out")
+        print("FUNCTION_LOCATION: /path/to/test_file.py -> Test_MainUserTurn -> test_player_batting_and_gets_out")
         player_score, player_wickets, player_choice, over = 0, 1, '1', 0
         with patch('random.randint', return_value=1):
             new_score, new_wickets = user_turn(player_score, player_wickets, player_choice, over)
@@ -72,7 +74,7 @@ class Test_MainUserTurn:
     @patch('builtins.input', side_effect=[2, 1])
     @pytest.mark.regression
     def test_player_bowling_and_opponent_gets_out(self):
-        print("FUNCTION_LOCATION: test_player_bowling_and_opponent_gets_out")
+        print("FUNCTION_LOCATION: /path/to/test_file.py -> Test_MainUserTurn -> test_player_bowling_and_opponent_gets_out")
         player_score, player_wickets, player_choice, over = 0, 1, '2', 0
         with patch('random.randint', return_value=1):
             new_score, new_wickets = user_turn(player_score, player_wickets, player_choice, over)
@@ -81,7 +83,7 @@ class Test_MainUserTurn:
     @patch('builtins.input', side_effect=[1, 2])
     @pytest.mark.regression
     def test_player_scores_runs(self):
-        print("FUNCTION_LOCATION: test_player_scores_runs")
+        print("FUNCTION_LOCATION: /path/to/test_file.py -> Test_MainUserTurn -> test_player_scores_runs")
         player_score, player_wickets, player_choice, over = 0, 1, '1', 0
         with patch('random.randint', return_value=2):
             new_score, new_wickets = user_turn(player_score, player_wickets, player_choice, over)

@@ -49,6 +49,8 @@ Security: This function does not handle any sensitive data or operations that co
 END_GUIDELINE
 
 roost_feedback [9/11/2024, 1:08:24 PM]:Print out {{FUNCTION_LOCATION}} string from prompt in every function please
+
+roost_feedback [9/11/2024, 1:26:37 PM]:Please print function location, provided in the prompt under """**Function location**""" The function location should provide the full relative path to the file in which the function resides
 """
 
 # ********RoostGPT********
@@ -66,7 +68,7 @@ class Test_MainDisplayScoreboard:
         player1_score = player2_score = 10
         over = 5
         expected_output = "\nScoreboard\n==========\nOver 6:\nPlayer 1: 10 runs\nPlayer 2: 10 runs\n"
-        print("FUNCTION_LOCATION: test_display_scoreboard_equal_scores")
+        print("FUNCTION_LOCATION: /path/to/file/test_display_scoreboard_equal_scores")
         # Act
         monkeypatch.setattr(sys, 'stdout', StringIO())
         display_scoreboard(player1_score, player2_score, over)
@@ -79,7 +81,7 @@ class Test_MainDisplayScoreboard:
         player1_score = player2_score = 0
         over = 0
         expected_output = "\nScoreboard\n==========\nOver 1:\nPlayer 1: 0 runs\nPlayer 2: 0 runs\n"
-        print("FUNCTION_LOCATION: test_display_scoreboard_zero_scores")
+        print("FUNCTION_LOCATION: /path/to/file/test_display_scoreboard_zero_scores")
         # Act
         monkeypatch.setattr(sys, 'stdout', StringIO())
         display_scoreboard(player1_score, player2_score, over)
@@ -92,7 +94,7 @@ class Test_MainDisplayScoreboard:
         player1_score = player2_score = 100
         over = 9
         expected_output = "\nScoreboard\n==========\nOver 10:\nPlayer 1: 100 runs\nPlayer 2: 100 runs\n"
-        print("FUNCTION_LOCATION: test_display_scoreboard_max_scores")
+        print("FUNCTION_LOCATION: /path/to/file/test_display_scoreboard_max_scores")
         # Act
         monkeypatch.setattr(sys, 'stdout', StringIO())
         display_scoreboard(player1_score, player2_score, over)
