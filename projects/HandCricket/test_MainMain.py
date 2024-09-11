@@ -62,6 +62,8 @@ END_GUIDELINE
 roost_feedback [9/11/2024, 1:03:07 PM]:Print out {{FUNCTION_LOCATION}} string from prompt in every function please
 
 roost_feedback [9/11/2024, 1:21:53 PM]:Please print function location, provided in the prompt under """**Function location**""" The function location should provide the full relative path to the file in which the function resides
+
+roost_feedback [9/11/2024, 3:06:21 PM]:Please print whether a function's file location is present under **Function location** in the prompt. If yes, provide file path
 """
 
 # ********RoostGPT********
@@ -76,7 +78,8 @@ class Test_MainMain:
     @pytest.mark.regression
     @pytest.mark.positive
     def test_game_with_correct_inputs(self, monkeypatch):
-        print("/path/to/your/test/file.py: test_game_with_correct_inputs")
+        print("Function location: /path/to/your/test/file.py")
+        print("Function: test_game_with_correct_inputs")
         inputs = ["3", "1", "1", "2"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         try:
@@ -87,7 +90,8 @@ class Test_MainMain:
     @pytest.mark.regression
     @pytest.mark.negative
     def test_game_with_min_values(self, monkeypatch):
-        print("/path/to/your/test/file.py: test_game_with_min_values")
+        print("Function location: /path/to/your/test/file.py")
+        print("Function: test_game_with_min_values")
         inputs = ["1", "1", "1", "1"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         try:
@@ -98,7 +102,8 @@ class Test_MainMain:
     @pytest.mark.regression
     @pytest.mark.negative
     def test_game_with_max_values(self, monkeypatch):
-        print("/path/to/your/test/file.py: test_game_with_max_values")
+        print("Function location: /path/to/your/test/file.py")
+        print("Function: test_game_with_max_values")
         inputs = ["10", "2", "2", "3"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         try:
@@ -109,7 +114,8 @@ class Test_MainMain:
     @pytest.mark.regression
     @pytest.mark.negative
     def test_game_with_invalid_inputs(self, monkeypatch):
-        print("/path/to/your/test/file.py: test_game_with_invalid_inputs")
+        print("Function location: /path/to/your/test/file.py")
+        print("Function: test_game_with_invalid_inputs")
         inputs = ["11", "3", "3", "4"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         with pytest.raises(ValueError):

@@ -62,6 +62,8 @@ END_GUIDELINE
 roost_feedback [9/11/2024, 1:04:52 PM]:Print out {{FUNCTION_LOCATION}} string from prompt in every function please
 
 roost_feedback [9/11/2024, 1:23:07 PM]:Please print function location, provided in the prompt under """**Function location**""" The function location should provide the full relative path to the file in which the function resides
+
+roost_feedback [9/11/2024, 3:07:45 PM]:Please print whether a function's file location is present under **Function location** in the prompt. If yes, provide file path
 """
 
 # ********RoostGPT********
@@ -78,7 +80,7 @@ class Test_MainToss:
     @patch('builtins.input', return_value='1')
     @patch('random.randint', return_value=1)
     def test_correct_user_choice_heads(self, input, randint):
-        print("/path/to/file/main.py")
+        print("Function location: /path/to/file/main.py")
         assert toss() == 1
 
     @pytest.mark.smoke
@@ -86,19 +88,19 @@ class Test_MainToss:
     @patch('builtins.input', return_value='2')
     @patch('random.randint', return_value=2)
     def test_correct_user_choice_tails(self, input, randint):
-        print("/path/to/file/main.py")
+        print("Function location: /path/to/file/main.py")
         assert toss() == 2
 
     @pytest.mark.negative
     @patch('builtins.input', return_value='2')
     @patch('random.randint', return_value=1)
     def test_incorrect_user_choice_heads(self, input, randint):
-        print("/path/to/file/main.py")
+        print("Function location: /path/to/file/main.py")
         assert toss() == 1
 
     @pytest.mark.negative
     @patch('builtins.input', return_value='1')
     @patch('random.randint', return_value=2)
     def test_incorrect_user_choice_tails(self, input, randint):
-        print("/path/to/file/main.py")
+        print("Function location: /path/to/file/main.py")
         assert toss() == 2
