@@ -68,6 +68,8 @@ roost_feedback [9/11/2024, 3:06:21 PM]:Please print whether a function's file lo
 roost_feedback [9/11/2024, 4:13:26 PM]:Please print in each function the text provided below **Function location** in the prompt
 
 roost_feedback [9/11/2024, 4:38:21 PM]:Please print in each function the text provided below **Function location** in the prompt. Also print the text provided below **Dependencies:** in each function 
+
+roost_feedback [9/11/2024, 5:24:03 PM]:Please print in each function the text provided below **Function location** in the prompt
 """
 
 # ********RoostGPT********
@@ -84,6 +86,7 @@ class Test_MainMain:
     def test_game_with_correct_inputs(self, monkeypatch):
         print("Function location: /path/to/your/test/file.py")
         print("Function: test_game_with_correct_inputs")
+        print("Dependencies: pytest, random, time, main from main")
         inputs = ["3", "1", "1", "2"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         try:
@@ -96,6 +99,7 @@ class Test_MainMain:
     def test_game_with_min_values(self, monkeypatch):
         print("Function location: /path/to/your/test/file.py")
         print("Function: test_game_with_min_values")
+        print("Dependencies: pytest, random, time, main from main")
         inputs = ["1", "1", "1", "1"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         try:
@@ -108,6 +112,7 @@ class Test_MainMain:
     def test_game_with_max_values(self, monkeypatch):
         print("Function location: /path/to/your/test/file.py")
         print("Function: test_game_with_max_values")
+        print("Dependencies: pytest, random, time, main from main")
         inputs = ["10", "2", "2", "3"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         try:
@@ -120,6 +125,7 @@ class Test_MainMain:
     def test_game_with_invalid_inputs(self, monkeypatch):
         print("Function location: /path/to/your/test/file.py")
         print("Function: test_game_with_invalid_inputs")
+        print("Dependencies: pytest, random, time, main from main")
         inputs = ["11", "3", "3", "4"]
         monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
         with pytest.raises(ValueError):

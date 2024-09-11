@@ -51,6 +51,8 @@ END_GUIDELINE
 roost_feedback [9/11/2024, 1:09:36 PM]:Print out {{FUNCTION_LOCATION}} string from prompt in every function please
 
 roost_feedback [9/11/2024, 1:27:52 PM]:Please print function location, provided in the prompt under """**Function location**""" The function location should provide the full relative path to the file in which the function resides
+
+roost_feedback [9/11/2024, 5:31:06 PM]:Please print in each function the text provided below **Function location** in the prompt
 """
 
 # ********RoostGPT********
@@ -62,7 +64,7 @@ import random
 class Test_MainWhoWon:
     @pytest.mark.positive
     def test_player1_wins(self, capsys):
-        print("main.Test_MainWhoWon.test_player1_wins")
+        print("Function location: main.py -> Test_MainWhoWon -> test_player1_wins")
         player1_score = random.randint(50, 100)
         player2_score = random.randint(1, 49)
         who_won(player1_score, player2_score)
@@ -71,7 +73,7 @@ class Test_MainWhoWon:
 
     @pytest.mark.positive
     def test_player2_wins(self, capsys):
-        print("main.Test_MainWhoWon.test_player2_wins")
+        print("Function location: main.py -> Test_MainWhoWon -> test_player2_wins")
         player1_score = random.randint(1, 49)
         player2_score = random.randint(50, 100)
         who_won(player1_score, player2_score)
@@ -80,7 +82,7 @@ class Test_MainWhoWon:
 
     @pytest.mark.positive
     def test_draw_match(self, capsys):
-        print("main.Test_MainWhoWon.test_draw_match")
+        print("Function location: main.py -> Test_MainWhoWon -> test_draw_match")
         player1_score = player2_score = random.randint(1, 100)
         who_won(player1_score, player2_score)
         out, err = capsys.readouterr()
@@ -88,7 +90,7 @@ class Test_MainWhoWon:
 
     @pytest.mark.negative
     def test_negative_scores(self, capsys):
-        print("main.Test_MainWhoWon.test_negative_scores")
+        print("Function location: main.py -> Test_MainWhoWon -> test_negative_scores")
         player1_score = player2_score = -1
         who_won(player1_score, player2_score)
         out, err = capsys.readouterr()
@@ -96,7 +98,7 @@ class Test_MainWhoWon:
 
     @pytest.mark.negative
     def test_non_integer_scores(self, capsys):
-        print("main.Test_MainWhoWon.test_non_integer_scores")
+        print("Function location: main.py -> Test_MainWhoWon -> test_non_integer_scores")
         player1_score = player2_score = 0.5
         who_won(player1_score, player2_score)
         out, err = capsys.readouterr()

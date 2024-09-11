@@ -51,6 +51,8 @@ END_GUIDELINE
 roost_feedback [9/11/2024, 1:08:24 PM]:Print out {{FUNCTION_LOCATION}} string from prompt in every function please
 
 roost_feedback [9/11/2024, 1:26:37 PM]:Please print function location, provided in the prompt under """**Function location**""" The function location should provide the full relative path to the file in which the function resides
+
+roost_feedback [9/11/2024, 5:29:50 PM]:Please print in each function the text provided below **Function location** in the prompt
 """
 
 # ********RoostGPT********
