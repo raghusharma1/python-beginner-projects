@@ -66,6 +66,8 @@ roost_feedback [9/11/2024, 1:21:53 PM]:Please print function location, provided 
 roost_feedback [9/11/2024, 3:06:21 PM]:Please print whether a function's file location is present under **Function location** in the prompt. If yes, provide file path
 
 roost_feedback [9/11/2024, 4:13:26 PM]:Please print in each function the text provided below **Function location** in the prompt
+
+roost_feedback [9/11/2024, 4:38:21 PM]:Please print in each function the text provided below **Function location** in the prompt. Also print the text provided below **Dependencies:** in each function 
 """
 
 # ********RoostGPT********
