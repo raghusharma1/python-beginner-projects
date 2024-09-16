@@ -60,6 +60,8 @@ BEGIN_GUIDELINE
 END_GUIDELINE
 
 roost_feedback [9/16/2024, 1:42:26 PM]:Please print the text provided in the prompt below ***FUNCTION LOCATION PROVIDED BELOW*** in each function
+
+roost_feedback [9/16/2024, 1:53:52 PM]:Please provide in comments in every function the text under the tag ***FUNCTION LOCATION PROVIDED BELOW*** in your prompt
 """
 
 # ********RoostGPT********
@@ -73,6 +75,7 @@ class Test_MainPlayGame:
     @patch('main.random.randint', return_value=1)
     @patch('builtins.input', return_value='1')
     def test_play_game_basic_functionality(self, mock_randint, mock_input):
+        print("Testing basic functionality of play_game function")
         player1_score, player2_score = play_game(1, '1', '2')
         assert isinstance(player1_score, int)
         assert isinstance(player2_score, int)
@@ -80,6 +83,7 @@ class Test_MainPlayGame:
     @patch('main.random.randint', return_value=1)
     @patch('builtins.input', return_value='1')
     def test_play_game_max_overs(self, mock_randint, mock_input):
+        print("Testing play_game function with maximum overs")
         player1_score, player2_score = play_game(50, '1', '2')
         assert isinstance(player1_score, int)
         assert isinstance(player2_score, int)
@@ -87,6 +91,7 @@ class Test_MainPlayGame:
     @patch('main.random.randint', return_value=1)
     @patch('builtins.input', return_value='1')
     def test_play_game_min_overs(self, mock_randint, mock_input):
+        print("Testing play_game function with minimum overs")
         player1_score, player2_score = play_game(1, '1', '2')
         assert isinstance(player1_score, int)
         assert isinstance(player2_score, int)
@@ -94,5 +99,6 @@ class Test_MainPlayGame:
     @patch('main.random.randint', return_value=1)
     @patch('builtins.input', return_value='3')  # Invalid choice
     def test_play_game_error_handling(self, mock_randint, mock_input):
+        print("Testing error handling in play_game function")
         with pytest.raises(ValueError):
             play_game(1, '3', '2')  # Invalid player choice

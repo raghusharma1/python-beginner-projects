@@ -62,6 +62,8 @@ END_GUIDELINE
 ```
 
 roost_feedback [9/16/2024, 1:40:24 PM]:Please print the text provided in the prompt below ***FUNCTION LOCATION PROVIDED BELOW*** in each function
+
+roost_feedback [9/16/2024, 1:52:53 PM]:Please provide in comments in every function the text under the tag ***FUNCTION LOCATION PROVIDED BELOW*** in your prompt
 """
 
 # ********RoostGPT********
@@ -77,6 +79,7 @@ class Test_MainMain:
     # Scenario 1: Validate the game with valid inputs
     @patch('builtins.input', side_effect=[5, 1, 1, 1, 1])
     def test_valid_game(self, mock_input):
+        print("Running Scenario 1: Validate the game with valid inputs")
         try:
             main()
         except Exception:
@@ -86,6 +89,7 @@ class Test_MainMain:
     @pytest.mark.parametrize("overs", [1, 10])
     @patch('builtins.input', side_effect=[overs, 1, 1, 1, 1])
     def test_boundary_overs(self, mock_input, overs):
+        print("Running Scenario 2: Verify game behavior with minimal and maximal overs")
         try:
             main()
         except Exception:
@@ -94,12 +98,14 @@ class Test_MainMain:
     # Scenario 3: Test the game's behavior with invalid inputs
     @patch('builtins.input', side_effect=["invalid", "invalid", "invalid", "invalid"])
     def test_invalid_inputs(self, mock_input):
+        print("Running Scenario 3: Test the game's behavior with invalid inputs")
         with pytest.raises(ValueError, match="Invalid input, exiting game"):
             main()
 
     # Scenario 4: Test the game's performance with maximum overs and difficulty
     @patch('builtins.input', side_effect=[10, 1, 1, 3, 1])
     def test_performance_maximum_overs_difficulty(self, mock_input):
+        print("Running Scenario 4: Test the game's performance with maximum overs and difficulty")
         start_time = time.time()
         try:
             main()
