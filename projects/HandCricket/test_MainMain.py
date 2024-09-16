@@ -60,6 +60,8 @@ Security: As the game does not involve any sensitive data or operations, securit
 END_GUIDELINE
 
 roost_feedback [9/16/2024, 2:40:54 PM]:Please print text provided below ***FUNCTION LOCATION PROVIDED BELOW*** in your prompt
+
+roost_feedback [9/16/2024, 4:00:13 PM]:Please print the function location provided in the prompt for each function
 """
 
 # ********RoostGPT********

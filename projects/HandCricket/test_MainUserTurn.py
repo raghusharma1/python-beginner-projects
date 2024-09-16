@@ -49,6 +49,8 @@ Security: The tests should check if any input manipulations can breach data inte
 END_GUIDELINE
 
 roost_feedback [9/16/2024, 2:43:24 PM]:Please print text provided below ***FUNCTION LOCATION PROVIDED BELOW*** in your prompt
+
+roost_feedback [9/16/2024, 4:02:59 PM]:Please print the function location provided in the prompt for each function
 """
 
 # ********RoostGPT********

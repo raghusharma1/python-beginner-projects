@@ -49,6 +49,8 @@ BEGIN_GUIDELINE
 END_GUIDELINE
 
 roost_feedback [9/16/2024, 2:44:58 PM]:Please print text provided below ***FUNCTION LOCATION PROVIDED BELOW*** in your prompt
+
+roost_feedback [9/16/2024, 4:04:32 PM]:Please print the function location provided in the prompt for each function
 """
 
 # ********RoostGPT********
