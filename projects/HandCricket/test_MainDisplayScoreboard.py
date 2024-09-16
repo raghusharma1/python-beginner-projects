@@ -51,6 +51,8 @@ END_GUIDELINE
 roost_feedback [9/16/2024, 2:44:10 PM]:Please print text provided below ***FUNCTION LOCATION PROVIDED BELOW*** in your prompt
 
 roost_feedback [9/16/2024, 4:03:46 PM]:Please print the function location provided in the prompt for each function
+
+roost_feedback [9/16/2024, 4:54:50 PM]:Please print the location of the functions in the function. Location is provided in the improve.js prompt. You MUST print the function location located under ***FUNCTION LOCATION PROVIDE BELOW***
 """
 
 # ********RoostGPT********
