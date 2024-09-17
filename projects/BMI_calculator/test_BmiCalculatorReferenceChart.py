@@ -68,6 +68,8 @@ END_GUIDELINE
 These guidelines and scenarios will help ensure that the `reference_chart` function is thoroughly tested, robust, and reliable in its operation, providing confidence in its deployment and use.
 
 roost_feedback [9/17/2024, 7:48:07 PM]:Ensure that all import statements in your code are accurate and correctly reflect the project's structure. Match the import statements to those found in the original code under test, using the exact same modules, packages, and functions without altering their import style.
+
+roost_feedback [9/17/2024, 8:06:00 PM]:Please ensure you follow the prompt correctly! Especially for import statements.
 """
 
 # ********RoostGPT********
@@ -106,8 +108,7 @@ def test_empty_csv_file(monkeypatch, capsys):
     reference_chart()
     
     captured = capsys.readouterr()
-    assert "Here You can take the reference chart" in captured.out
-    assert "----" not in captured.out  
+    assert "No data available" in captured.out
 
 @pytest.mark.negative
 def test_missing_csv_file(monkeypatch):
@@ -125,5 +126,4 @@ def test_incorrect_format_csv_file(monkeypatch, capsys):
     reference_chart()
     
     captured = capsys.readouterr()
-    assert "Category;Range" in captured.out  
-    assert "Underweight;<18.5" in captured.out  
+    assert "Error: Incorrect format" in captured.out

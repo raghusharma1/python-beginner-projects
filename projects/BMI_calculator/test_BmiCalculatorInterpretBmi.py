@@ -104,6 +104,8 @@ END_GUIDELINE
 These guidelines and scenarios ensure comprehensive testing of the `interpret_bmi` function, focusing on both its correctness in BMI classification and its ability to handle invalid inputs gracefully.
 
 roost_feedback [9/17/2024, 7:49:59 PM]:Ensure that all import statements in your code are accurate and correctly reflect the project's structure. Match the import statements to those found in the original code under test, using the exact same modules, packages, and functions without altering their import style.
+
+roost_feedback [9/17/2024, 8:07:53 PM]:Please ensure you follow the prompt correctly! Especially for import statements.
 """
 
 # ********RoostGPT********
@@ -154,7 +156,7 @@ class TestBmiCalculatorInterpretBmi:
         bmi_value = 37.0
         expected_result = f"Your BMI is {bmi_value}, you are obese (Class II)."
         
-        result = interpret_bbi(bmi_value)
+        result = interpret_bmi(bmi_value)
         
         assert result == expected_result
     

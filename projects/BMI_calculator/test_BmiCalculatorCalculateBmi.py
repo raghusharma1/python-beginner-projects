@@ -79,6 +79,8 @@ END_GUIDELINE
 These guidelines and scenarios aim to ensure that the `calculate_bmi` function is tested comprehensively, covering typical use cases as well as edge cases and error handling, which aligns with both business logic and technical robustness.
 
 roost_feedback [9/17/2024, 7:49:05 PM]:Ensure that all import statements in your code are accurate and correctly reflect the project's structure. Match the import statements to those found in the original code under test, using the exact same modules, packages, and functions without altering their import style.
+
+roost_feedback [9/17/2024, 8:06:58 PM]:Please ensure you follow the prompt correctly! Especially for import statements.
 """
 
 # ********RoostGPT********

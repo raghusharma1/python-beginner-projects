@@ -78,6 +78,8 @@ END_GUIDELINE
 These testing scenarios and guidelines aim to ensure comprehensive coverage of the `main` function's behavior under various conditions, focusing on both standard operation and exception handling, while maintaining clarity and maintainability of the test code.
 
 roost_feedback [9/17/2024, 7:50:58 PM]:Ensure that all import statements in your code are accurate and correctly reflect the project's structure. Match the import statements to those found in the original code under test, using the exact same modules, packages, and functions without altering their import style.
+
+roost_feedback [9/17/2024, 8:08:53 PM]:Please ensure you follow the prompt correctly! Especially for import statements.
 """
 
 # ********RoostGPT********
