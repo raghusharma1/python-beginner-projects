@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title id="head-title">index.html</title>
+      <link href="assets\style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <h1 id="title">index.html</h1>
+    <p>Report generated on 18-Sep-2024 at 10:50:07 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a>
+        v4.1.1</p>
+    <div id="environment-header">
+      <h2>Environment</h2>
+    </div>
+    <table id="environment"></table>
+    <!-- TEMPLATES -->
+      <template id="template_environment_row">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+    <template id="template_results-table__body--empty">
+      <tbody class="results-table-row">
+        <tr id="not-found-message">
+          <td colspan="4">No results found. Check the filters.</th>
+        </tr>
+    </template>
+    <template id="template_results-table__tbody">
+      <tbody class="results-table-row">
+        <tr class="collapsible">
+        </tr>
+        <tr class="extras-row">
+          <td class="extra" colspan="4">
+            <div class="extraHTML"></div>
+            <div class="media">
+              <div class="media-container">
+                  <div class="media-container__nav--left"><</div>
+                  <div class="media-container__viewport">
+                    <img src="" />
+                    <video controls>
+                      <source src="" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="media-container__nav--right">></div>
+                </div>
+                <div class="media__name"></div>
+                <div class="media__counter"></div>
+            </div>
+            <div class="logwrapper">
+              <div class="logexpander"></div>
+              <div class="log"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+    <!-- END TEMPLATES -->
+    <div class="summary">
+      <div class="summary__data">
+        <h2>Summary</h2>
+        <div class="additional-summary prefix">
+        </div>
+        <p class="run-count">26 tests took 53 ms.</p>
+        <p class="filter">(Un)check the boxes to filter the results.</p>
+        <div class="summary__reload">
+          <div class="summary__reload__button hidden" onclick="location.reload()">
+            <div>There are still tests running. <br />Reload this page to get the latest results!</div>
+          </div>
+        </div>
+        <div class="summary__spacer"></div>
+        <div class="controls">
+          <div class="filters">
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="failed" />
+            <span class="failed">13 Failed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="passed" />
+            <span class="passed">13 Passed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="skipped" disabled/>
+            <span class="skipped">0 Skipped,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xfailed" disabled/>
+            <span class="xfailed">0 Expected failures,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xpassed" disabled/>
+            <span class="xpassed">0 Unexpected passes,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="error" disabled/>
+            <span class="error">0 Errors,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="rerun" disabled/>
+            <span class="rerun">0 Reruns</span>
+          </div>
+          <div class="collapse">
+            <button id="show_all_details">Show all details</button>&nbsp;/&nbsp;<button id="hide_all_details">Hide all details</button>
+          </div>
+        </div>
+      </div>
+      <div class="additional-summary summary">
+      </div>
+      <div class="additional-summary postfix">
+      </div>
+    </div>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable" data-column-type="result">Result</th>
+          <th class="sortable" data-column-type="testId">Test</th>
+          <th class="sortable" data-column-type="duration">Duration</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+  <footer>
+    <div id="data-container" data-jsonblob="{&#34;environment&#34;: {&#34;Python&#34;: &#34;3.12.6&#34;, &#34;Platform&#34;: &#34;Windows-11-10.0.22631-SP0&#34;, &#34;Packages&#34;: {&#34;pytest&#34;: &#34;8.3.3&#34;, &#34;pluggy&#34;: &#34;1.5.0&#34;}, &#34;Plugins&#34;: {&#34;html&#34;: &#34;4.1.1&#34;, &#34;metadata&#34;: &#34;3.1.1&#34;}}, &#34;tests&#34;: {&#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_positive_scores&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_positive_scores&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_positive_scores&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_zero_scores&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_zero_scores&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_zero_scores&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_high_over_number&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_high_over_number&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_high_over_number&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_negative_scores&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_negative_scores&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainDisplayScoreboard.py::Test_MainDisplayScoreboard::test_display_scoreboard_negative_scores&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_valid_input_flow&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_valid_input_flow&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainMain.py::Test_MainMain::test_valid_input_flow&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainMain.Test_MainMain object at 0x000001FD7F7E36B0&amp;gt;\n\n    @pytest.mark.valid\n    def test_valid_input_flow(self):\n        test_inputs = [&amp;quot;7&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;]\n        expected_output = [&amp;quot;Welcome Hand Cricket&amp;quot;, &amp;quot;You will be playing against another player&amp;quot;, &amp;quot;Match Summary&amp;quot;]\n    \n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=test_inputs):\n            with patch(&amp;#x27;builtins.print&amp;#x27;) as mock_print:\n&amp;gt;               main()\n\ntest_MainMain.py:93: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:25: in main\n    player1_score, player2_score = play_game(\nmain.py:66: in play_game\n    player1_score, player1_wickets = user_turn(\nmain.py:100: in user_turn\n    input(f&amp;quot;Over {over + 1}, Ball {balls + 1}: Enter your {&amp;#x27;shot&amp;#x27;} (1-6): &amp;quot;)\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188277382080&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 1: Enter your shot (1-6): &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F7EE6E0&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7FDBC5E0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_valid_input_flow&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n&#34;}], &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_invalid_overs_input&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_invalid_overs_input&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainMain.py::Test_MainMain::test_invalid_overs_input&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainMain.Test_MainMain object at 0x000001FD7F7E37D0&amp;gt;\n\n    @pytest.mark.invalid\n    def test_invalid_overs_input(self):\n        test_inputs = [&amp;quot;11&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;]\n        expected_output = &amp;quot;Invalid input, exiting game&amp;quot;\n    \n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=test_inputs):\n            with patch(&amp;#x27;builtins.print&amp;#x27;) as mock_print:\n&amp;gt;               main()\n\ntest_MainMain.py:104: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:25: in main\n    player1_score, player2_score = play_game(\nmain.py:76: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188277382896&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 1: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F73A050&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7FDBD8A0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_invalid_overs_input&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n&#34;}], &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_toss_winner_decision&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_toss_winner_decision&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainMain.py::Test_MainMain::test_toss_winner_decision&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainMain.Test_MainMain object at 0x000001FD7F7DFBC0&amp;gt;\n\n    @pytest.mark.positive\n    def test_toss_winner_decision(self):\n        test_inputs = [&amp;quot;5&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;1&amp;quot;]\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=test_inputs):\n            with patch(&amp;#x27;random.randint&amp;#x27;, return_value=1):\n                with patch(&amp;#x27;builtins.print&amp;#x27;) as mock_print:\n&amp;gt;                   main()\n\ntest_MainMain.py:113: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:25: in main\n    player1_score, player2_score = play_game(\nmain.py:66: in play_game\n    player1_score, player1_wickets = user_turn(\nmain.py:100: in user_turn\n    input(f&amp;quot;Over {over + 1}, Ball {balls + 1}: Enter your {&amp;#x27;shot&amp;#x27;} (1-6): &amp;quot;)\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188277382080&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 1: Enter your shot (1-6): &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F87CE50&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7FDBCFE0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_toss_winner_decision&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n&#34;}], &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_difficulty_level_impact&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_difficulty_level_impact&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainMain.py::Test_MainMain::test_difficulty_level_impact&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainMain.Test_MainMain object at 0x000001FD7F7E8E00&amp;gt;\n\n    @pytest.mark.regression\n    def test_difficulty_level_impact(self):\n        test_inputs = [&amp;quot;5&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;3&amp;quot;]\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=test_inputs):\n            with patch(&amp;#x27;builtins.print&amp;#x27;) as mock_print:\n&amp;gt;               main()\n\ntest_MainMain.py:122: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:25: in main\n    player1_score, player2_score = play_game(\nmain.py:76: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188276644176&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 1: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F739FF0&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7FE75D00&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_difficulty_level_impact&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n&#34;}], &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_player_choice_handling&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainMain.py::Test_MainMain::test_player_choice_handling&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainMain.py::Test_MainMain::test_player_choice_handling&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainMain.Test_MainMain object at 0x000001FD7F7E85F0&amp;gt;\n\n    @pytest.mark.negative\n    def test_player_choice_handling(self):\n        test_inputs = [&amp;quot;5&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;1&amp;quot;]\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=test_inputs):\n            with patch(&amp;#x27;random.randint&amp;#x27;, return_value=1):\n                with patch(&amp;#x27;builtins.print&amp;#x27;) as mock_print:\n&amp;gt;                   main()\n\ntest_MainMain.py:132: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:25: in main\n    player1_score, player2_score = play_game(\nmain.py:76: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188277951488&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 1: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7DC7D480&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E4680&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_player_choice_handling&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n&#34;}], &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_with_minimum_overs&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_with_minimum_overs&#34;, &#34;duration&#34;: &#34;2 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_with_minimum_overs&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;2 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainPlayGame.Test_MainPlayGame object at 0x000001FD7F7E8BC0&amp;gt;\n\n    @pytest.mark.smoke\n    def test_play_game_with_minimum_overs(self):\n        &amp;quot;&amp;quot;&amp;quot;Test game logic with the minimum number of overs.&amp;quot;&amp;quot;&amp;quot;\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=[1, 1, 1, 1, 1, 1]):\n&amp;gt;           result = play_game(1, &amp;#x27;1&amp;#x27;, &amp;#x27;2&amp;#x27;)\n\ntest_MainPlayGame.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:71: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188276641104&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 1: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F7392D0&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E45E0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_play_game_with_minimum_overs&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\n\nMatch Summary\n=============\nOvers: 1\n\nOver 1, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 1\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 2\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 3\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 9 wickets left.\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 4\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 5\nPlayer&amp;#x27;s turn - Bowling\n&#34;}], &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_with_multiple_overs&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_with_multiple_overs&#34;, &#34;duration&#34;: &#34;13 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_with_multiple_overs&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;13 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainPlayGame.Test_MainPlayGame object at 0x000001FD7F7E8D10&amp;gt;\n\n    @pytest.mark.regression\n    def test_play_game_with_multiple_overs(self):\n        &amp;quot;&amp;quot;&amp;quot;Test game logic over multiple overs.&amp;quot;&amp;quot;&amp;quot;\n        input_sequence = [1, 1, 1, 1, 1, 1] * 5\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=input_sequence):\n&amp;gt;           result = play_game(5, &amp;#x27;1&amp;#x27;, &amp;#x27;2&amp;#x27;)\n\ntest_MainPlayGame.py:103: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:71: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188277957072&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 2, Ball 4: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F6ED210&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E40E0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_play_game_with_multiple_overs&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\n\nMatch Summary\n=============\nOvers: 5\n\nOver 1, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 1\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 2\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 3\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 4\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 5\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 6\nPlayer&amp;#x27;s turn - Bowling\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 6\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 9\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 13\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 16\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 21\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 25\n\nScoreboard\n==========\nOver 1:\nPlayer 1: 6 runs\nPlayer 2: 25 runs\n\nOver 2, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 7\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 8\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 9\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 10\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 11\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 12\nPlayer&amp;#x27;s turn - Bowling\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 26\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 32\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 36\n&#34;}], &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_all_wickets_lost&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_all_wickets_lost&#34;, &#34;duration&#34;: &#34;3 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_all_wickets_lost&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;3 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainPlayGame.Test_MainPlayGame object at 0x000001FD7F7EA930&amp;gt;\n\n    @pytest.mark.negative\n    def test_play_game_all_wickets_lost(self):\n        &amp;quot;&amp;quot;&amp;quot;Test game logic when all wickets are lost.&amp;quot;&amp;quot;&amp;quot;\n        input_sequence = [1, 1, 1, 1, 1, 1] * 10\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=input_sequence):\n&amp;gt;           result = play_game(10, &amp;#x27;1&amp;#x27;, &amp;#x27;2&amp;#x27;)\n\ntest_MainPlayGame.py:115: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:71: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188276401264&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 4, Ball 1: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F700610&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E54E0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_play_game_all_wickets_lost&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\n\nMatch Summary\n=============\nOvers: 10\n\nOver 1, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 1\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 2\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 3\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 4\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 5\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 6\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 2\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 4\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 9\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 11\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 14\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 17\n\nScoreboard\n==========\nOver 1:\nPlayer 1: 6 runs\nPlayer 2: 17 runs\n\nOver 2, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 9 wickets left.\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 7\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 8\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 8 wickets left.\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 7 wickets left.\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 9\nPlayer&amp;#x27;s turn - Bowling\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 18\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 24\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 26\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 32\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 35\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 38\n\nScoreboard\n==========\nOver 2:\nPlayer 1: 9 runs\nPlayer 2: 38 runs\n\nOver 3, Player 1: 7 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 10\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 11\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 12\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 13\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 6 wickets left.\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 14\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 40\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 46\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 51\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 53\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 56\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 58\n\nScoreboard\n==========\nOver 3:\nPlayer 1: 14 runs\nPlayer 2: 58 runs\n\nOver 4, Player 1: 6 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 15\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 5 wickets left.\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 16\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 17\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 18\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 19\nPlayer&amp;#x27;s turn - Bowling\n&#34;}], &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_random_choices&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_random_choices&#34;, &#34;duration&#34;: &#34;2 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_random_choices&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;2 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainPlayGame.Test_MainPlayGame object at 0x000001FD7F7EA1E0&amp;gt;\n\n    @pytest.mark.random\n    def test_play_game_random_choices(self):\n        &amp;quot;&amp;quot;&amp;quot;Test game logic with random player choices.&amp;quot;&amp;quot;&amp;quot;\n        random_inputs = [random.randint(1, 6) for _ in range(30)]\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=random_inputs):\n&amp;gt;           result = play_game(5, &amp;#x27;1&amp;#x27;, &amp;#x27;2&amp;#x27;)\n\ntest_MainPlayGame.py:126: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:71: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188276556832&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 2, Ball 4: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F724C10&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E5120&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_play_game_random_choices&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\n\nMatch Summary\n=============\nOvers: 5\n\nOver 1, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 4, Opponent chose 2\nPlayer&amp;#x27;s score is 4\nYou chose 4, Opponent chose 2\nPlayer&amp;#x27;s score is 8\nYou chose 5, Opponent chose 2\nPlayer&amp;#x27;s score is 13\nYou chose 3, Opponent chose 2\nPlayer&amp;#x27;s score is 16\nYou chose 2, Opponent chose 3\nPlayer&amp;#x27;s score is 18\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 19\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 2\nYou chose 3, Opponent chose 5\nPlayer&amp;#x27;s score is 5\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 6\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 10\nYou chose 2, Opponent chose 6\nPlayer&amp;#x27;s score is 12\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 13\n\nScoreboard\n==========\nOver 1:\nPlayer 1: 19 runs\nPlayer 2: 13 runs\n\nOver 2, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 4, Opponent chose 3\nPlayer&amp;#x27;s score is 23\nYou chose 2, Opponent chose 5\nPlayer&amp;#x27;s score is 25\nYou chose 6, Opponent chose 4\nPlayer&amp;#x27;s score is 31\nYou chose 4, Opponent chose 2\nPlayer&amp;#x27;s score is 35\nYou chose 6, Opponent chose 6\nPlayer is out!\nPlayer has 9 wickets left.\nYou chose 3, Opponent chose 3\nPlayer is out!\nPlayer has 8 wickets left.\nPlayer&amp;#x27;s turn - Bowling\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 14\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 15\nYou chose 2, Opponent chose 3\nPlayer&amp;#x27;s score is 17\n&#34;}], &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_maximum_overs&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_maximum_overs&#34;, &#34;duration&#34;: &#34;7 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainPlayGame.py::Test_MainPlayGame::test_play_game_maximum_overs&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;7 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;test_MainPlayGame.Test_MainPlayGame object at 0x000001FD7F7EA510&amp;gt;\n\n    @pytest.mark.performance\n    def test_play_game_maximum_overs(self):\n        &amp;quot;&amp;quot;&amp;quot;Test the performance of the game logic under maximum overs.&amp;quot;&amp;quot;&amp;quot;\n        input_sequence = [1, 1, 1, 1, 1, 1] * 50\n        start_time = time.time()\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=input_sequence):\n&amp;gt;           result = play_game(50, &amp;#x27;1&amp;#x27;, &amp;#x27;2&amp;#x27;)\n\ntest_MainPlayGame.py:139: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:71: in play_game\n    player2_score, player2_wickets = user_turn(\nmain.py:110: in user_turn\n    input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188276407648&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 20, Ball 6: Enter your delivery (1-6): &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7F6D2A10&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E4900&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_play_game_maximum_overs&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\n\nMatch Summary\n=============\nOvers: 50\n\nOver 1, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 1\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 2\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 3\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 4\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 5\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 6\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 2\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 8\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 12\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 15\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 18\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 22\n\nScoreboard\n==========\nOver 1:\nPlayer 1: 6 runs\nPlayer 2: 22 runs\n\nOver 2, Player 1: 10 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 7\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 8\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 9 wickets left.\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 9\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 10\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 11\nPlayer&amp;#x27;s turn - Bowling\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 28\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 32\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 35\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 38\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 40\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 44\n\nScoreboard\n==========\nOver 2:\nPlayer 1: 11 runs\nPlayer 2: 44 runs\n\nOver 3, Player 1: 9 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 12\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 13\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 14\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 15\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 16\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 8 wickets left.\nPlayer&amp;#x27;s turn - Bowling\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 50\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 53\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 59\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 62\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 67\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 68\n\nScoreboard\n==========\nOver 3:\nPlayer 1: 16 runs\nPlayer 2: 68 runs\n\nOver 4, Player 1: 8 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 17\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 18\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 19\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 20\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 21\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 22\nPlayer&amp;#x27;s turn - Bowling\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 69\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 72\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 76\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 82\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 87\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 88\n\nScoreboard\n==========\nOver 4:\nPlayer 1: 22 runs\nPlayer 2: 88 runs\n\nOver 5, Player 1: 8 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 23\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 24\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 25\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 26\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 27\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 7 wickets left.\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 90\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 92\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 98\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 103\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 107\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 111\n\nScoreboard\n==========\nOver 5:\nPlayer 1: 27 runs\nPlayer 2: 111 runs\n\nOver 6, Player 1: 7 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 28\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 29\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 30\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 31\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 32\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 33\nPlayer&amp;#x27;s turn - Bowling\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 117\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 120\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 124\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 129\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 133\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 139\n\nScoreboard\n==========\nOver 6:\nPlayer 1: 33 runs\nPlayer 2: 139 runs\n\nOver 7, Player 1: 7 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 34\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 6 wickets left.\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 35\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 36\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 5 wickets left.\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 37\nPlayer&amp;#x27;s turn - Bowling\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 145\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 149\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 152\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 156\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 158\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 162\n\nScoreboard\n==========\nOver 7:\nPlayer 1: 37 runs\nPlayer 2: 162 runs\n\nOver 8, Player 1: 5 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 38\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 39\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 40\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 41\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 42\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 43\nPlayer&amp;#x27;s turn - Bowling\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 167\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 170\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 172\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 176\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 181\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 186\n\nScoreboard\n==========\nOver 8:\nPlayer 1: 43 runs\nPlayer 2: 186 runs\n\nOver 9, Player 1: 5 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 5\nPlayer&amp;#x27;s score is 44\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 4 wickets left.\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 45\nYou chose 1, Opponent chose 3\nPlayer&amp;#x27;s score is 46\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 47\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 48\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 188\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 191\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 192\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 198\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 202\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 204\n\nScoreboard\n==========\nOver 9:\nPlayer 1: 48 runs\nPlayer 2: 204 runs\n\nOver 10, Player 1: 4 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 3 wickets left.\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 49\nYou chose 1, Opponent chose 6\nPlayer&amp;#x27;s score is 50\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 2 wickets left.\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 1 wickets left.\nYou chose 1, Opponent chose 4\nPlayer&amp;#x27;s score is 51\nPlayer&amp;#x27;s turn - Bowling\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 210\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 215\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 221\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 223\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 227\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 231\n\nScoreboard\n==========\nOver 10:\nPlayer 1: 51 runs\nPlayer 2: 231 runs\n\nOver 11, Player 1: 1 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer&amp;#x27;s turn - Bowling\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 235\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 237\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 242\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 245\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 248\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 250\n\nScoreboard\n==========\nOver 11:\nPlayer 1: 51 runs\nPlayer 2: 250 runs\n\nOver 12, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 253\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 257\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 259\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 264\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 270\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 272\n\nScoreboard\n==========\nOver 12:\nPlayer 1: 51 runs\nPlayer 2: 272 runs\n\nOver 13, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 275\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 278\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 279\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 282\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 288\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 293\n\nScoreboard\n==========\nOver 13:\nPlayer 1: 51 runs\nPlayer 2: 293 runs\n\nOver 14, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 296\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 299\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 302\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 308\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 310\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 314\n\nScoreboard\n==========\nOver 14:\nPlayer 1: 51 runs\nPlayer 2: 314 runs\n\nOver 15, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 315\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 318\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 320\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 326\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 332\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 338\n\nScoreboard\n==========\nOver 15:\nPlayer 1: 51 runs\nPlayer 2: 338 runs\n\nOver 16, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 340\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 345\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 350\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 355\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 356\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 360\n\nScoreboard\n==========\nOver 16:\nPlayer 1: 51 runs\nPlayer 2: 360 runs\n\nOver 17, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 364\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 369\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 372\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 375\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 378\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 381\n\nScoreboard\n==========\nOver 17:\nPlayer 1: 51 runs\nPlayer 2: 381 runs\n\nOver 18, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 384\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 390\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 395\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 398\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 402\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 407\n\nScoreboard\n==========\nOver 18:\nPlayer 1: 51 runs\nPlayer 2: 407 runs\n\nOver 19, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 413\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 419\nYou chose 6, Opponent chose 1\nPlayer&amp;#x27;s score is 425\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 429\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 430\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 433\n\nScoreboard\n==========\nOver 19:\nPlayer 1: 51 runs\nPlayer 2: 433 runs\n\nOver 20, Player 1: 0 wickets left, Player 2: 10 wickets left\nPlayer&amp;#x27;s turn - Batting\nPlayer&amp;#x27;s turn - Bowling\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 435\nYou chose 5, Opponent chose 1\nPlayer&amp;#x27;s score is 440\nYou chose 3, Opponent chose 1\nPlayer&amp;#x27;s score is 443\nYou chose 1, Opponent chose 1\nPlayer&amp;#x27;s score is 444\nYou chose 4, Opponent chose 1\nPlayer&amp;#x27;s score is 448\n&#34;}], &#34;projects/HandCricket/test_MainToss.py::Test_MainToss::test_player_one_wins_with_correct_guess&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainToss.py::Test_MainToss::test_player_one_wins_with_correct_guess&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainToss.py::Test_MainToss::test_player_one_wins_with_correct_guess&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nToss time!\nIt&amp;#x27;s Heads!\n&#34;}], &#34;projects/HandCricket/test_MainToss.py::Test_MainToss::test_player_two_wins_with_incorrect_guess&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainToss.py::Test_MainToss::test_player_two_wins_with_incorrect_guess&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainToss.py::Test_MainToss::test_player_two_wins_with_incorrect_guess&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nToss time!\nIt&amp;#x27;s Heads!\n&#34;}], &#34;projects/HandCricket/test_MainToss.py::Test_MainToss::test_output_correct_announcement&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainToss.py::Test_MainToss::test_output_correct_announcement&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainToss.py::Test_MainToss::test_output_correct_announcement&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainUserTurn.py::test_score_increment_when_batting_not_out&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainUserTurn.py::test_score_increment_when_batting_not_out&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainUserTurn.py::test_score_increment_when_batting_not_out&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 1\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 3\nYou chose 3, Opponent chose 4\nPlayer&amp;#x27;s score is 6\nYou chose 4, Opponent chose 3\nPlayer&amp;#x27;s score is 10\nYou chose 5, Opponent chose 6\nPlayer&amp;#x27;s score is 15\nYou chose 6, Opponent chose 5\nPlayer&amp;#x27;s score is 21\n&#34;}], &#34;projects/HandCricket/test_MainUserTurn.py::test_wicket_reduction_when_out_batting&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainUserTurn.py::test_wicket_reduction_when_out_batting&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainUserTurn.py::test_wicket_reduction_when_out_batting&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;setup_out_batting = (10, 2, &amp;#x27;1&amp;#x27;, 0, [&amp;#x27;1&amp;#x27;], [1])\n\n    @pytest.mark.negative\n    def test_wicket_reduction_when_out_batting(setup_out_batting):\n        player_score, player_wickets, player_choice, over, inputs, random_outputs = setup_out_batting\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=inputs), patch(&amp;#x27;random.randint&amp;#x27;, side_effect=random_outputs):\n&amp;gt;           _, final_wickets = user_turn(player_score, player_wickets, player_choice, over)\n\ntest_MainUserTurn.py:134: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:100: in user_turn\n    input(f&amp;quot;Over {over + 1}, Ball {balls + 1}: Enter your {&amp;#x27;shot&amp;#x27;} (1-6): &amp;quot;)\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188282797696&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 2: Enter your shot (1-6): &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7FD1A8C0&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E5D00&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_wicket_reduction_when_out_batting&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 1 wickets left.\n&#34;}], &#34;projects/HandCricket/test_MainUserTurn.py::test_no_score_change_when_out&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainUserTurn.py::test_no_score_change_when_out&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainUserTurn.py::test_no_score_change_when_out&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;setup_out_batting = (10, 2, &amp;#x27;1&amp;#x27;, 0, [&amp;#x27;1&amp;#x27;], [1])\n\n    @pytest.mark.negative\n    def test_no_score_change_when_out(setup_out_batting):\n        player_score, player_wickets, player_choice, over, inputs, random_outputs = setup_out_batting\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=inputs), patch(&amp;#x27;random.randint&amp;#x27;, side_effect=random_outputs):\n&amp;gt;           final_score, _ = user_turn(player_score, player_wickets, player_choice, over)\n\ntest_MainUserTurn.py:141: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:100: in user_turn\n    input(f&amp;quot;Over {over + 1}, Ball {balls + 1}: Enter your {&amp;#x27;shot&amp;#x27;} (1-6): &amp;quot;)\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188278298672&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 2: Enter your shot (1-6): &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7FD1AB90&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E6CA0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_no_score_change_when_out&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 1\nPlayer is out!\nPlayer has 1 wickets left.\n&#34;}], &#34;projects/HandCricket/test_MainUserTurn.py::test_wicket_reduction_when_opponent_out_bowling&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainUserTurn.py::test_wicket_reduction_when_opponent_out_bowling&#34;, &#34;duration&#34;: &#34;2 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainUserTurn.py::test_wicket_reduction_when_opponent_out_bowling&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;2 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;setup_bowling_out = (10, 2, &amp;#x27;2&amp;#x27;, 0, [&amp;#x27;2&amp;#x27;, &amp;#x27;1&amp;#x27;], [1])\n\n    @pytest.mark.valid\n    def test_wicket_reduction_when_opponent_out_bowling(setup_bowling_out):\n        player_score, player_wickets, player_choice, over, inputs, random_outputs = setup_bowling_out\n        with patch(&amp;#x27;builtins.input&amp;#x27;, side_effect=inputs), patch(&amp;#x27;random.randint&amp;#x27;, side_effect=random_outputs):\n&amp;gt;           _, final_wickets = user_turn(player_score, player_wickets, player_choice, over)\n\ntest_MainUserTurn.py:148: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nmain.py:105: in user_turn\n    opponent_choice = input(\nC:\\Python312\\Lib\\unittest\\mock.py:1137: in __call__\n    return self._mock_call(*args, **kwargs)\nC:\\Python312\\Lib\\unittest\\mock.py:1141: in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;MagicMock name=&amp;#x27;input&amp;#x27; id=&amp;#x27;2188282797936&amp;#x27;&amp;gt;\nargs = (&amp;#x27;Over 1, Ball 2: Player 2, choose 1 to bat, 2 to bowl: &amp;#x27;,), kwargs = {}\neffect = &amp;lt;list_iterator object at 0x000001FD7FD1D540&amp;gt;\n\n    def _execute_mock_call(self, /, *args, **kwargs):\n        # separate from _increment_mock_call so that awaited functions are\n        # executed separately from their call, also AsyncMock overrides this method\n    \n        effect = self.side_effect\n        if effect is not None:\n            if _is_exception(effect):\n                raise effect\n            elif not _callable(effect):\n&amp;gt;               result = next(effect)\nE               StopIteration\n\nC:\\Python312\\Lib\\unittest\\mock.py:1198: StopIteration\n\nThe above exception was the direct cause of the following exception:\n\ncls = &amp;lt;class &amp;#x27;_pytest.runner.CallInfo&amp;#x27;&amp;gt;\nfunc = &amp;lt;function call_and_report.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x000001FD7F6E76A0&amp;gt;\nwhen = &amp;#x27;call&amp;#x27;\nreraise = (&amp;lt;class &amp;#x27;_pytest.outcomes.Exit&amp;#x27;&amp;gt;, &amp;lt;class &amp;#x27;KeyboardInterrupt&amp;#x27;&amp;gt;)\n\n    @classmethod\n    def from_call(\n        cls,\n        func: Callable[[], TResult],\n        when: Literal[&amp;quot;collect&amp;quot;, &amp;quot;setup&amp;quot;, &amp;quot;call&amp;quot;, &amp;quot;teardown&amp;quot;],\n        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,\n    ) -&amp;gt; CallInfo[TResult]:\n        &amp;quot;&amp;quot;&amp;quot;Call func, wrapping the result in a CallInfo.\n    \n        :param func:\n            The function to call. Called without arguments.\n        :type func: Callable[[], _pytest.runner.TResult]\n        :param when:\n            The phase in which the function is called.\n        :param reraise:\n            Exception or exceptions that shall propagate if raised by the\n            function, instead of being wrapped in the CallInfo.\n        &amp;quot;&amp;quot;&amp;quot;\n        excinfo = None\n        start = timing.time()\n        precise_start = timing.perf_counter()\n        try:\n&amp;gt;           result: TResult | None = func()\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\runner.py:242: in &amp;lt;lambda&amp;gt;\n    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_hooks.py:513: in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\pluggy\\_manager.py:120: in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:92: in pytest_runtest_call\n    yield from thread_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\threadexception.py:68: in thread_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:95: in pytest_runtest_call\n    yield from unraisable_exception_runtest_hook()\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\unraisableexception.py:70: in unraisable_exception_runtest_hook\n    yield\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:846: in pytest_runtest_call\n    yield from self._runtest_for(item, &amp;quot;call&amp;quot;)\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\logging.py:829: in _runtest_for\n    yield\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = &amp;lt;CaptureManager _method=&amp;#x27;fd&amp;#x27; _global_capturing=&amp;lt;MultiCapture out=&amp;lt;FDCapture 1 oldfd=5 _state=&amp;#x27;suspended&amp;#x27; tmpfile=&amp;lt;_io...._io.TextIOWrapper name=&amp;#x27;nul&amp;#x27; mode=&amp;#x27;r&amp;#x27; encoding=&amp;#x27;utf-8&amp;#x27;&amp;gt;&amp;gt; _state=&amp;#x27;suspended&amp;#x27; _in_suspended=False&amp;gt; _capture_fixture=None&amp;gt;\nitem = &amp;lt;Function test_wicket_reduction_when_opponent_out_bowling&amp;gt;\n\n    @hookimpl(wrapper=True)\n    def pytest_runtest_call(self, item: Item) -&amp;gt; Generator[None]:\n        with self.item_capture(&amp;quot;call&amp;quot;, item):\n&amp;gt;           return (yield)\nE           RuntimeError: generator raised StopIteration\n\nC:\\Users\\raghu\\.virtualenvs\\HandCricket-JhRzPb7a\\Lib\\site-packages\\_pytest\\capture.py:880: RuntimeError\n\n----------------------------- Captured stdout call -----------------------------\nPlayer&amp;#x27;s turn - Bowling\nYou chose 1, Opponent chose 1\nOpponent is out!\nOpponent has 1 wickets left.\n&#34;}], &#34;projects/HandCricket/test_MainUserTurn.py::test_continuation_until_all_wickets_or_over_complete&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainUserTurn.py::test_continuation_until_all_wickets_or_over_complete&#34;, &#34;duration&#34;: &#34;3 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainUserTurn.py::test_continuation_until_all_wickets_or_over_complete&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;3 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nPlayer&amp;#x27;s turn - Batting\nYou chose 1, Opponent chose 2\nPlayer&amp;#x27;s score is 1\nYou chose 2, Opponent chose 1\nPlayer&amp;#x27;s score is 3\nYou chose 3, Opponent chose 4\nPlayer&amp;#x27;s score is 6\nYou chose 4, Opponent chose 3\nPlayer&amp;#x27;s score is 10\nYou chose 5, Opponent chose 6\nPlayer&amp;#x27;s score is 15\nYou chose 6, Opponent chose 5\nPlayer&amp;#x27;s score is 21\n&#34;}], &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_player1_wins&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_player1_wins&#34;, &#34;duration&#34;: &#34;2 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_player1_wins&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;2 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_player2_wins&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_player2_wins&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_player2_wins&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_draw_game&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_draw_game&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_draw_game&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_large_scores&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_large_scores&#34;, &#34;duration&#34;: &#34;1 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;projects/HandCricket/test_MainWhoWon.py::Test_MainWhoWon::test_large_scores&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;1 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}]}, &#34;renderCollapsed&#34;: [&#34;passed&#34;], &#34;initialSort&#34;: &#34;result&#34;, &#34;title&#34;: &#34;index.html&#34;}"></div>
+    <script>
+      (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const { getCollapsedCategory, setCollapsedIds } = require('./storage.js')
+
+class DataManager {
+    setManager(data) {
+        const collapsedCategories = [...getCollapsedCategory(data.renderCollapsed)]
+        const collapsedIds = []
+        const tests = Object.values(data.tests).flat().map((test, index) => {
+            const collapsed = collapsedCategories.includes(test.result.toLowerCase())
+            const id = `test_${index}`
+            if (collapsed) {
+                collapsedIds.push(id)
+            }
+            return {
+                ...test,
+                id,
+                collapsed,
+            }
+        })
+        const dataBlob = { ...data, tests }
+        this.data = { ...dataBlob }
+        this.renderData = { ...dataBlob }
+        setCollapsedIds(collapsedIds)
+    }
+
+    get allData() {
+        return { ...this.data }
+    }
+
+    resetRender() {
+        this.renderData = { ...this.data }
+    }
+
+    setRender(data) {
+        this.renderData.tests = [...data]
+    }
+
+    toggleCollapsedItem(id) {
+        this.renderData.tests = this.renderData.tests.map((test) =>
+            test.id === id ? { ...test, collapsed: !test.collapsed } : test,
+        )
+    }
+
+    set allCollapsed(collapsed) {
+        this.renderData = { ...this.renderData, tests: [...this.renderData.tests.map((test) => (
+            { ...test, collapsed }
+        ))] }
+    }
+
+    get testSubset() {
+        return [...this.renderData.tests]
+    }
+
+    get environment() {
+        return this.renderData.environment
+    }
+
+    get initialSort() {
+        return this.data.initialSort
+    }
+}
+
+module.exports = {
+    manager: new DataManager(),
+}
+
+},{"./storage.js":8}],2:[function(require,module,exports){
+const mediaViewer = require('./mediaviewer.js')
+const templateEnvRow = document.getElementById('template_environment_row')
+const templateResult = document.getElementById('template_results-table__tbody')
+
+function htmlToElements(html) {
+    const temp = document.createElement('template')
+    temp.innerHTML = html
+    return temp.content.childNodes
+}
+
+const find = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return elem.querySelector(selector)
+}
+
+const findAll = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return [...elem.querySelectorAll(selector)]
+}
+
+const dom = {
+    getStaticRow: (key, value) => {
+        const envRow = templateEnvRow.content.cloneNode(true)
+        const isObj = typeof value === 'object' && value !== null
+        const values = isObj ? Object.keys(value).map((k) => `${k}: ${value[k]}`) : null
+
+        const valuesElement = htmlToElements(
+            values ? `<ul>${values.map((val) => `<li>${val}</li>`).join('')}<ul>` : `<div>${value}</div>`)[0]
+        const td = findAll('td', envRow)
+        td[0].textContent = key
+        td[1].appendChild(valuesElement)
+
+        return envRow
+    },
+    getResultTBody: ({ testId, id, log, extras, resultsTableRow, tableHtml, result, collapsed }) => {
+        const resultBody = templateResult.content.cloneNode(true)
+        resultBody.querySelector('tbody').classList.add(result.toLowerCase())
+        resultBody.querySelector('tbody').id = testId
+        resultBody.querySelector('.collapsible').dataset.id = id
+
+        resultsTableRow.forEach((html) => {
+            const t = document.createElement('template')
+            t.innerHTML = html
+            resultBody.querySelector('.collapsible').appendChild(t.content)
+        })
+
+        if (log) {
+            // Wrap lines starting with "E" with span.error to color those lines red
+            const wrappedLog = log.replace(/^E.*$/gm, (match) => `<span class="error">${match}</span>`)
+            resultBody.querySelector('.log').innerHTML = wrappedLog
+        } else {
+            resultBody.querySelector('.log').remove()
+        }
+
+        if (collapsed) {
+            resultBody.querySelector('.collapsible > td')?.classList.add('collapsed')
+            resultBody.querySelector('.extras-row').classList.add('hidden')
+        } else {
+            resultBody.querySelector('.collapsible > td')?.classList.remove('collapsed')
+        }
+
+        const media = []
+        extras?.forEach(({ name, format_type, content }) => {
+            if (['image', 'video'].includes(format_type)) {
+                media.push({ path: content, name, format_type })
+            }
+
+            if (format_type === 'html') {
+                resultBody.querySelector('.extraHTML').insertAdjacentHTML('beforeend', `<div>${content}</div>`)
+            }
+        })
+        mediaViewer.setup(resultBody, media)
+
+        // Add custom html from the pytest_html_results_table_html hook
+        tableHtml?.forEach((item) => {
+            resultBody.querySelector('td[class="extra"]').insertAdjacentHTML('beforeend', item)
+        })
+
+        return resultBody
+    },
+}
+
+module.exports = {
+    dom,
+    htmlToElements,
+    find,
+    findAll,
+}
+
+},{"./mediaviewer.js":6}],3:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const storageModule = require('./storage.js')
+
+const getFilteredSubSet = (filter) =>
+    manager.allData.tests.filter(({ result }) => filter.includes(result.toLowerCase()))
+
+const doInitFilter = () => {
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+}
+
+const doFilter = (type, show) => {
+    if (show) {
+        storageModule.showCategory(type)
+    } else {
+        storageModule.hideCategory(type)
+    }
+
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+
+    const sortColumn = storageModule.getSort()
+    doSort(sortColumn, true)
+}
+
+module.exports = {
+    doFilter,
+    doInitFilter,
+}
+
+},{"./datamanager.js":1,"./sort.js":7,"./storage.js":8}],4:[function(require,module,exports){
+const { redraw, bindEvents, renderStatic } = require('./main.js')
+const { doInitFilter } = require('./filter.js')
+const { doInitSort } = require('./sort.js')
+const { manager } = require('./datamanager.js')
+const data = JSON.parse(document.getElementById('data-container').dataset.jsonblob)
+
+function init() {
+    manager.setManager(data)
+    doInitFilter()
+    doInitSort()
+    renderStatic()
+    redraw()
+    bindEvents()
+}
+
+init()
+
+},{"./datamanager.js":1,"./filter.js":3,"./main.js":5,"./sort.js":7}],5:[function(require,module,exports){
+const { dom, find, findAll } = require('./dom.js')
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const { doFilter } = require('./filter.js')
+const {
+    getVisible,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    getSortDirection,
+    possibleFilters,
+} = require('./storage.js')
+
+const removeChildren = (node) => {
+    while (node.firstChild) {
+        node.removeChild(node.firstChild)
+    }
+}
+
+const renderStatic = () => {
+    const renderEnvironmentTable = () => {
+        const environment = manager.environment
+        const rows = Object.keys(environment).map((key) => dom.getStaticRow(key, environment[key]))
+        const table = document.getElementById('environment')
+        removeChildren(table)
+        rows.forEach((row) => table.appendChild(row))
+    }
+    renderEnvironmentTable()
+}
+
+const addItemToggleListener = (elem) => {
+    elem.addEventListener('click', ({ target }) => {
+        const id = target.parentElement.dataset.id
+        manager.toggleCollapsedItem(id)
+
+        const collapsedIds = getCollapsedIds()
+        if (collapsedIds.includes(id)) {
+            const updated = collapsedIds.filter((item) => item !== id)
+            setCollapsedIds(updated)
+        } else {
+            collapsedIds.push(id)
+            setCollapsedIds(collapsedIds)
+        }
+        redraw()
+    })
+}
+
+const renderContent = (tests) => {
+    const sortAttr = getSort(manager.initialSort)
+    const sortAsc = JSON.parse(getSortDirection())
+    const rows = tests.map(dom.getResultTBody)
+    const table = document.getElementById('results-table')
+    const tableHeader = document.getElementById('results-table-head')
+
+    const newTable = document.createElement('table')
+    newTable.id = 'results-table'
+
+    // remove all sorting classes and set the relevant
+    findAll('.sortable', tableHeader).forEach((elem) => elem.classList.remove('asc', 'desc'))
+    tableHeader.querySelector(`.sortable[data-column-type="${sortAttr}"]`)?.classList.add(sortAsc ? 'desc' : 'asc')
+    newTable.appendChild(tableHeader)
+
+    if (!rows.length) {
+        const emptyTable = document.getElementById('template_results-table__body--empty').content.cloneNode(true)
+        newTable.appendChild(emptyTable)
+    } else {
+        rows.forEach((row) => {
+            if (!!row) {
+                findAll('.collapsible td:not(.col-links', row).forEach(addItemToggleListener)
+                find('.logexpander', row).addEventListener('click',
+                    (evt) => evt.target.parentNode.classList.toggle('expanded'),
+                )
+                newTable.appendChild(row)
+            }
+        })
+    }
+
+    table.replaceWith(newTable)
+}
+
+const renderDerived = () => {
+    const currentFilter = getVisible()
+    possibleFilters.forEach((result) => {
+        const input = document.querySelector(`input[data-test-result="${result}"]`)
+        input.checked = currentFilter.includes(result)
+    })
+}
+
+const bindEvents = () => {
+    const filterColumn = (evt) => {
+        const { target: element } = evt
+        const { testResult } = element.dataset
+
+        doFilter(testResult, element.checked)
+        const collapsedIds = getCollapsedIds()
+        const updated = manager.renderData.tests.map((test) => {
+            return {
+                ...test,
+                collapsed: collapsedIds.includes(test.id),
+            }
+        })
+        manager.setRender(updated)
+        redraw()
+    }
+
+    const header = document.getElementById('environment-header')
+    header.addEventListener('click', () => {
+        const table = document.getElementById('environment')
+        table.classList.toggle('hidden')
+        header.classList.toggle('collapsed')
+    })
+
+    findAll('input[name="filter_checkbox"]').forEach((elem) => {
+        elem.addEventListener('click', filterColumn)
+    })
+
+    findAll('.sortable').forEach((elem) => {
+        elem.addEventListener('click', (evt) => {
+            const { target: element } = evt
+            const { columnType } = element.dataset
+            doSort(columnType)
+            redraw()
+        })
+    })
+
+    document.getElementById('show_all_details').addEventListener('click', () => {
+        manager.allCollapsed = false
+        setCollapsedIds([])
+        redraw()
+    })
+    document.getElementById('hide_all_details').addEventListener('click', () => {
+        manager.allCollapsed = true
+        const allIds = manager.renderData.tests.map((test) => test.id)
+        setCollapsedIds(allIds)
+        redraw()
+    })
+}
+
+const redraw = () => {
+    const { testSubset } = manager
+
+    renderContent(testSubset)
+    renderDerived()
+}
+
+module.exports = {
+    redraw,
+    bindEvents,
+    renderStatic,
+}
+
+},{"./datamanager.js":1,"./dom.js":2,"./filter.js":3,"./sort.js":7,"./storage.js":8}],6:[function(require,module,exports){
+class MediaViewer {
+    constructor(assets) {
+        this.assets = assets
+        this.index = 0
+    }
+
+    nextActive() {
+        this.index = this.index === this.assets.length - 1 ? 0 : this.index + 1
+        return [this.activeFile, this.index]
+    }
+
+    prevActive() {
+        this.index = this.index === 0 ? this.assets.length - 1 : this.index -1
+        return [this.activeFile, this.index]
+    }
+
+    get currentIndex() {
+        return this.index
+    }
+
+    get activeFile() {
+        return this.assets[this.index]
+    }
+}
+
+
+const setup = (resultBody, assets) => {
+    if (!assets.length) {
+        resultBody.querySelector('.media').classList.add('hidden')
+        return
+    }
+
+    const mediaViewer = new MediaViewer(assets)
+    const container = resultBody.querySelector('.media-container')
+    const leftArrow = resultBody.querySelector('.media-container__nav--left')
+    const rightArrow = resultBody.querySelector('.media-container__nav--right')
+    const mediaName = resultBody.querySelector('.media__name')
+    const counter = resultBody.querySelector('.media__counter')
+    const imageEl = resultBody.querySelector('img')
+    const sourceEl = resultBody.querySelector('source')
+    const videoEl = resultBody.querySelector('video')
+
+    const setImg = (media, index) => {
+        if (media?.format_type === 'image') {
+            imageEl.src = media.path
+
+            imageEl.classList.remove('hidden')
+            videoEl.classList.add('hidden')
+        } else if (media?.format_type === 'video') {
+            sourceEl.src = media.path
+
+            videoEl.classList.remove('hidden')
+            imageEl.classList.add('hidden')
+        }
+
+        mediaName.innerText = media?.name
+        counter.innerText = `${index + 1} / ${assets.length}`
+    }
+    setImg(mediaViewer.activeFile, mediaViewer.currentIndex)
+
+    const moveLeft = () => {
+        const [media, index] = mediaViewer.prevActive()
+        setImg(media, index)
+    }
+    const doRight = () => {
+        const [media, index] = mediaViewer.nextActive()
+        setImg(media, index)
+    }
+    const openImg = () => {
+        window.open(mediaViewer.activeFile.path, '_blank')
+    }
+    if (assets.length === 1) {
+        container.classList.add('media-container--fullscreen')
+    } else {
+        leftArrow.addEventListener('click', moveLeft)
+        rightArrow.addEventListener('click', doRight)
+    }
+    imageEl.addEventListener('click', openImg)
+}
+
+module.exports = {
+    setup,
+}
+
+},{}],7:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const storageModule = require('./storage.js')
+
+const genericSort = (list, key, ascending, customOrder) => {
+    let sorted
+    if (customOrder) {
+        sorted = list.sort((a, b) => {
+            const aValue = a.result.toLowerCase()
+            const bValue = b.result.toLowerCase()
+
+            const aIndex = customOrder.findIndex((item) => item.toLowerCase() === aValue)
+            const bIndex = customOrder.findIndex((item) => item.toLowerCase() === bValue)
+
+            // Compare the indices to determine the sort order
+            return aIndex - bIndex
+        })
+    } else {
+        sorted = list.sort((a, b) => a[key] === b[key] ? 0 : a[key] > b[key] ? 1 : -1)
+    }
+
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const durationSort = (list, ascending) => {
+    const parseDuration = (duration) => {
+        if (duration.includes(':')) {
+            // If it's in the format "HH:mm:ss"
+            const [hours, minutes, seconds] = duration.split(':').map(Number)
+            return (hours * 3600 + minutes * 60 + seconds) * 1000
+        } else {
+            // If it's in the format "nnn ms"
+            return parseInt(duration)
+        }
+    }
+    const sorted = list.sort((a, b) => parseDuration(a['duration']) - parseDuration(b['duration']))
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const doInitSort = () => {
+    const type = storageModule.getSort(manager.initialSort)
+    const ascending = storageModule.getSortDirection()
+    const list = manager.testSubset
+    const initialOrder = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed', 'Skipped', 'Passed']
+
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    if (type?.toLowerCase() === 'original') {
+        manager.setRender(list)
+    } else {
+        let sortedList
+        switch (type) {
+        case 'duration':
+            sortedList = durationSort(list, ascending)
+            break
+        case 'result':
+            sortedList = genericSort(list, type, ascending, initialOrder)
+            break
+        default:
+            sortedList = genericSort(list, type, ascending)
+            break
+        }
+        manager.setRender(sortedList)
+    }
+}
+
+const doSort = (type, skipDirection) => {
+    const newSortType = storageModule.getSort(manager.initialSort) !== type
+    const currentAsc = storageModule.getSortDirection()
+    let ascending
+    if (skipDirection) {
+        ascending = currentAsc
+    } else {
+        ascending = newSortType ? false : !currentAsc
+    }
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    const list = manager.testSubset
+    const sortedList = type === 'duration' ? durationSort(list, ascending) : genericSort(list, type, ascending)
+    manager.setRender(sortedList)
+}
+
+module.exports = {
+    doInitSort,
+    doSort,
+}
+
+},{"./datamanager.js":1,"./storage.js":8}],8:[function(require,module,exports){
+const possibleFilters = [
+    'passed',
+    'skipped',
+    'failed',
+    'error',
+    'xfailed',
+    'xpassed',
+    'rerun',
+]
+
+const getVisible = () => {
+    const url = new URL(window.location.href)
+    const settings = new URLSearchParams(url.search).get('visible')
+    const lower = (item) => {
+        const lowerItem = item.toLowerCase()
+        if (possibleFilters.includes(lowerItem)) {
+            return lowerItem
+        }
+        return null
+    }
+    return settings === null ?
+        possibleFilters :
+        [...new Set(settings?.split(',').map(lower).filter((item) => item))]
+}
+
+const hideCategory = (categoryToHide) => {
+    const url = new URL(window.location.href)
+    const visibleParams = new URLSearchParams(url.search).get('visible')
+    const currentVisible = visibleParams ? visibleParams.split(',') : [...possibleFilters]
+    const settings = [...new Set(currentVisible)].filter((f) => f !== categoryToHide).join(',')
+
+    url.searchParams.set('visible', settings)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const showCategory = (categoryToShow) => {
+    if (typeof window === 'undefined') {
+        return
+    }
+    const url = new URL(window.location.href)
+    const currentVisible = new URLSearchParams(url.search).get('visible')?.split(',').filter(Boolean) ||
+        [...possibleFilters]
+    const settings = [...new Set([categoryToShow, ...currentVisible])]
+    const noFilter = possibleFilters.length === settings.length || !settings.length
+
+    noFilter ? url.searchParams.delete('visible') : url.searchParams.set('visible', settings.join(','))
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getSort = (initialSort) => {
+    const url = new URL(window.location.href)
+    let sort = new URLSearchParams(url.search).get('sort')
+    if (!sort) {
+        sort = initialSort || 'result'
+    }
+    return sort
+}
+
+const setSort = (type) => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('sort', type)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getCollapsedCategory = (renderCollapsed) => {
+    let categories
+    if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href)
+        const collapsedItems = new URLSearchParams(url.search).get('collapsed')
+        switch (true) {
+        case !renderCollapsed && collapsedItems === null:
+            categories = ['passed']
+            break
+        case collapsedItems?.length === 0 || /^["']{2}$/.test(collapsedItems):
+            categories = []
+            break
+        case /^all$/.test(collapsedItems) || collapsedItems === null && /^all$/.test(renderCollapsed):
+            categories = [...possibleFilters]
+            break
+        default:
+            categories = collapsedItems?.split(',').map((item) => item.toLowerCase()) || renderCollapsed
+            break
+        }
+    } else {
+        categories = []
+    }
+    return categories
+}
+
+const getSortDirection = () => JSON.parse(sessionStorage.getItem('sortAsc')) || false
+const setSortDirection = (ascending) => sessionStorage.setItem('sortAsc', ascending)
+
+const getCollapsedIds = () => JSON.parse(sessionStorage.getItem('collapsedIds')) || []
+const setCollapsedIds = (list) => sessionStorage.setItem('collapsedIds', JSON.stringify(list))
+
+module.exports = {
+    getVisible,
+    hideCategory,
+    showCategory,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    setSort,
+    getSortDirection,
+    setSortDirection,
+    getCollapsedCategory,
+    possibleFilters,
+}
+
+},{}]},{},[4]);
+    </script>
+  </footer>
+</html>
