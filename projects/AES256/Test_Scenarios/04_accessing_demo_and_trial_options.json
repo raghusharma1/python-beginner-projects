@@ -1,0 +1,102 @@
+{
+  "test_name": "Accessing Demo and Trial Options",
+  "description": "This scenario validates the trial initiation workflow by clicking on 'Watch Demo' and 'Try RoostGPT' buttons. It ensures that the buttons function correctly, lead to the appropriate pages, and display expected trial forms or demo videos.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://roost.ai",
+    "https://roost.ai/how-roostgpt-works",
+    "https://app.roost.ai/tryRoostAI"
+  ],
+  "steps": [
+    "1. Navigate to https://roost.ai.",
+    "2. Verify the presence of the 'Watch Demo' and 'Try RoostGPT' buttons.",
+    "3. Click on the 'Watch Demo' button.",
+    "4. Assert that the demo video page or modal is displayed.",
+    "5. Verify the video player loads correctly and is functional.",
+    "6. Return to the homepage.",
+    "7. Click on the 'Try RoostGPT' button.",
+    "8. Verify that the page navigates to https://app.roost.ai/tryRoostAI.",
+    "9. Assert the presence of a 'Start Trial' or signup form.",
+    "10. Fill out the trial form with valid data.",
+    "11. Submit the form and verify success confirmation.",
+    "12. Log out or navigate back to the homepage.",
+    "13. Reload the homepage and verify state persistence.",
+    "14. Test the 'Watch Demo' button in a new browser tab.",
+    "15. Test the 'Try RoostGPT' button in a private browsing window."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='watch-demo']",
+      "text": "Watch Demo",
+      "action": "click",
+      "url_on_page": "https://roost.ai"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='try-roostgpt']",
+      "text": "Try RoostGPT",
+      "action": "click",
+      "url_on_page": "https://roost.ai"
+    }
+  ],
+  "expected_results": [
+    "Demo video plays correctly without errors.",
+    "Trial initiation leads to the expected signup page.",
+    "Relevant success messages are displayed after trial form submission.",
+    "Page states persist across reloads and navigation.",
+    "All interactions are functional in private browsing mode."
+  ],
+  "edge_cases": [
+    "Demo video fails to load due to network issues.",
+    "Trial form submission with invalid data.",
+    "Attempt trial initiation with an already registered email.",
+    "Test trial initiation on unsupported browsers.",
+    "Simulate a timeout during trial form submission."
+  ],
+  "data_requirements": [
+    "Valid data for trial form (e.g., name, email, password).",
+    "Placeholder content for demo video.",
+    "Error messages for invalid trial form submissions."
+  ],
+  "dependencies": [
+    "Demo video must be hosted and accessible.",
+    "Trial form functionality must be implemented.",
+    "Backend services for trial initiation must be operational."
+  ],
+  "api_interactions": [
+    "Monitor API calls for trial form submission.",
+    "Verify payloads for demo video loading requests."
+  ],
+  "performance_metrics": [
+    "Demo video buffer time (<5 seconds).",
+    "Trial form submission response time (<2 seconds).",
+    "Overall page loading time (<3.5 seconds)."
+  ],
+  "accessibility_requirements": [
+    "Ensure demo video includes captions.",
+    "Provide descriptive alt text for all images.",
+    "Ensure button labels have sufficient color contrast."
+  ],
+  "metadata": {
+    "uuid": "ae0f52f4-f373-439d-98c5-3a3726bb9c89",
+    "created_at": "2025-07-21T17:36:49.888676",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "workflow",
+      "api-integration",
+      "performance",
+      "form-submission",
+      "complex-scenario",
+      "network-resilience",
+      "auto-generated",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}

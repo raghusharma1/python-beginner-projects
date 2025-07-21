@@ -1,0 +1,88 @@
+{
+  "test_name": "Verify Blog Article Navigation Workflow",
+  "description": "This scenario tests the navigation workflow for accessing blog articles on the Roost AI blog. It ensures users can view a list of articles, select an article, and be directed to the correct content page.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://roost.ai/blog"
+  ],
+  "steps": [
+    "1. Navigate to https://roost.ai/blog.",
+    "2. Verify the page title is 'Roost.ai Blog on Generative AI and Large Language Models'.",
+    "3. Scroll down to the list of blog articles displayed on the page.",
+    "4. Assert that each article entry displays a title, date, and a 'Read this Article >>' link.",
+    "5. Click on the first 'Read this Article >>' link.",
+    "6. Verify that the user is redirected to the correct article page.",
+    "7. Validate the presence of the article's title and content on the redirected page.",
+    "8. Use the browser's back button to return to the main blog page.",
+    "9. Scroll down and verify the state of the scrolled position persists.",
+    "10. Repeat steps 4-8 for at least two more articles to ensure all links function properly.",
+    "11. Test the browser's forward button to return to a previously viewed article.",
+    "12. Verify that the previously viewed article is displayed correctly."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href*='Read this Article']",
+      "text": "Read this Article >>",
+      "action": "click",
+      "url_on_page": "https://roost.ai/blog"
+    }
+  ],
+  "expected_results": [
+    "The blog page loads successfully with the correct title.",
+    "Each blog article displays the correct title, date, and 'Read this Article >>' link.",
+    "Clicking on an article link redirects the user to the correct content page.",
+    "The browser's back button returns the user to the main blog page.",
+    "The scrolled state of the blog page persists upon returning.",
+    "The forward button redirects the user to the previously viewed article."
+  ],
+  "edge_cases": [
+    "Clicking a 'Read this Article >>' link that redirects to a missing or deleted article.",
+    "Attempting to load the blog page with no available articles.",
+    "Testing navigation with browser cookies disabled.",
+    "Testing navigation with JavaScript disabled.",
+    "Clicking the same article link multiple times to ensure it always redirects correctly."
+  ],
+  "data_requirements": [
+    "Sample articles with unique titles, dates, and content.",
+    "At least one article with no content to test error rendering.",
+    "Broken or incorrect article links for edge case testing."
+  ],
+  "dependencies": [
+    "The blog page must have at least three articles visible.",
+    "The article pages must be correctly configured and accessible.",
+    "Browser cache and cookies must be cleared."
+  ],
+  "api_interactions": [
+    "Verify API response for article list (e.g., GET /api/articles).",
+    "Mock API response for a missing or deleted article (404)."
+  ],
+  "performance_metrics": [
+    "Page load time should be under 2 seconds for the blog page.",
+    "Article redirection time should be under 1 second."
+  ],
+  "accessibility_requirements": [
+    "All links must have descriptive text for screen readers.",
+    "The article list must be keyboard navigable.",
+    "Ensure proper color contrast for links and article titles."
+  ],
+  "metadata": {
+    "uuid": "abff898d-3d98-4d2b-bd2c-b6f80fa036ef",
+    "created_at": "2025-07-21T17:36:49.912817",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "navigation",
+      "api-integration",
+      "performance",
+      "complex-scenario",
+      "auto-generated",
+      "ui-test"
+    ],
+    "estimated_execution_time": 60,
+    "flakiness_potential": "medium"
+  }
+}

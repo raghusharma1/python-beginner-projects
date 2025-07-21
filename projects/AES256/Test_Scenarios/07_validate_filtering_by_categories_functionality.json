@@ -1,0 +1,87 @@
+{
+  "test_name": "Validate Filtering by Categories Functionality",
+  "description": "This test verifies that users can filter blog articles by selecting categories, and the filtering behavior is accurate and consistent with the selected category.",
+  "type": "data_validation",
+  "complexity": "high",
+  "pages": [
+    "https://roost.ai/blog"
+  ],
+  "steps": [
+    "1. Navigate to https://roost.ai/blog.",
+    "2. Verify the presence of a 'Categories' section on the page.",
+    "3. Validate that the categories listed include 'generative AI,' 'large language models,' 'chatGPT,' and 'software testing.'",
+    "4. Click on the 'generative AI' category link.",
+    "5. Verify that the articles displayed belong to the 'generative AI' category only.",
+    "6. Click on the 'large language models' category link.",
+    "7. Verify that the articles displayed belong to the 'large language models' category only.",
+    "8. Test selecting a category with no articles available.",
+    "9. Validate that a user-friendly message is displayed indicating no articles are available.",
+    "10. Test switching between categories multiple times to ensure filtering persists.",
+    "11. Reset the filtering by clicking a 'Clear All Filters' link, if available.",
+    "12. Validate that all articles are displayed again."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href*='categories']",
+      "text": "Category Name",
+      "action": "click",
+      "url_on_page": "https://roost.ai/blog"
+    }
+  ],
+  "expected_results": [
+    "Clicking on a category displays only articles relevant to that category.",
+    "Selecting a category with no articles displays a user-friendly message.",
+    "Filtering persists when switching between categories multiple times.",
+    "Resetting the filters displays all articles again."
+  ],
+  "edge_cases": [
+    "Attempting to filter by a non-existent category.",
+    "Attempting to load a category page with no articles available.",
+    "Testing filtering with JavaScript disabled.",
+    "Testing filtering with an extremely high number of categories.",
+    "Testing filtering with multiple users applying concurrent filters."
+  ],
+  "data_requirements": [
+    "At least three categories with multiple articles each.",
+    "One category with no articles for edge case testing.",
+    "Category names with special characters for validation."
+  ],
+  "dependencies": [
+    "The blog page must have at least three categories configured.",
+    "Articles must be tagged correctly with categories.",
+    "The 'Categories' section must be accessible."
+  ],
+  "api_interactions": [
+    "Verify API response for fetching categories (e.g., GET /api/categories).",
+    "Mock API response for a category with no articles (200 with empty array)."
+  ],
+  "performance_metrics": [
+    "Category filter response time should be under 1 second.",
+    "Page rendering time after filtering should be under 2 seconds."
+  ],
+  "accessibility_requirements": [
+    "All category links must have descriptive text for screen readers.",
+    "Filtering functionality must be keyboard accessible.",
+    "Ensure proper focus management when filtering."
+  ],
+  "metadata": {
+    "uuid": "7c6c121a-b180-4364-b7dc-02ea4c8008fb",
+    "created_at": "2025-07-21T17:36:49.927255",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "ui-test",
+      "concurrency",
+      "api-integration",
+      "performance",
+      "complex-scenario",
+      "auto-generated",
+      "data_validation"
+    ],
+    "estimated_execution_time": 60,
+    "flakiness_potential": "medium"
+  }
+}

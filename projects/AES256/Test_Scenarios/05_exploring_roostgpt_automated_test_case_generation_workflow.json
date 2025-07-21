@@ -1,0 +1,127 @@
+{
+  "test_name": "Exploring RoostGPT Automated Test Case Generation Workflow",
+  "description": "This scenario validates the informational content of the page and ensures users can explore the step-by-step process of how RoostGPT generates automated test cases. It tests navigation to related resources and checks for proper rendering of content.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://roost.ai/how-roostgpt-works"
+  ],
+  "steps": [
+    "1. Navigate to https://roost.ai/how-roostgpt-works.",
+    "2. Verify the page title matches 'Discover How RoostGPT Works: Automated Test Case Generation Unveiled'.",
+    "3. Check that the main content explaining RoostGPT's functionality is visible and correctly formatted.",
+    "4. Verify presence of links to related resources such as 'What is RoostGPT', 'Java Unit Test Cases', 'API Test Cases', and 'Getting Started'.",
+    "5. Click on the link 'What is RoostGPT' and ensure it navigates to the correct page.",
+    "6. Return to the original page using the browser back button and verify state persistence.",
+    "7. Test navigation to 'Java Unit Test Cases' link and validate the resource content.",
+    "8. Repeat the navigation test for 'API Test Cases' and 'Getting Started'.",
+    "9. Interact with any visible buttons or interactive elements and validate their functionality.",
+    "10. Reload the page and verify that all static content is correctly rendered.",
+    "11. Perform a manual inspection to ensure proper alignment and spacing of content elements.",
+    "12. Verify that no broken links or missing images exist on the page.",
+    "13. Test navigation with alternative input methods such as keyboard shortcuts.",
+    "14. Validate hover effects or tooltips for interactive elements if available.",
+    "15. Test for responsiveness by resizing the browser window and verifying content reflows appropriately.",
+    "16. Use browser developer tools to inspect DOM structure and validate semantic HTML usage.",
+    "17. Test page load times on a slow network and measure rendering speed.",
+    "18. Perform content validation by extracting text and comparing it against expected data.",
+    "19. Validate meta tags and SEO attributes for the page.",
+    "20. Check accessibility features such as alt attributes for images and ARIA roles for interactive elements."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/what-is-roostgpt']",
+      "text": "What is RoostGPT",
+      "action": "click",
+      "url_on_page": "https://roost.ai/how-roostgpt-works"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/java-unit-test-cases']",
+      "text": "Java Unit Test Cases",
+      "action": "click",
+      "url_on_page": "https://roost.ai/how-roostgpt-works"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/api-test-cases']",
+      "text": "API Test Cases",
+      "action": "click",
+      "url_on_page": "https://roost.ai/how-roostgpt-works"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/getting-started']",
+      "text": "Getting Started",
+      "action": "click",
+      "url_on_page": "https://roost.ai/how-roostgpt-works"
+    }
+  ],
+  "expected_results": [
+    "Page title is displayed correctly.",
+    "All related resource links navigate to the expected pages.",
+    "Content explaining RoostGPT functionality is visible and correctly formatted.",
+    "Hover effects and tooltips for interactive elements work as intended.",
+    "Page is responsive and reflows correctly on different viewport sizes.",
+    "No broken links or missing images are found on the page."
+  ],
+  "edge_cases": [
+    "Navigate to a broken or non-existent link.",
+    "Simulate slow network conditions and measure page load time.",
+    "Verify behavior when browser back button is used during navigation.",
+    "Check for missing alt attributes in images.",
+    "Validate incorrect or outdated URLs in the link elements."
+  ],
+  "data_requirements": [
+    "valid_url: 'https://roost.ai/how-roostgpt-works'",
+    "related_links: ['/what-is-roostgpt', '/java-unit-test-cases', '/api-test-cases', '/getting-started']",
+    "expected_page_title: 'Discover How RoostGPT Works: Automated Test Case Generation Unveiled'",
+    "broken_link: '/non-existent-page'",
+    "alt_texts: ['RoostGPT overview image', 'Step-by-step explanation graphic']"
+  ],
+  "dependencies": [
+    "Ensure the page https://roost.ai/how-roostgpt-works is live and accessible.",
+    "Verify all related resources are hosted and accessible at their respective URLs.",
+    "Ensure browser cache is cleared before testing."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/navigation",
+      "method": "GET",
+      "description": "Validate API responses for navigation links."
+    }
+  ],
+  "performance_metrics": [
+    "Page load time under 3 seconds on a standard network.",
+    "Rendering speed of less than 500ms for main content.",
+    "No more than 10 HTTP requests made during page load."
+  ],
+  "accessibility_requirements": [
+    "Test compliance with WCAG 2.1 Level AA standards.",
+    "Verify proper use of ARIA roles and labels.",
+    "Ensure keyboard navigability for all interactive elements.",
+    "Validate sufficient contrast ratios for text and background colors."
+  ],
+  "metadata": {
+    "uuid": "eade352f-de24-40e4-a5d9-07bfeb94e973",
+    "created_at": "2025-07-21T17:36:49.899990",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "navigation",
+      "keyboard-navigation",
+      "api-integration",
+      "performance",
+      "form-submission",
+      "complex-scenario",
+      "network-resilience",
+      "auto-generated",
+      "ui-test"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "medium"
+  }
+}

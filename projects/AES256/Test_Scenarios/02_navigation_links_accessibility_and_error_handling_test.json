@@ -1,0 +1,94 @@
+{
+  "test_name": "Navigation Links Accessibility and Error Handling Test",
+  "description": "Tests navigation links on the login page to ensure they lead to correct pages, are accessible, and handle errors gracefully.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/login.",
+    "2. Verify the visibility of navigation links such as 'About Roost', 'Privacy Policy', 'Documentation', and 'API Reference'.",
+    "3. Click the 'About Roost' link and verify navigation to the correct page.",
+    "4. Return to the login page.",
+    "5. Click the 'Privacy Policy' link and verify navigation to the Privacy Policy page.",
+    "6. Return to the login page.",
+    "7. Click the 'Documentation' link and verify navigation to the Documentation page.",
+    "8. Return to the login page.",
+    "9. Click the 'API Reference' link and verify navigation to the correct page.",
+    "10. Test accessibility compliance for each link by verifying keyboard navigation.",
+    "11. Simulate a network failure and click one of the links to verify proper error handling.",
+    "12. Assert the presence of accessible link labels for screen readers.",
+    "13. Test responsiveness of links on different viewport sizes (desktop, tablet, mobile).",
+    "14. Reload the page and verify all links are still functional."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/about']",
+      "text": "About Roost",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/privacy']",
+      "text": "Privacy Policy",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "Navigation to each link's corresponding page is successful.",
+    "Accessible link labels are visible to screen readers.",
+    "Proper error message displayed during network failure."
+  ],
+  "edge_cases": [
+    "Attempt to click a navigation link during a network failure.",
+    "Verify links with an unsupported browser.",
+    "Access links with JavaScript disabled.",
+    "Verify links on a mobile viewport.",
+    "Test links with slow network conditions."
+  ],
+  "data_requirements": [
+    "valid_url: '/about'",
+    "valid_url: '/privacy'",
+    "valid_url: '/documentation'",
+    "valid_url: '/api-reference'"
+  ],
+  "dependencies": [
+    "Network connectivity must be available.",
+    "Linked pages ('About Roost', 'Privacy Policy', etc.) must be operational."
+  ],
+  "api_interactions": [],
+  "performance_metrics": [
+    "Link click response time should be less than 1 second.",
+    "Navigation to linked pages should complete within 2 seconds."
+  ],
+  "accessibility_requirements": [
+    "Verify each link is focusable via keyboard.",
+    "Ensure accessible labels are present for navigation links."
+  ],
+  "metadata": {
+    "uuid": "429f72d9-eb0f-449b-a350-bb427fc2063e",
+    "created_at": "2025-07-21T17:36:49.840311",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "navigation",
+      "keyboard-navigation",
+      "error-handling",
+      "performance",
+      "complex-scenario",
+      "network-resilience",
+      "auto-generated",
+      "authentication",
+      "ui-test",
+      "responsive"
+    ],
+    "estimated_execution_time": 70,
+    "flakiness_potential": "medium"
+  }
+}
