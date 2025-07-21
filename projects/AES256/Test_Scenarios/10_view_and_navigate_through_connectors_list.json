@@ -1,0 +1,123 @@
+{
+  "test_name": "View and Navigate Through Connectors List",
+  "description": "This scenario tests the ability of the user to view and navigate through the connectors list, including verifying pagination functionality and ensuring all details are displayed correctly.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/connectors.",
+    "2. Verify the page title is 'Connectors - Roost.ai'.",
+    "3. Assert the visibility of the connectors table.",
+    "4. Check that the table headers include 'Connector Name', 'Connector Type', 'Created On', 'Modification Time', and 'Actions'.",
+    "5. Verify that each row of the table displays all expected fields correctly.",
+    "6. Scroll down to the bottom of the page to load more entries if pagination is infinite scroll.",
+    "7. If pagination controls are present, click the 'Next' button and verify the next set of rows is displayed.",
+    "8. Click the 'Previous' button and ensure the previous set of rows is displayed.",
+    "9. Test if the table search or filter functionality returns accurate results for a search query (if available).",
+    "10. Test sorting functionality on columns (if available) and verify that data is sorted correctly.",
+    "11. Refresh the page and verify that the table state reverts to default (sorted by default column, no filters applied).",
+    "12. Verify that the 'Actions' column contains buttons for 'Test', 'Info', 'Edit', and 'Delete'.",
+    "13. Hover over the 'Info' action button to check if a tooltip appears (if applicable).",
+    "14. Test the 'Info' button on a row and verify that a modal or new page opens with connector details.",
+    "15. Close the 'Info' modal and ensure the user is returned to the connectors list.",
+    "16. Assert responsiveness by resizing the browser window and verifying the table adjusts without overlapping or breaking.",
+    "17. Test keyboard navigation to move between rows and actions using the Tab key.",
+    "18. Log out and try to access https://dev.roost.ai/connectors and verify redirection to the login page."
+  ],
+  "selectors": [
+    {
+      "element_type": "table",
+      "selector": "table#connectors-list",
+      "text": "N/A",
+      "action": "assert_visibility",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "button.next-page",
+      "text": "Next",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "button.previous-page",
+      "text": "Previous",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "button.info-action",
+      "text": "Info",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    }
+  ],
+  "expected_results": [
+    "Page title matches 'Connectors - Roost.ai'.",
+    "Connectors table is visible on the page.",
+    "Table headers match the expected values.",
+    "Each row displays the correct connector details.",
+    "Pagination operates as expected, showing the correct next or previous set of rows.",
+    "Search functionality filters results accurately.",
+    "Sorting functionality sorts data as expected.",
+    "Table state reverts to default after a page refresh.",
+    "Info modal or page loads the correct connector details.",
+    "Page is responsive across different screen sizes."
+  ],
+  "edge_cases": [
+    "Table loads no data due to a backend failure.",
+    "Pagination controls fail to load the next or previous page.",
+    "Invalid or partial text in the search bar returns no results.",
+    "Table does not revert to default state after a page refresh.",
+    "Keyboard navigation skips rows or is non-functional."
+  ],
+  "data_requirements": [
+    "Minimum of 20 connector records in the database for pagination testing.",
+    "Connectors with long names to test table responsiveness.",
+    "Connectors with special characters (e.g., @, #) in their names for search functionality.",
+    "Malformed connector data to test display handling.",
+    "Empty connector list to verify the 'No Data' state."
+  ],
+  "dependencies": [
+    "User must be logged in.",
+    "Connectors data must be prepopulated in the database.",
+    "Pagination controls must be implemented on the backend."
+  ],
+  "api_interactions": [
+    "GET /connectors: Retrieve connectors list.",
+    "GET /connectors/{id}: Fetch individual connector details."
+  ],
+  "performance_metrics": [
+    "Page load time under 2 seconds.",
+    "Pagination response time under 1 second.",
+    "Table rendering time under 500ms."
+  ],
+  "accessibility_requirements": [
+    "Table headers must have appropriate 'aria-label' attributes.",
+    "Pagination controls must be keyboard-navigable.",
+    "Contrast ratio for text and background must meet WCAG AA standards."
+  ],
+  "metadata": {
+    "uuid": "3ff89395-bef8-4780-8998-b5c4ad93c7a5",
+    "created_at": "2025-07-21T08:27:27.113003",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "workflow",
+      "keyboard-navigation",
+      "auto-generated",
+      "performance",
+      "ui-test",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}
