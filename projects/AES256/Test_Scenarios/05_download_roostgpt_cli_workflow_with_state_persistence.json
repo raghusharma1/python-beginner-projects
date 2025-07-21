@@ -1,0 +1,103 @@
+{
+  "test_name": "Download RoostGPT CLI Workflow with State Persistence",
+  "description": "This test verifies the download functionality of the RoostGPT CLI from the products page while ensuring state persistence across page reloads.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/products"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/products.",
+    "2. Verify the page title is 'Roost.ai | Your Testing Co-Pilot Powered by Generative AI and Large Language Models'.",
+    "3. Locate the 'Download RoostGPT CLI' button using its selector.",
+    "4. Click on the 'Download RoostGPT CLI' button.",
+    "5. Verify that a file download prompt appears.",
+    "6. Assert the downloaded file has the correct name and format (e.g., 'roost-gpt-cli.zip').",
+    "7. Reload the page.",
+    "8. Verify that the 'Download RoostGPT CLI' button is still visible and clickable.",
+    "9. Verify the page state remains unchanged after the reload.",
+    "10. Interact with other visible UI elements to ensure they remain functional after the download action.",
+    "11. Manually simulate a page timeout and reload to ensure state recovery.",
+    "12. Verify no duplicate downloads occur without additional user interaction.",
+    "13. Test the download functionality across different browsers (Chrome, Firefox, Safari).",
+    "14. Verify the download link's URL matches the expected endpoint.",
+    "15. Test the workflow on a mobile device to ensure responsiveness and functionality.",
+    "16. Verify proper state management by inspecting cookies/local storage (if applicable).",
+    "17. Simulate a failed download by intercepting the request and returning a 404 error code.",
+    "18. Verify that an appropriate error message is displayed for failed downloads."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[aria-label='Download RoostGPT CLI']",
+      "text": "Download RoostGPT CLI",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/products"
+    }
+  ],
+  "expected_results": [
+    "The file download prompt appears upon clicking the 'Download RoostGPT CLI' button.",
+    "The downloaded file has the correct name and format.",
+    "The page state remains consistent across reloads.",
+    "Error message 'Download failed. Please try again later.' appears for failed downloads.",
+    "All UI elements remain functional after the download action.",
+    "The 'Download RoostGPT CLI' button remains accessible and clickable after the page reload."
+  ],
+  "edge_cases": [
+    "Simulate network failure during the file download process.",
+    "Simulate a slow network to test download timeout handling.",
+    "Test download initiation when the user has restricted download permissions in the browser.",
+    "Verify the button is disabled or becomes unresponsive when clicked multiple times in rapid succession.",
+    "Simulate a corrupted file download and verify user guidance for re-downloading."
+  ],
+  "data_requirements": [
+    "Valid file URL for the RoostGPT CLI download.",
+    "Expected file size for the downloaded file.",
+    "Valid browser configurations (e.g., pop-up blockers disabled).",
+    "Access to different devices and operating systems for cross-browser testing."
+  ],
+  "dependencies": [
+    "The download link must be correctly configured.",
+    "The file server must be online and accessible.",
+    "The user must have valid permissions to perform downloads."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/download-cli",
+      "method": "GET",
+      "expected_response": "200 OK with file content",
+      "error_handling": "Simulate 404 and 500 errors."
+    }
+  ],
+  "performance_metrics": [
+    "Measure file download initiation time.",
+    "Assess the total download time under various network conditions.",
+    "Evaluate page rendering speed post-download action."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 AA compliance: Ensure the 'Download RoostGPT CLI' button is keyboard accessible.",
+    "Screen reader support: Verify the button has a descriptive aria-label.",
+    "Focus management: Ensure focus returns to the button after download initiation."
+  ],
+  "metadata": {
+    "uuid": "4d084a39-9724-4062-a210-5a2dc59e14c0",
+    "created_at": "2025-07-21T09:39:31.089789",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "accessibility",
+      "workflow",
+      "file-download",
+      "complex-scenario",
+      "network-resilience",
+      "performance",
+      "api-integration",
+      "file-upload",
+      "ui-test"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}

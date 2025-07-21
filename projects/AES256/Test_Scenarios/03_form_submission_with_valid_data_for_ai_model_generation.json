@@ -1,0 +1,125 @@
+{
+  "test_name": "Form Submission with Valid Data for AI Model Generation",
+  "description": "Tests the form submission workflow for AI model generation using valid data. Ensures proper API integration, state persistence, and response handling.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/gptCLIForm.",
+    "2. Verify the page title matches 'Roost Enterprise Login | Software as a Service'.",
+    "3. Locate the input field for 'Base URL' and ensure it is visible.",
+    "4. Type a valid Base URL, e.g., 'https://api.openai.com/v1'.",
+    "5. Locate the input field for 'Open AI Token' and ensure it is visible.",
+    "6. Type a valid Open AI Token, e.g., 'sk-abc123'.",
+    "7. Verify the 'Verification Option' dropdown is visible.",
+    "8. Select 'Verify' from the dropdown.",
+    "9. Locate the submit button and ensure it is visible.",
+    "10. Click the submit button.",
+    "11. Wait for the API response and verify the success message appears.",
+    "12. Reload the page and verify that the previously entered data persists (if applicable).",
+    "13. Verify the network request sent contains correct payload data.",
+    "14. Simulate a failed API response and verify an error message appears.",
+    "15. Clear all form fields and submit the form to test required field validation.",
+    "16. Test navigation to another page to ensure state persistence.",
+    "17. Return to the form page and verify the data remains unchanged.",
+    "18. Check browser console for any JavaScript errors.",
+    "19. Validate that the page layout is responsive on smaller viewports.",
+    "20. Assert that all required form fields have proper aria-label attributes for accessibility."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[name='base_url']",
+      "text": "Base URL",
+      "action": "type",
+      "value": "https://api.openai.com/v1",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[name='open_ai_token']",
+      "text": "Open AI Token",
+      "action": "type",
+      "value": "sk-abc123",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[name='verification_option']",
+      "text": "Verification Option",
+      "action": "select_option",
+      "value": "Verify",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[type='submit']",
+      "text": "Submit",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "Form submits successfully with valid data.",
+    "Success message 'AI model successfully generated' appears.",
+    "Previously entered data persists after page reload.",
+    "API request matches expected payload format.",
+    "Error message 'Invalid input data' appears for empty form."
+  ],
+  "edge_cases": [
+    "Submit the form with an invalid Base URL format, e.g., 'invalid_url'.",
+    "Submit the form with an expired Open AI Token.",
+    "Leave the 'Verification Option' dropdown unselected and submit.",
+    "Simulate a network timeout during form submission.",
+    "Test form submission with XSS payloads in the Base URL field."
+  ],
+  "data_requirements": [
+    "valid_base_url: 'https://api.openai.com/v1'",
+    "invalid_base_url: 'invalid_url'",
+    "valid_open_ai_token: 'sk-abc123'",
+    "expired_open_ai_token: 'sk-expired123'",
+    "xss_payload: '<script>alert(\"XSS\")</script>'"
+  ],
+  "dependencies": [
+    "API endpoint for AI model generation must be live and reachable.",
+    "Valid Open AI Token must exist for testing.",
+    "Form validation rules must be implemented on both frontend and backend."
+  ],
+  "api_interactions": [
+    "POST /v1/generate-model"
+  ],
+  "performance_metrics": [
+    "Form submission response time < 200ms.",
+    "Page load time < 2s.",
+    "Rendering efficiency for various screen widths."
+  ],
+  "accessibility_requirements": [
+    "Ensure all inputs have proper aria-label attributes.",
+    "Verify screen reader can navigate through all form fields.",
+    "Contrast ratio of text meets WCAG AA standards."
+  ],
+  "metadata": {
+    "uuid": "86ebee79-165d-4737-9c6d-b2bff0ea9400",
+    "created_at": "2025-07-21T09:39:31.078588",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "data-validation",
+      "accessibility",
+      "workflow",
+      "complex-scenario",
+      "network-resilience",
+      "performance",
+      "api-integration",
+      "responsive",
+      "ui-test",
+      "form-submission"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "medium"
+  }
+}

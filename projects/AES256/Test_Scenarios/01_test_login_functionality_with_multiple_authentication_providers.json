@@ -1,0 +1,98 @@
+{
+  "test_name": "Test Login Functionality with Multiple Authentication Providers",
+  "description": "This scenario validates the ability of users to log in using third-party authentication providers like Google, Github, Microsoft, Okta, Auth0, and PingID. This ensures that the integration and redirection flows for all providers work correctly.",
+  "type": "authentication",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/login.",
+    "2. Verify the visibility of authentication provider buttons (e.g., 'Sign in with Google', 'Sign in with Github').",
+    "3. Click on the 'Google' login button and verify redirection to Google's OAuth page.",
+    "4. Simulate entering valid Google credentials and completing authentication.",
+    "5. Verify redirection back to https://dev.roost.ai/login with a successful login message.",
+    "6. Log out and repeat steps 3-5 for 'Github', 'Microsoft', 'Okta', 'Auth0', and 'PingID'.",
+    "7. Attempt login using one of the providers but simulate an invalid password entry.",
+    "8. Verify the error message is displayed on the third-party provider's page.",
+    "9. Simulate canceling the login process on the provider's page and ensure redirection back to https://dev.roost.ai/login occurs.",
+    "10. Check that no session or user information has been set after a canceled login attempt.",
+    "11. Attempt login via Google, this time simulating a network failure during the redirect.",
+    "12. Assert that the user is informed of the error and can retry the login process.",
+    "13. Test session persistence by refreshing the page after successful login and verifying the user remains logged in.",
+    "14. Log out and ensure the session is fully cleared.",
+    "15. Try to access the primary application dashboard at https://dev.roost.ai to verify redirection back to login if not authenticated."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='google-login']",
+      "text": "Sign in with Google",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='github-login']",
+      "text": "Sign in with Github",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is successfully redirected to the third-party OAuth page when clicking on a provider button.",
+    "User is authenticated and redirected back to the application with a valid session.",
+    "Error messages are displayed for invalid credentials.",
+    "Canceling a login attempt does not create a session or other user data.",
+    "Users cannot access the application dashboard if not logged in."
+  ],
+  "edge_cases": [
+    "Simulate a network timeout during redirection to or from the third-party provider.",
+    "Verify behavior when the third-party provider is unavailable.",
+    "Attempt login with an inactive or unauthorized provider account.",
+    "Ensure proper handling for unsupported browsers or older versions.",
+    "Check for CSRF vulnerabilities during redirection."
+  ],
+  "data_requirements": [
+    "google_valid_account: 'valid_user@gmail.com'",
+    "google_invalid_account: 'invalid_user@gmail.com'",
+    "github_valid_account: 'valid_user@github.com'",
+    "github_invalid_account: 'invalid_user@github.com'",
+    "network_error_simulation: true"
+  ],
+  "dependencies": [
+    "Third-party authentication providers must be configured and available.",
+    "Network connection must be stable for redirection.",
+    "User accounts must exist in the third-party providers being tested."
+  ],
+  "api_interactions": [
+    "OAuth endpoints for Google, Github, Microsoft, Okta, Auth0, PingID"
+  ],
+  "performance_metrics": [
+    "Redirection response time from provider to application.",
+    "Session creation time after successful login."
+  ],
+  "accessibility_requirements": [
+    "Ensure buttons for different providers have aria-label attributes for screen readers.",
+    "Validate keyboard navigability for all interactive elements."
+  ],
+  "metadata": {
+    "uuid": "0d24a747-2eb7-4453-8f96-061862ac1650",
+    "created_at": "2025-07-21T09:39:31.073123",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "authentication",
+      "accessibility",
+      "complex-scenario",
+      "network-resilience",
+      "performance",
+      "api-integration",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}

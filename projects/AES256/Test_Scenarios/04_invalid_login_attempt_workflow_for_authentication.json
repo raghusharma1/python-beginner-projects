@@ -1,0 +1,117 @@
+{
+  "test_name": "Invalid Login Attempt Workflow for Authentication",
+  "description": "Tests the login workflow with invalid credentials, ensuring error handling and session management.",
+  "type": "authentication",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/login.",
+    "2. Locate the email input field and ensure it is visible.",
+    "3. Type an invalid email format, e.g., 'user@invalid'.",
+    "4. Locate the password input field and ensure it is visible.",
+    "5. Type an incorrect password, e.g., 'wrongpassword'.",
+    "6. Locate the login button and ensure it is visible.",
+    "7. Click the login button.",
+    "8. Verify that an error message appears: 'Invalid email or password'.",
+    "9. Attempt login again with valid email but incorrect password.",
+    "10. Verify that a second error message appears: 'Invalid password'.",
+    "11. Try logging in multiple times to trigger account lockout.",
+    "12. Verify that an account lockout message appears: 'Your account has been temporarily locked'.",
+    "13. Navigate to the password reset page.",
+    "14. Submit an invalid email address to reset password.",
+    "15. Verify that an error message appears: 'Email does not exist'.",
+    "16. Submit a valid email to reset password.",
+    "17. Verify receipt of password reset confirmation message.",
+    "18. Attempt to reuse the password reset link after successfully changing password.",
+    "19. Verify proper handling of reused password reset link.",
+    "20. Test session timeout after login and attempt re-login."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[name='email']",
+      "text": "Email Input",
+      "action": "type",
+      "value": "user@invalid",
+      "url_on_page": "https://dev.roost.ai/login"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[name='password']",
+      "text": "Password Input",
+      "action": "type",
+      "value": "wrongpassword",
+      "url_on_page": "https://dev.roost.ai/login"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[type='submit']",
+      "text": "Login",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "Error message 'Invalid email or password' is displayed after first login attempt.",
+    "Error message 'Invalid password' is displayed after second login attempt.",
+    "Account lockout message 'Your account has been temporarily locked' appears after multiple failed attempts.",
+    "Password reset confirmation message is displayed.",
+    "Password change success message is displayed.",
+    "User is successfully logged in with new password.",
+    "Dashboard displays correct user information."
+  ],
+  "edge_cases": [
+    "Attempt to reuse the same password reset link after password has been changed.",
+    "Submit password reset for non-existent email address.",
+    "Enter mismatched passwords in password reset form.",
+    "Try to access protected routes without authentication.",
+    "Test password strength requirements during reset."
+  ],
+  "data_requirements": [
+    "valid_email: 'user@example.com'",
+    "invalid_email: 'invalid@example.com'",
+    "valid_password: 'NewSecurePass123!'",
+    "invalid_password: 'wrongpassword'",
+    "weak_password: 'password123'"
+  ],
+  "dependencies": [
+    "User account must exist in the system.",
+    "Email service must be configured for password reset emails.",
+    "Account lockout policy must be configured."
+  ],
+  "api_interactions": [
+    "POST /v1/login",
+    "POST /v1/password-reset"
+  ],
+  "performance_metrics": [
+    "Login response time < 300ms.",
+    "Password reset email generation time < 500ms."
+  ],
+  "accessibility_requirements": [
+    "Ensure all form fields are navigable via keyboard.",
+    "Verify error messages are accessible via screen reader.",
+    "Ensure color contrast ratios meet WCAG AA standards."
+  ],
+  "metadata": {
+    "uuid": "e34d3d8a-2738-4879-ace5-c468e0b4ec11",
+    "created_at": "2025-07-21T09:39:31.086732",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "authentication",
+      "accessibility",
+      "complex-scenario",
+      "performance",
+      "api-integration",
+      "error-handling",
+      "ui-test"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "medium"
+  }
+}
