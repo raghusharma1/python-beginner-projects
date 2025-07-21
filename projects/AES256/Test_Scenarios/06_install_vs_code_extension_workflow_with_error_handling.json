@@ -1,0 +1,100 @@
+{
+  "test_name": "Install VS Code Extension Workflow with Error Handling",
+  "description": "This test verifies the end-to-end workflow for installing the VS Code extension from the products page, including error handling during the process.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/products"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/products.",
+    "2. Verify the page title is 'Roost.ai | Your Testing Co-Pilot Powered by Generative AI and Large Language Models'.",
+    "3. Locate the 'Install VS Code Extension' button.",
+    "4. Click on the 'Install VS Code Extension' button.",
+    "5. Verify the user is redirected to the appropriate marketplace page for the extension.",
+    "6. Assert the marketplace page loads within an acceptable time frame.",
+    "7. Intercept the redirect and simulate a 404 error to verify error handling.",
+    "8. Verify an appropriate error message is displayed if the redirect fails.",
+    "9. Simulate a network timeout during the redirect and verify user guidance.",
+    "10. Test the workflow on a mobile device to ensure the button remains functional.",
+    "11. Test cross-browser compatibility for the button click and redirect process.",
+    "12. Verify proper state management by returning to the products page after installing the extension.",
+    "13. Ensure focus is correctly managed during and after redirect.",
+    "14. Verify the 'Install VS Code Extension' button is accessible via keyboard navigation.",
+    "15. Test the workflow with screen readers to ensure proper announcement of the button and its action.",
+    "16. Verify the URL of the marketplace page matches the expected link."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[aria-label='Install VS Code Extension']",
+      "text": "Install VS Code Extension",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/products"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the correct marketplace page for the VS Code extension.",
+    "The page loads within an acceptable time frame.",
+    "Error message 'Unable to load marketplace page. Please try again later.' appears for failed redirects.",
+    "The 'Install VS Code Extension' button remains functional on mobile devices.",
+    "Focus is correctly managed before and after the redirect."
+  ],
+  "edge_cases": [
+    "Simulate an invalid marketplace URL during the redirect.",
+    "Simulate a slow network to test redirect timeout handling.",
+    "Test the workflow with browser extensions that block redirections.",
+    "Verify the button is disabled when clicked multiple times in rapid succession.",
+    "Simulate a server error (500) during the redirect."
+  ],
+  "data_requirements": [
+    "Valid URL for the VS Code extension marketplace.",
+    "Test data for slow network simulations.",
+    "Access to different browsers and devices for compatibility testing.",
+    "Screen reader software for accessibility testing."
+  ],
+  "dependencies": [
+    "The redirect URL must be correctly configured.",
+    "The marketplace page must be online and accessible.",
+    "The user must have internet access and permissions for redirection."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/redirect-extension",
+      "method": "GET",
+      "expected_response": "302 Redirect with valid marketplace URL",
+      "error_handling": "Simulate 404 and 500 errors."
+    }
+  ],
+  "performance_metrics": [
+    "Measure redirect initiation time.",
+    "Assess the total time taken to load the marketplace page.",
+    "Evaluate rendering speed on mobile devices."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 AA compliance: Ensure the 'Install VS Code Extension' button is keyboard accessible.",
+    "Screen reader support: Verify the button has a descriptive aria-label.",
+    "Focus management: Ensure focus transitions appropriately during the redirect."
+  ],
+  "metadata": {
+    "uuid": "78dd8570-ea38-4d36-b113-0ae0bd4269df",
+    "created_at": "2025-07-21T09:39:31.093059",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "accessibility",
+      "workflow",
+      "complex-scenario",
+      "network-resilience",
+      "performance",
+      "api-integration",
+      "error-handling",
+      "keyboard-navigation",
+      "ui-test"
+    ],
+    "estimated_execution_time": 80,
+    "flakiness_potential": "medium"
+  }
+}

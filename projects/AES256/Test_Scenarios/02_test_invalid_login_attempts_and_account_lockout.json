@@ -1,0 +1,83 @@
+{
+  "test_name": "Test Invalid Login Attempts and Account Lockout",
+  "description": "This scenario tests the security and error handling mechanisms on the login page to ensure proper feedback for incorrect login attempts and account lockout policies.",
+  "type": "error_handling",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/login.",
+    "2. Attempt to log in using an invalid email address format and verify the error message.",
+    "3. Attempt to log in using a valid email address but an incorrect password.",
+    "4. Repeat step 3 multiple times (e.g., 5 attempts) to trigger account lockout.",
+    "5. Verify an 'account locked' message is displayed after exceeding the allowed number of attempts.",
+    "6. Wait for the lockout duration to expire (simulate if necessary) and verify the account can be accessed again.",
+    "7. Test logging in with an account that has been deactivated or deleted.",
+    "8. Verify a distinct error message is displayed for deactivated accounts.",
+    "9. Attempt to log in and simulate a backend server error response.",
+    "10. Verify that a generic error message is displayed to the user.",
+    "11. Reload the page and confirm that the error state is cleared."
+  ],
+  "selectors": [],
+  "expected_results": [
+    "Invalid email format is rejected with a clear error message.",
+    "Incorrect password attempts trigger an account lockout after a predefined number of attempts.",
+    "Deactivated accounts show a distinct error message.",
+    "Backend errors are handled gracefully with generic feedback to the user."
+  ],
+  "edge_cases": [
+    "Enter an email with special unicode characters.",
+    "Attempt login with an extremely long email or password.",
+    "Simulate a session timeout during login.",
+    "Attempt login from multiple devices simultaneously.",
+    "Test system behavior under heavy login traffic."
+  ],
+  "data_requirements": [
+    "invalid_email: 'notanemail'",
+    "valid_email: 'user@example.com'",
+    "invalid_password: 'wrongpassword'",
+    "deactivated_account_email: 'deactivated@example.com'",
+    "backend_error_simulation: true"
+  ],
+  "dependencies": [
+    "Account lockout policy must be enabled.",
+    "Deactivated user accounts must exist in the system.",
+    "Backend services must simulate error scenarios."
+  ],
+  "api_interactions": [
+    "Login POST endpoint",
+    "Account lockout policy configurations"
+  ],
+  "performance_metrics": [
+    "Response time for error messages.",
+    "Timeout handling for backend errors."
+  ],
+  "accessibility_requirements": [
+    "Error messages should be accessible via screen readers.",
+    "Ensure focus transitions correctly to error messages."
+  ],
+  "metadata": {
+    "uuid": "32d43627-44da-4168-bb02-14a3758dbd27",
+    "created_at": "2025-07-21T09:39:31.076671",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "authentication",
+      "accessibility",
+      "complex-scenario",
+      "error_handling",
+      "concurrency",
+      "network-resilience",
+      "performance",
+      "security",
+      "api-integration",
+      "error-handling",
+      "ui-test"
+    ],
+    "estimated_execution_time": 55,
+    "flakiness_potential": "medium"
+  }
+}
