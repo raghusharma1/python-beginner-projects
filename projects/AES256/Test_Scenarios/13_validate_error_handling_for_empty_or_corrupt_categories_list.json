@@ -1,0 +1,98 @@
+{
+  "test_name": "Validate Error Handling for Empty or Corrupt Categories List",
+  "description": "This test ensures that the application gracefully handles scenarios where the categories list is empty or contains corrupt data.",
+  "type": "error_handling",
+  "complexity": "high",
+  "pages": [
+    "https://docs.roost.ai/shelves"
+  ],
+  "steps": [
+    "1. Navigate to https://docs.roost.ai/shelves.",
+    "2. Simulate an API failure that returns an empty categories list.",
+    "3. Verify that an appropriate message, such as 'No categories available,' is displayed.",
+    "4. Simulate an API response with corrupt or malformed data for categories.",
+    "5. Verify that the page does not crash and displays a fallback message or handles errors gracefully.",
+    "6. Attempt to sort categories when the list is empty.",
+    "7. Verify that sorting options are disabled or show no effect.",
+    "8. Reload the page and simulate a delayed API response.",
+    "9. Verify that a loading spinner or placeholder is displayed until the data is fetched.",
+    "10. Simulate an API timeout for the categories endpoint.",
+    "11. Verify that the user is notified of a network error and can retry the request.",
+    "12. Navigate to another page and return to Shelves.",
+    "13. Verify that the retry mechanism triggers another API call.",
+    "14. Test the behavior on a mobile viewport.",
+    "15. Verify that error messages and fallback UI are responsive and readable on smaller screens.",
+    "16. Simulate simultaneous API requests for categories and sort data.",
+    "17. Verify that the page handles concurrent requests without race conditions."
+  ],
+  "selectors": [
+    {
+      "element_type": "text",
+      "selector": "div.no-categories-message",
+      "text": "No categories available",
+      "action": "assert_visibility",
+      "url_on_page": "https://docs.roost.ai/shelves"
+    }
+  ],
+  "expected_results": [
+    "Appropriate fallback message is displayed when categories list is empty.",
+    "Categories page does not crash with corrupt or malformed API data.",
+    "Sorting options are disabled when there are no categories.",
+    "Loading spinner is displayed during delayed API responses.",
+    "User is notified of network errors and can retry fetching categories."
+  ],
+  "edge_cases": [
+    "Simulate API returning a 500 Internal Server Error.",
+    "Simulate API returning incomplete category data.",
+    "Simulate race conditions with concurrent network requests.",
+    "Test user interaction with retry button during API delays.",
+    "Verify responsiveness of error messages on various screen sizes."
+  ],
+  "data_requirements": [
+    "Empty categories response from API.",
+    "Malformed categories response from API.",
+    "Simulated API timeout or network failure.",
+    "Delayed API response.",
+    "Mobile device or emulator for responsiveness testing."
+  ],
+  "dependencies": [
+    "The application must have an API endpoint for fetching categories.",
+    "Error handling logic must be implemented in the application.",
+    "UI placeholders or fallback messages must be present."
+  ],
+  "api_interactions": [
+    "GET /categories - Simulate various failure scenarios.",
+    "GET /categories/sort - Simulate network delays or incorrect responses."
+  ],
+  "performance_metrics": [
+    "Error handling UI should be displayed within 500ms of detecting an issue.",
+    "Retry mechanism should trigger a new API call within 1 second of user interaction."
+  ],
+  "accessibility_requirements": [
+    "Error messages should be screen-reader accessible.",
+    "Fallback UI should meet WCAG AA color contrast standards.",
+    "Error dialogs or messages should be keyboard navigable."
+  ],
+  "metadata": {
+    "uuid": "27cb815a-60b0-413d-9c2f-a42bc6700d33",
+    "created_at": "2025-07-21T17:36:49.995530",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "ui-test",
+      "concurrency",
+      "api-integration",
+      "performance",
+      "data-validation",
+      "complex-scenario",
+      "network-resilience",
+      "auto-generated",
+      "error_handling",
+      "responsive"
+    ],
+    "estimated_execution_time": 85,
+    "flakiness_potential": "medium"
+  }
+}

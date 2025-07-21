@@ -1,0 +1,92 @@
+{
+  "test_name": "Error Handling on Documentation Page",
+  "description": "This test ensures proper error handling is implemented for invalid navigation attempts, network failures, and server-side errors.",
+  "type": "error_handling",
+  "complexity": "high",
+  "pages": [
+    "https://docs.roost.ai"
+  ],
+  "steps": [
+    "1. Navigate to https://docs.roost.ai.",
+    "2. Verify page title is 'Roost.ai Documentation'.",
+    "3. Attempt to navigate to a non-existent category via URL (e.g., https://docs.roost.ai/shelves/invalid-category).",
+    "4. Verify that a '404 Not Found' error page is displayed.",
+    "5. Simulate a failed network condition and reload the page to test error handling.",
+    "6. Verify that a network error message is displayed.",
+    "7. Restore network condition and reload the page to confirm recovery.",
+    "8. Attempt to access the documentation page with JavaScript disabled.",
+    "9. Verify that an appropriate message or fallback content is displayed.",
+    "10. Test navigation with a low-bandwidth network simulation.",
+    "11. Verify that page elements load gracefully without breaking.",
+    "12. Test server-side error simulation by injecting an invalid API response.",
+    "13. Validate error handling for invalid API responses.",
+    "14. Test client-side error handling by entering invalid inputs into any available form fields (if present).",
+    "15. Verify proper error messages are displayed for invalid inputs.",
+    "16. Validate error recovery by fixing invalid inputs and retrying the operation.",
+    "17. Test concurrent API requests to simulate high-load scenarios.",
+    "18. Verify that the page remains responsive under high-load conditions.",
+    "19. Test browser refresh during error conditions to validate state recovery.",
+    "20. Logout or close the documentation tab."
+  ],
+  "selectors": [],
+  "expected_results": [
+    "404 Not Found page is displayed for invalid category navigation.",
+    "Network error message is displayed during failed network conditions.",
+    "Page recovers gracefully after restoring network conditions.",
+    "Fallback content or appropriate message is displayed for JavaScript-disabled environments.",
+    "Low-bandwidth simulation loads page elements gracefully.",
+    "Invalid API responses are handled gracefully with error messages.",
+    "Proper error messages are displayed for invalid inputs.",
+    "Page remains responsive under high-load conditions."
+  ],
+  "edge_cases": [
+    "Navigate to a non-existent category while offline.",
+    "Attempt page reload during a simulated server-side error.",
+    "Access the page with a browser extension blocking scripts.",
+    "Test multiple concurrent invalid requests.",
+    "Validate behavior during rapid page refreshes."
+  ],
+  "data_requirements": [
+    "Invalid category URL: '/shelves/invalid-category'.",
+    "Network conditions: offline simulation.",
+    "Browser settings: JavaScript disabled.",
+    "API response: mock server error (500 Internal Server Error)."
+  ],
+  "dependencies": [
+    "Ensure the Roost.ai documentation server is up and running.",
+    "Ensure APIs return error responses during mock testing.",
+    "Ensure proper error message handling is implemented."
+  ],
+  "api_interactions": [
+    "Simulate failed API responses for invalid navigation.",
+    "Monitor API responses during high-load conditions."
+  ],
+  "performance_metrics": [
+    "Measure page recovery time after network failure.",
+    "Validate responsiveness during high-load scenarios."
+  ],
+  "accessibility_requirements": [
+    "Verify error messages are accessible to screen readers.",
+    "Check fallback content for JavaScript-disabled environments."
+  ],
+  "metadata": {
+    "uuid": "d1a6d5e7-264f-4d09-a8d2-d1a6a5b14aeb",
+    "created_at": "2025-07-21T17:36:49.975758",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "ui-test",
+      "concurrency",
+      "api-integration",
+      "error-handling",
+      "performance",
+      "complex-scenario",
+      "auto-generated",
+      "error_handling"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "high"
+  }
+}

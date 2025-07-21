@@ -1,0 +1,131 @@
+{
+  "test_name": "Setup Trial Account with Cloud Integration",
+  "description": "Tests the end-to-end process of setting up a trial account on Roost.ai with AWS integration, ensuring proper form data handling, validation, and API interaction.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://app.roost.ai/tryRoostAI"
+  ],
+  "steps": [
+    "1. Navigate to https://app.roost.ai/tryRoostAI.",
+    "2. Verify the page title is 'Roost.ai | Your Testing Co-Pilot Powered by Generative AI and Large Language Models'.",
+    "3. Verify all form fields are visible and enabled.",
+    "4. Enter a valid email address in the email input field.",
+    "5. Enter a valid password in the password input field.",
+    "6. Select 'AWS' from the cloud integration dropdown menu.",
+    "7. Provide valid AWS credentials in the required fields.",
+    "8. Agree to the terms and conditions by clicking the checkbox.",
+    "9. Click the 'Submit' button to create the trial account.",
+    "10. Wait for the API response and verify success message 'Trial account successfully created'.",
+    "11. Check if the user is redirected to the dashboard.",
+    "12. Verify the dashboard displays the message 'Welcome to Roost.ai Trial'.",
+    "13. Log out of the account and verify the user is redirected to the login page.",
+    "14. Attempt to log back in using the created credentials.",
+    "15. Verify successful login and redirection to the dashboard.",
+    "16. Test state persistence by refreshing the dashboard page.",
+    "17. Verify the integration settings (AWS) are accurately reflected in the account settings.",
+    "18. Log out again and close the browser."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[name='email']",
+      "text": "Email Address",
+      "action": "type",
+      "value": "",
+      "url_on_page": "https://app.roost.ai/tryRoostAI"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[name='password']",
+      "text": "Password",
+      "action": "type",
+      "value": "",
+      "url_on_page": "https://app.roost.ai/tryRoostAI"
+    },
+    {
+      "element_type": "select",
+      "selector": "select[name='cloud_provider']",
+      "text": "Cloud Provider",
+      "action": "select",
+      "value": "AWS",
+      "url_on_page": "https://app.roost.ai/tryRoostAI"
+    },
+    {
+      "element_type": "checkbox",
+      "selector": "input[type='checkbox']",
+      "text": "Agree to Terms",
+      "action": "click",
+      "value": "",
+      "url_on_page": "https://app.roost.ai/tryRoostAI"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[type='submit']",
+      "text": "Submit",
+      "action": "click",
+      "url_on_page": "https://app.roost.ai/tryRoostAI"
+    }
+  ],
+  "expected_results": [
+    "All form fields accept input and validate correctly.",
+    "Error messages are displayed for missing or invalid inputs.",
+    "User is able to submit the form with valid data.",
+    "API response indicates trial account creation success.",
+    "User is redirected to the dashboard upon success.",
+    "Dashboard reflects correct trial account details.",
+    "User can log out and log back in successfully."
+  ],
+  "edge_cases": [
+    "Submit the form without filling in any fields.",
+    "Enter an invalid email format in the email field.",
+    "Enter a weak password that does not meet complexity requirements.",
+    "Attempt to use an unsupported cloud provider.",
+    "Uncheck the terms and conditions checkbox and try to submit."
+  ],
+  "data_requirements": [
+    "valid_email: 'testuser@roost.ai'",
+    "invalid_email: 'invalid-email.com'",
+    "valid_password: 'StrongPassword123!'",
+    "weak_password: '12345'",
+    "aws_credentials: { 'access_key': 'AWSKEY123', 'secret_key': 'SECRET123' }"
+  ],
+  "dependencies": [
+    "The Roost.ai trial account page must be accessible.",
+    "The AWS integration API must be available.",
+    "A valid SSL certificate must be configured for the site."
+  ],
+  "api_interactions": [
+    "/api/trial-setup",
+    "/api/auth/login"
+  ],
+  "performance_metrics": [
+    "Page load time under 2 seconds.",
+    "Form submission response time under 1.5 seconds."
+  ],
+  "accessibility_requirements": [
+    "Ensure all form fields are navigable via keyboard.",
+    "All input fields have appropriate labels.",
+    "Checkboxes and buttons are accessible via screen readers."
+  ],
+  "metadata": {
+    "uuid": "f1edeae6-4460-4db1-a76a-f667432b0351",
+    "created_at": "2025-07-21T17:36:49.941679",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "workflow",
+      "api-integration",
+      "performance",
+      "data-validation",
+      "form-submission",
+      "complex-scenario",
+      "auto-generated",
+      "ui-test"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}

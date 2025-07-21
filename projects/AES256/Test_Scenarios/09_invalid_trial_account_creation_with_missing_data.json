@@ -1,0 +1,93 @@
+{
+  "test_name": "Invalid Trial Account Creation with Missing Data",
+  "description": "Tests the system's error handling when attempting to create a trial account with missing or invalid data inputs.",
+  "type": "error_handling",
+  "complexity": "high",
+  "pages": [
+    "https://app.roost.ai/tryRoostAI"
+  ],
+  "steps": [
+    "1. Navigate to https://app.roost.ai/tryRoostAI.",
+    "2. Leave all form fields blank and click the 'Submit' button.",
+    "3. Verify error messages are displayed for each required field.",
+    "4. Enter only an email address and click 'Submit'.",
+    "5. Verify password and cloud provider error messages.",
+    "6. Enter a weak password and attempt to submit.",
+    "7. Verify 'Password too weak' error message is displayed.",
+    "8. Enter invalid AWS credentials and click 'Submit'.",
+    "9. Verify 'Invalid AWS credentials' error message is displayed.",
+    "10. Leave the terms and conditions checkbox unchecked and attempt to submit.",
+    "11. Verify 'You must agree to terms' error message is displayed.",
+    "12. Correct all inputs except one and verify corresponding error messages."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[name='email']",
+      "text": "Email Address",
+      "action": "type",
+      "value": "",
+      "url_on_page": "https://app.roost.ai/tryRoostAI"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[type='submit']",
+      "text": "Submit",
+      "action": "click",
+      "url_on_page": "https://app.roost.ai/tryRoostAI"
+    }
+  ],
+  "expected_results": [
+    "Error messages are displayed for missing fields.",
+    "Weak password is rejected.",
+    "Invalid AWS credentials are rejected.",
+    "Terms and conditions checkbox must be checked to proceed."
+  ],
+  "edge_cases": [
+    "Submit form with incorrect email format.",
+    "Submit form with all fields blank.",
+    "Submit form with an empty password field.",
+    "Uncheck the terms checkbox and attempt submission.",
+    "Attempt to proceed with invalid AWS keys."
+  ],
+  "data_requirements": [
+    "invalid_email: 'invalid-email'",
+    "weak_password: '12345'",
+    "invalid_aws_credentials: { 'access_key': 'INVALID', 'secret_key': 'INVALID' }"
+  ],
+  "dependencies": [
+    "Trial account form must be accessible.",
+    "API inputs must validate and return errors for invalid data."
+  ],
+  "api_interactions": [
+    "/api/trial-setup"
+  ],
+  "performance_metrics": [
+    "Form validation response time under 500ms."
+  ],
+  "accessibility_requirements": [
+    "Ensure error messages are linked to the corresponding fields.",
+    "All form fields have accessible labels."
+  ],
+  "metadata": {
+    "uuid": "baea5ac4-8c61-43f5-9faf-8d85400a0a54",
+    "created_at": "2025-07-21T17:36:49.954219",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "ui-test",
+      "api-integration",
+      "error-handling",
+      "performance",
+      "data-validation",
+      "form-submission",
+      "complex-scenario",
+      "auto-generated",
+      "error_handling"
+    ],
+    "estimated_execution_time": 60,
+    "flakiness_potential": "medium"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "test_name": "Browse Categories and Sort Documentation Shelves",
+  "description": "This test validates the functionality of browsing and sorting documentation categories on the Shelves page. It ensures that users can view and sort categories like 'Roost User Guide,' 'Roost Admin Guide,' and 'Roost Tutorial' based on 'Name,' 'Created Date,' and 'Updated Date'.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://docs.roost.ai/shelves"
+  ],
+  "steps": [
+    "1. Navigate to https://docs.roost.ai/shelves.",
+    "2. Verify the page title is 'Shelves | roost.ai'.",
+    "3. Confirm that the categories 'Roost User Guide,' 'Roost Admin Guide,' and 'Roost Tutorial' are visible.",
+    "4. Click on the sorting menu (if available) and choose 'Name'.",
+    "5. Verify that the categories are sorted alphabetically by name.",
+    "6. Click on the sorting menu and select 'Created Date'.",
+    "7. Verify that the categories are sorted by their creation date in ascending order.",
+    "8. Click on the sorting menu and select 'Updated Date'.",
+    "9. Verify that the categories are sorted by their last updated date in descending order.",
+    "10. Attempt to reload the page.",
+    "11. Verify that the previously selected sorting option persists after a reload.",
+    "12. Interact with a specific category link (e.g. 'Roost User Guide').",
+    "13. Confirm navigation to the respective documentation page (e.g. https://docs.roost.ai/roost-user-guide).",
+    "14. Return to the Shelves page and verify the sorting state remains intact.",
+    "15. Test the functionality on a mobile viewport by resizing the browser window.",
+    "16. Verify that the sorting options and categories are still accessible on smaller screens.",
+    "17. Log out of the application (if any logout button is visible).",
+    "18. Log back in and navigate to the Shelves page to confirm state persistence."
+  ],
+  "selectors": [
+    {
+      "element_type": "dropdown",
+      "selector": "select.sorting-options",
+      "text": "Sort by",
+      "action": "click",
+      "url_on_page": "https://docs.roost.ai/shelves"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/roost-user-guide']",
+      "text": "Roost User Guide",
+      "action": "click",
+      "url_on_page": "https://docs.roost.ai/shelves"
+    }
+  ],
+  "expected_results": [
+    "Categories are sorted alphabetically by name when 'Name' is selected.",
+    "Categories are sorted by creation date when 'Created Date' is selected.",
+    "Categories are sorted by last updated date when 'Updated Date' is selected.",
+    "Sorting preference is retained after page reload.",
+    "Mobile responsiveness ensures all sorting options and categories are accessible."
+  ],
+  "edge_cases": [
+    "Attempt to sort categories when none are present on the page.",
+    "Test sorting with duplicate category names.",
+    "Test sorting with categories that have identical created or updated dates.",
+    "Interrupt sorting by navigating away and returning to the page.",
+    "Check responsiveness on extremely small viewport sizes."
+  ],
+  "data_requirements": [
+    "At least three categories with unique names.",
+    "Categories with varying created and updated dates.",
+    "A mobile device or emulator for responsiveness testing.",
+    "Sorting options for 'Name,' 'Created Date,' and 'Updated Date'.",
+    "Test user account with access to the Shelves page."
+  ],
+  "dependencies": [
+    "The Shelves page must be accessible via https://docs.roost.ai/shelves.",
+    "Categories must be pre-populated in the application.",
+    "Sorting functionality must be implemented on the page."
+  ],
+  "api_interactions": [
+    "GET /categories - Fetch categories to display.",
+    "POST /categories/sort - Send sorting preference to the server.",
+    "GET /categories?sort=<criteria> - Fetch sorted categories."
+  ],
+  "performance_metrics": [
+    "Page load time should be under 2 seconds when navigating to the Shelves page.",
+    "Sorting operation should complete within 1 second.",
+    "No noticeable lag in UI rendering during sorting interactions."
+  ],
+  "accessibility_requirements": [
+    "Ensure dropdown menus are keyboard-navigable.",
+    "Aria labels are present for sorting options.",
+    "Color contrast meets WCAG AA standards for text and background."
+  ],
+  "metadata": {
+    "uuid": "17a75508-ff7e-4b70-86b9-6c7dbfd49219",
+    "created_at": "2025-07-21T17:36:49.985542",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "workflow",
+      "api-integration",
+      "performance",
+      "complex-scenario",
+      "auto-generated",
+      "ui-test",
+      "responsive"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}

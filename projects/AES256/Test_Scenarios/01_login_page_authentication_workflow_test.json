@@ -1,0 +1,114 @@
+{
+  "test_name": "Login Page Authentication Workflow Test",
+  "description": "Tests the authentication workflow of the login page, including third-party integration options and handling of error conditions.",
+  "type": "authentication",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/login.",
+    "2. Verify the page title 'Roost Enterprise Login | Software as a Service' is displayed.",
+    "3. Assert the visibility of third-party login options such as Google, Github, Microsoft, Okta, Auth0, and PingID.",
+    "4. Attempt to log in using Google by clicking the 'Google' login button.",
+    "5. Verify the Google OAuth popup is displayed and that the user can enter credentials.",
+    "6. Cancel the Google login and return to the login page.",
+    "7. Attempt to log in using Github and verify the OAuth flow.",
+    "8. Repeat steps for other third-party integrations such as Microsoft, Okta, Auth0, and PingID.",
+    "9. Enter an invalid email address format (e.g., 'invalidemail') in the email input field.",
+    "10. Submit the form and verify that the error message 'Invalid email format' is displayed.",
+    "11. Enter a valid email address (e.g., 'user@example.com') but an invalid password (e.g., 'wrongpassword').",
+    "12. Submit the form and verify that the error message 'Invalid email or password' is displayed.",
+    "13. Enter valid credentials and submit the form.",
+    "14. Verify successful login and redirection to the primary dashboard at https://dev.roost.ai.",
+    "15. Log out and return to the login page.",
+    "16. Test session persistence across browser refresh.",
+    "17. Attempt to log in with expired credentials and verify proper error handling.",
+    "18. Test password reset functionality by clicking the 'Forgot Password' link (if available)."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='google-login']",
+      "text": "Sign in with Google",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='email-input']",
+      "text": "Email Input",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/login",
+      "value": "user@example.com"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='submit-login']",
+      "text": "Log In",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "Error message 'Invalid email format' is displayed for invalid email input.",
+    "Error message 'Invalid email or password' is displayed for incorrect credentials.",
+    "Successful login redirects the user to https://dev.roost.ai.",
+    "OAuth flow is initiated for third-party login options.",
+    "Session persistence is maintained across browser refresh."
+  ],
+  "edge_cases": [
+    "Enter a valid email address with an empty password field.",
+    "Submit login using an expired password.",
+    "Attempt to log in using an unsupported third-party integration.",
+    "Enter mismatched passwords during a password reset flow.",
+    "Test login functionality with an account that has been locked."
+  ],
+  "data_requirements": [
+    "valid_email: 'user@example.com'",
+    "invalid_email: 'invalidemail'",
+    "valid_password: 'SecurePass123!'",
+    "invalid_password: 'wrongpassword'",
+    "expired_password: 'ExpiredPass123!'"
+  ],
+  "dependencies": [
+    "User account must exist in the system.",
+    "OAuth integrations for Google, Github, Microsoft, Okta, Auth0, and PingID must be configured.",
+    "Email service must be operational for password reset functionality."
+  ],
+  "api_interactions": [
+    "POST /api/auth/login",
+    "POST /api/auth/oauth/google",
+    "POST /api/auth/oauth/github",
+    "POST /api/auth/reset-password"
+  ],
+  "performance_metrics": [
+    "Page load time should be less than 2 seconds.",
+    "Response time for API login should be less than 500ms.",
+    "OAuth redirection should occur within 1 second."
+  ],
+  "accessibility_requirements": [
+    "Ensure all buttons have accessible labels for screen readers.",
+    "Verify proper focus management during OAuth popups.",
+    "Ensure error messages are announced via ARIA live regions."
+  ],
+  "metadata": {
+    "uuid": "abc7ab26-adde-4f19-90cc-abc9810ebc5b",
+    "created_at": "2025-07-21T17:36:49.814849",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "error-handling",
+      "performance",
+      "complex-scenario",
+      "auto-generated",
+      "authentication",
+      "ui-test"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}

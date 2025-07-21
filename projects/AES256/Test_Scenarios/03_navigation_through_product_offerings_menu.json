@@ -1,0 +1,109 @@
+{
+  "test_name": "Navigation Through Product Offerings Menu",
+  "description": "This scenario tests the navigation through the product offerings menu on the Roost AI homepage. It ensures the user can access options like 'What is RoostGPT', 'How RoostGPT Works?', and other product-related pages. The test validates the links' functionality, page loading times, and visibility of expected content on the target pages.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://roost.ai",
+    "https://roost.ai/how-roostgpt-works",
+    "https://roost.ai/blog",
+    "https://app.roost.ai/tryRoostAI"
+  ],
+  "steps": [
+    "1. Navigate to https://roost.ai.",
+    "2. Verify the page title is 'LLM Driven Testing Copilot | Test Case Generation & Code Scanning'.",
+    "3. Locate the product offerings menu.",
+    "4. Click on the 'What is RoostGPT' link.",
+    "5. Verify that the page navigates to https://roost.ai/how-roostgpt-works.",
+    "6. Assert the visibility of the 'How RoostGPT Works?' heading on the new page.",
+    "7. Return to the homepage.",
+    "8. Click on the 'API Test Cases' link.",
+    "9. Verify the page navigates to https://roost.ai/blog.",
+    "10. Assert the visibility of API-related blog content.",
+    "11. Return to the homepage.",
+    "12. Click on the 'Try RoostGPT' button.",
+    "13. Verify the page navigates to https://app.roost.ai/tryRoostAI.",
+    "14. Assert the presence of a 'Start Trial' button.",
+    "15. Log out or navigate back to the homepage.",
+    "16. Repeat the process for other menu items."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/how-roostgpt-works']",
+      "text": "What is RoostGPT",
+      "action": "click",
+      "url_on_page": "https://roost.ai"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/blog']",
+      "text": "API Test Cases",
+      "action": "click",
+      "url_on_page": "https://roost.ai"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='try-roostgpt']",
+      "text": "Try RoostGPT",
+      "action": "click",
+      "url_on_page": "https://roost.ai"
+    }
+  ],
+  "expected_results": [
+    "The navigation links direct to the correct pages.",
+    "The content on the navigated pages matches the expected headings or descriptions.",
+    "The homepage remains intact and functional upon returning.",
+    "No broken links are encountered during navigation.",
+    "All pages load within an acceptable time frame (e.g., <3 seconds)."
+  ],
+  "edge_cases": [
+    "Attempt navigation with JavaScript disabled.",
+    "Check for broken links in the product menu.",
+    "Test navigation from a slow network connection.",
+    "Test rapid clicking on multiple menu items.",
+    "Verify visibility and access of menu items on mobile devices."
+  ],
+  "data_requirements": [
+    "Valid URLs for all product pages.",
+    "Content validation data for headings and body text.",
+    "Mobile viewport configurations for responsiveness testing."
+  ],
+  "dependencies": [
+    "Product pages must be published and accessible.",
+    "Menu links must be correctly configured.",
+    "Browser JavaScript must be enabled for dynamic content."
+  ],
+  "api_interactions": [
+    "Monitor API calls for loading dynamic content on navigated pages."
+  ],
+  "performance_metrics": [
+    "Page load time (<3 seconds).",
+    "Response time for dynamic content API calls.",
+    "Rendering speed of navigated pages."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 AA compliance for menu navigation.",
+    "ARIA roles defined for all navigable elements.",
+    "Keyboard navigation support for all menu items."
+  ],
+  "metadata": {
+    "uuid": "942f16d6-e946-4287-9f7d-c0553003d338",
+    "created_at": "2025-07-21T17:36:49.867522",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "navigation",
+      "api-integration",
+      "performance",
+      "complex-scenario",
+      "network-resilience",
+      "auto-generated",
+      "ui-test"
+    ],
+    "estimated_execution_time": 80,
+    "flakiness_potential": "medium"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "test_name": "Documentation Navigation Workflow",
+  "description": "This test validates the ability of users to navigate between documentation categories and ensures proper state persistence across multiple pages.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://docs.roost.ai",
+    "https://docs.roost.ai/shelves/roost-tutorial",
+    "https://docs.roost.ai/shelves/roost-user-guide"
+  ],
+  "steps": [
+    "1. Navigate to https://docs.roost.ai.",
+    "2. Verify page title is 'Roost.ai Documentation'.",
+    "3. Identify and click on the 'Roost Tutorial' category link.",
+    "4. Validate navigation to https://docs.roost.ai/shelves/roost-tutorial.",
+    "5. Verify tutorials are displayed correctly on the page.",
+    "6. Return to the main documentation page using browser back button or designated link.",
+    "7. Identify and click on the 'Roost User Guide' category link.",
+    "8. Validate navigation to https://docs.roost.ai/shelves/roost-user-guide.",
+    "9. Verify user guides are displayed correctly on this page.",
+    "10. Test responsiveness of the page by resizing the browser window and verifying the layout adjusts appropriately.",
+    "11. Open developer tools and simulate a mobile viewport to validate mobile responsiveness.",
+    "12. Verify that navigation links remain accessible in mobile view.",
+    "13. Return again to the main documentation page.",
+    "14. Reload the page to ensure state persistence (e.g., no errors or missing elements).",
+    "15. Simulate a failed network condition and reload the page to test error handling.",
+    "16. Validate that error messages for failed network requests are displayed.",
+    "17. Restore network condition and reload the page to confirm recovery.",
+    "18. Test accessibility features, such as keyboard navigation for links.",
+    "19. Confirm WCAG compliance by verifying that all links have proper aria-labels.",
+    "20. Logout or close the documentation tab."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/shelves/roost-tutorial']",
+      "text": "Roost Tutorial",
+      "action": "click",
+      "url_on_page": "https://docs.roost.ai"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/shelves/roost-user-guide']",
+      "text": "Roost User Guide",
+      "action": "click",
+      "url_on_page": "https://docs.roost.ai"
+    }
+  ],
+  "expected_results": [
+    "Navigation to Roost Tutorial category is successful.",
+    "Tutorials are displayed correctly on the page.",
+    "Navigation to Roost User Guide category is successful.",
+    "User guides are displayed correctly on the page.",
+    "No missing elements or errors occur on page reload.",
+    "Mobile responsiveness adjusts layout appropriately.",
+    "Error messages are displayed during network failure.",
+    "Recovery from network failure is successful.",
+    "Accessibility checks pass WCAG compliance standards."
+  ],
+  "edge_cases": [
+    "Attempt to navigate to a non-existent category link.",
+    "Simulate a failed network request during navigation.",
+    "Access the page with JavaScript disabled.",
+    "Test navigation on a low-bandwidth network.",
+    "Validate behavior when navigating between categories too quickly."
+  ],
+  "data_requirements": [
+    "Valid category links: '/shelves/roost-tutorial', '/shelves/roost-user-guide'.",
+    "Invalid category link: '/shelves/invalid-category'.",
+    "Mobile viewport dimensions: 375px x 667px (iPhone 8 simulation).",
+    "Network conditions: low-bandwidth simulation."
+  ],
+  "dependencies": [
+    "Ensure the Roost.ai documentation server is up and running.",
+    "Ensure valid links to documentation categories exist.",
+    "Ensure tutorials and user guides are populated on their respective pages."
+  ],
+  "api_interactions": [
+    "Monitor API responses for category data loading.",
+    "Simulate failed API responses for error handling tests."
+  ],
+  "performance_metrics": [
+    "Measure page load time for navigation.",
+    "Validate rendering speed during mobile viewport adjustments."
+  ],
+  "accessibility_requirements": [
+    "Verify all links have aria-labels for proper screen reader support.",
+    "Test keyboard navigation for all elements.",
+    "Check color contrast ratios for WCAG compliance."
+  ],
+  "metadata": {
+    "uuid": "b267bc63-bfab-4992-b0f7-70245c76de89",
+    "created_at": "2025-07-21T17:36:49.966112",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "workflow",
+      "keyboard-navigation",
+      "api-integration",
+      "performance",
+      "complex-scenario",
+      "network-resilience",
+      "auto-generated",
+      "ui-test",
+      "responsive"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "medium"
+  }
+}
