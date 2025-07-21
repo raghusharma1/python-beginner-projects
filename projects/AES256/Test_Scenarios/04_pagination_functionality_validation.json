@@ -1,0 +1,118 @@
+{
+  "test_name": "Pagination Functionality Validation",
+  "description": "This test ensures the pagination system on the Test Plans page works correctly, including navigation between pages, edge cases like empty pages, and performance with a large number of pages.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/tests.",
+    "2. Verify the visibility and enabled state of pagination controls (First, Last, Next, Previous, and page numbers).",
+    "3. Click the 'Next' button and verify navigation to the next page.",
+    "4. Click the 'Previous' button and verify navigation to the previous page.",
+    "5. Click on a specific page number (e.g., '2') and ensure the correct page is displayed.",
+    "6. Click the 'First' button to navigate to the first page and verify results.",
+    "7. Click the 'Last' button to navigate to the last page and verify results.",
+    "8. Reload the page and verify the pagination state resets to the first page.",
+    "9. Simulate navigation to a page with no test plans and verify an appropriate message is displayed (e.g., 'No test plans found').",
+    "10. Test keyboard navigation for pagination controls (e.g., Tab key).",
+    "11. Verify responsiveness of pagination controls in different viewport sizes.",
+    "12. Perform rapid consecutive clicks on pagination controls to test stability.",
+    "13. Verify pagination controls are disabled when on the first/last page.",
+    "14. Simulate a backend failure during pagination and verify the error is handled gracefully."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-icon']",
+      "text": "\u00bb",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-left']",
+      "text": "\u00ab",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-first-page-button']",
+      "text": "First",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-last-page-button']",
+      "text": "Last",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "Correct test plans are displayed based on the current page.",
+    "Pagination state resets on page reload.",
+    "Appropriate message displayed for empty pages.",
+    "Backend errors during pagination are handled gracefully."
+  ],
+  "edge_cases": [
+    "Navigate to an invalid page number (e.g., '9999').",
+    "Rapidly click pagination controls to test performance.",
+    "Test pagination with uneven distribution of test plans per page.",
+    "Simulate backend errors during pagination API calls.",
+    "Test responsiveness of pagination on mobile viewports."
+  ],
+  "data_requirements": [
+    "valid_page_number: '1'",
+    "invalid_page_number: '9999'",
+    "empty_page: '10'",
+    "large_number_of_pages: '50'",
+    "boundary_page_number: 'last'"
+  ],
+  "dependencies": [
+    "Test plans must be distributed across multiple pages.",
+    "Pagination controls must be visible and enabled on the page.",
+    "API must support pagination requests."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/test-plans?page=1",
+      "method": "GET",
+      "description": "Fetch test plans for the first page.",
+      "mock_data": [],
+      "error_handling": "Simulate a 404 Not Found error for empty page."
+    }
+  ],
+  "performance_metrics": [
+    "Page load time after pagination should be less than 1000ms.",
+    "Smooth rendering of pagination controls."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 AA compliance: Ensure pagination controls are accessible via keyboard.",
+    "Proper ARIA attributes for pagination controls."
+  ],
+  "metadata": {
+    "uuid": "fcd35486-69d5-45c5-8cf9-d3d21760bb1b",
+    "created_at": "2025-07-21T08:27:27.075329",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "form-submission",
+      "accessibility",
+      "complex-scenario",
+      "keyboard-navigation",
+      "auto-generated",
+      "responsive",
+      "performance",
+      "ui-test",
+      "navigation",
+      "api-integration"
+    ],
+    "estimated_execution_time": 70,
+    "flakiness_potential": "medium"
+  }
+}

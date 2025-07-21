@@ -1,0 +1,152 @@
+{
+  "test_name": "Manage User Permissions Workflow",
+  "description": "This scenario tests the end-to-end user permissions management functionality, ensuring administrators can assign and revoke roles while verifying proper state persistence and error handling.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/admin/app",
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/admin/app.",
+    "2. Verify the page title is 'Admin Page - Roost.ai'.",
+    "3. Assert the visibility of the user permissions management section.",
+    "4. Attempt to select a user and click 'Make Admin' button.",
+    "5. Verify that the role of the user is updated to 'Admin'.",
+    "6. Attempt to select an admin user and click 'Remove Admin' button.",
+    "7. Verify that the role of the user is reverted to 'User'.",
+    "8. Test the 'Override' button to assign specific permission to a user.",
+    "9. Verify that the overridden permissions are applied to the user.",
+    "10. Attempt to click the 'Delete User' button for a selected user.",
+    "11. Confirm the deletion and verify the user no longer exists in the list.",
+    "12. Reload the page and verify the state persistence for all actions performed.",
+    "13. Attempt to assign permissions to a user who has been deleted.",
+    "14. Verify no actions can be performed and an error message is displayed.",
+    "15. Logout from the admin account.",
+    "16. Attempt to access https://dev.roost.ai/admin/app without logging in.",
+    "17. Verify redirection to the login page https://dev.roost.ai/login.",
+    "18. Log back in as an admin and verify all previously performed actions are saved and correct."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='make-admin']",
+      "text": "Make Admin",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='remove-admin']",
+      "text": "Remove Admin",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='override']",
+      "text": "Override",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='delete-user']",
+      "text": "Delete User",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href='/logout']",
+      "text": "Logout",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    }
+  ],
+  "expected_results": [
+    "User is successfully assigned admin role.",
+    "User's admin role is revoked successfully.",
+    "Permission override is applied and displayed correctly.",
+    "Deleted user no longer exists in the user list.",
+    "State persists after page reload.",
+    "Error message displayed when attempting to manage a deleted user.",
+    "Unauthenticated access redirects to the login page."
+  ],
+  "edge_cases": [
+    "Attempt to delete a user who is currently logged in.",
+    "Try to override permissions for a user who already has admin role.",
+    "Test concurrent role assignment for the same user by different admins.",
+    "Attempt to access the page with invalid session cookies.",
+    "Test state persistence after browser crash or reload."
+  ],
+  "data_requirements": [
+    "valid_user_email: 'admin@example.com'",
+    "valid_user_id: '123456'",
+    "invalid_user_id: '999999'",
+    "permission_set: ['read-only', 'write', 'admin']",
+    "deleted_user_id: '111111'"
+  ],
+  "dependencies": [
+    "Admin account must exist and be logged in.",
+    "User list must contain at least one valid user.",
+    "API endpoints for user management must be active."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/user/permissions",
+      "method": "POST",
+      "expected_status": [
+        200,
+        400,
+        404
+      ],
+      "mock_response": {
+        "success": true,
+        "message": "Permission updated successfully."
+      }
+    },
+    {
+      "endpoint": "/api/user/delete",
+      "method": "DELETE",
+      "expected_status": [
+        200,
+        404
+      ],
+      "mock_response": {
+        "success": true,
+        "message": "User deleted successfully."
+      }
+    }
+  ],
+  "performance_metrics": [
+    "API response time for user management endpoints should be below 500ms.",
+    "Page load time for https://dev.roost.ai/admin/app should not exceed 3 seconds."
+  ],
+  "accessibility_requirements": [
+    "Ensure all buttons have 'aria-label' attributes for screen readers.",
+    "Verify proper focus management during keyboard navigation.",
+    "Test color contrast ratios for text and buttons to meet WCAG AA standards."
+  ],
+  "metadata": {
+    "uuid": "eb6e4117-e164-431e-9724-d3801c550cf4",
+    "created_at": "2025-07-21T08:27:27.106064",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "workflow",
+      "concurrency",
+      "auto-generated",
+      "performance",
+      "ui-test",
+      "security",
+      "accessibility",
+      "api-integration",
+      "error-handling"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}

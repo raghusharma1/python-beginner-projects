@@ -1,0 +1,136 @@
+{
+  "test_name": "Analyze Test Activities Workflow",
+  "description": "Tests the ability to view, filter, and monitor automated test activities, ensuring data integrity, state persistence, and proper rendering of visual elements.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/analyses"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/analyses.",
+    "2. Assert the page title is 'Roost AI | Your Testing Co-Pilot Powered by Generative AI and Large Language Models'.",
+    "3. Verify the presence of filters for test activity status (e.g., 'In Progress', 'Completed', 'Failed').",
+    "4. Select the 'In Progress' filter and assert that only 'In Progress' activities are displayed.",
+    "5. Select the 'Failed' filter and assert that only 'Failed' activities are displayed.",
+    "6. Toggle the 'Auto-refresh' functionality and assert that test activity data updates periodically.",
+    "7. Select the 'My Activities' option and verify that activities specific to the logged-in user are displayed.",
+    "8. Select the 'All Activities' option and verify that activities from all users are displayed.",
+    "9. Refresh the page and assert that the selected filters persist.",
+    "10. Perform a manual refresh and verify that the latest test activity data is fetched.",
+    "11. Click on a specific test activity and navigate to its detailed view.",
+    "12. Verify the presence of detailed information like test name, update timestamps, and analysis status.",
+    "13. Return to the main analyses page and assert that navigation does not reset filters.",
+    "14. Simulate a network failure during auto-refresh and verify the error message displayed.",
+    "15. Restore network connectivity and assert that auto-refresh resumes without intervention.",
+    "16. Validate that test activities can be sorted by timestamp.",
+    "17. Validate that test activities can be sorted by status.",
+    "18. Test the ability to search for a specific test activity by name."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='filter-button']",
+      "text": "Filter",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/analyses"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[data-testid='activity-detail-link']",
+      "text": "View Details",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/analyses"
+    },
+    {
+      "element_type": "checkbox",
+      "selector": "input[data-testid='auto-refresh-checkbox']",
+      "text": "Auto-refresh",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/analyses"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='activity-filter-dropdown']",
+      "text": "Activity Filter",
+      "action": "select",
+      "url_on_page": "https://dev.roost.ai/roostgpt/analyses"
+    },
+    {
+      "element_type": "search",
+      "selector": "input[data-testid='search-input']",
+      "text": "Search Activities",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/roostgpt/analyses"
+    }
+  ],
+  "expected_results": [
+    "Filters correctly display activities of specified statuses.",
+    "Auto-refresh fetches the latest data at regular intervals.",
+    "Navigation to detailed activity view is successful and displays all relevant data.",
+    "Search functionality returns correct results based on input.",
+    "Sorting by timestamp arranges activities in chronological order.",
+    "Sorting by status groups activities correctly."
+  ],
+  "edge_cases": [
+    "Filter by a status that has no associated activities and verify no results are displayed.",
+    "Simulate a network failure during manual refresh and verify the proper error message is displayed.",
+    "Set the auto-refresh interval to an invalid value and verify the error handling.",
+    "Attempt to search with special characters and validate the response.",
+    "Simulate concurrent filter changes and verify the application handles them correctly."
+  ],
+  "data_requirements": [
+    "valid_filter_values: ['In Progress', 'Failed', 'Completed']",
+    "search_term_valid: 'TestActivity123'",
+    "search_term_invalid: '!@#$%^&*'",
+    "timestamp_range: ['2023-01-01T00:00:00Z', '2023-12-31T23:59:59Z']",
+    "activity_status_values: ['In Progress', 'Completed', 'Failed', 'Timed-Out']"
+  ],
+  "dependencies": [
+    "Test activities must exist in the system for all filter categories.",
+    "User must be logged in to view 'My Activities'.",
+    "Auto-refresh functionality must be enabled in the application settings."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/test-activities",
+      "method": "GET",
+      "description": "Fetch test activities based on filters and search input."
+    },
+    {
+      "endpoint": "/api/test-activity/{id}",
+      "method": "GET",
+      "description": "Fetch detailed information for a specific test activity."
+    }
+  ],
+  "performance_metrics": [
+    "Page load time should not exceed 2 seconds.",
+    "Auto-refresh interval should not exceed 5 seconds.",
+    "Search results should return within 1 second of input."
+  ],
+  "accessibility_requirements": [
+    "Verify all filters and checkboxes are keyboard-navigable.",
+    "Ensure dropdown menus are accessible with screen readers.",
+    "Validate that error messages have appropriate ARIA roles."
+  ],
+  "metadata": {
+    "uuid": "a3d60813-d295-43c2-bcbc-60ede4950e15",
+    "created_at": "2025-07-21T08:27:27.079807",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "workflow",
+      "data-validation",
+      "concurrency",
+      "auto-generated",
+      "network-resilience",
+      "performance",
+      "ui-test",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}

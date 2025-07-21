@@ -1,0 +1,159 @@
+{
+  "test_name": "Test Activity Logs Filtering and State Persistence",
+  "description": "This test scenario validates the filtering mechanism for test activity logs, ensuring that filters persist across page reloads and state changes. It also tests the auto-refresh feature to confirm real-time updates.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/events"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/events.",
+    "2. Assert that the test activity logs table is visible and populated with data.",
+    "3. Click on the filter dropdown to select a filter type (e.g., 'In-Progress').",
+    "4. Verify that the table updates to display only 'In-Progress' tests.",
+    "5. Enable the auto-refresh toggle.",
+    "6. Wait for 30 seconds and verify that new test activity logs are added if applicable.",
+    "7. Reload the page.",
+    "8. Verify that the filter setting ('In-Progress') persists after the reload.",
+    "9. Clear the filter and verify that the table displays all test activity logs.",
+    "10. Perform a search query in the search input field using a test name.",
+    "11. Verify that the results in the table match the search criteria.",
+    "12. Click on a test activity log entry to view detailed information.",
+    "13. Verify that the detailed information panel displays correct data for the selected log.",
+    "14. Close the detailed information panel.",
+    "15. Test the pagination controls by navigating to the next page of logs.",
+    "16. Verify that the logs displayed match the expected data for the selected page.",
+    "17. Trigger an intentional network failure (e.g., disable network in the browser).",
+    "18. Verify that the application displays an appropriate error message for the failed request.",
+    "19. Re-enable the network and refresh the page.",
+    "20. Verify that the application recovers gracefully and displays the logs without losing prior state."
+  ],
+  "selectors": [
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='filter-dropdown']",
+      "text": "Filter by Status",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events"
+    },
+    {
+      "element_type": "toggle",
+      "selector": "input[data-testid='auto-refresh-toggle']",
+      "text": "Auto-Refresh",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='search-input']",
+      "text": "Search",
+      "action": "type",
+      "value": "Test Name",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[data-testid='log-entry']",
+      "text": "View Log Details",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='pagination-next']",
+      "text": "Next Page",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events"
+    }
+  ],
+  "expected_results": [
+    "The filter dropdown correctly narrows down the displayed logs based on the selected status.",
+    "Auto-refresh adds new logs to the table without requiring manual intervention.",
+    "Filter settings persist after a page reload.",
+    "Search functionality narrows down the logs based on the query.",
+    "Detailed information for each log is displayed correctly when clicked.",
+    "Pagination works as expected by navigating between pages of logs.",
+    "Error message is displayed when network requests fail.",
+    "Application recovers gracefully after network issues."
+  ],
+  "edge_cases": [
+    "Attempt to filter by a status that has no matching logs.",
+    "Test search functionality with special characters (e.g., '@#$%').",
+    "Verify behavior when auto-refresh is enabled during a network failure.",
+    "Test pagination controls when there are no more logs to display.",
+    "Reload the page multiple times in quick succession and verify state persistence."
+  ],
+  "data_requirements": [
+    {
+      "filter_status": "In-Progress"
+    },
+    {
+      "search_term": "Specific Test Name"
+    },
+    {
+      "invalid_search_term": "@#$%"
+    },
+    {
+      "network_failure_duration": "30 seconds"
+    },
+    {
+      "pagination_test_page": 2
+    }
+  ],
+  "dependencies": [
+    "Test activity logs must be pre-populated in the database.",
+    "Network connectivity must be active for initial testing.",
+    "User account must have the required permissions to view logs."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/test-logs",
+      "method": "GET",
+      "description": "Fetch list of test activity logs."
+    },
+    {
+      "endpoint": "/api/test-log-details",
+      "method": "GET",
+      "description": "Fetch detailed information for a specific log."
+    }
+  ],
+  "performance_metrics": [
+    "Time taken to apply filters (<200ms).",
+    "Auto-refresh interval efficiency.",
+    "Search query response time (<150ms).",
+    "Pagination navigation speed."
+  ],
+  "accessibility_requirements": [
+    {
+      "wcag_guideline": "1.3.1",
+      "description": "Ensure that the filter dropdown is accessible via keyboard navigation."
+    },
+    {
+      "wcag_guideline": "2.4.4",
+      "description": "Ensure that all interactive elements are identifiable by screen readers."
+    },
+    {
+      "wcag_guideline": "3.3.1",
+      "description": "Provide error messages that are understandable and avoid ambiguity."
+    }
+  ],
+  "metadata": {
+    "uuid": "049daa34-96c2-437a-850a-80db8a88ecae",
+    "created_at": "2025-07-21T08:27:27.085886",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "workflow",
+      "auto-generated",
+      "network-resilience",
+      "performance",
+      "ui-test",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "medium"
+  }
+}

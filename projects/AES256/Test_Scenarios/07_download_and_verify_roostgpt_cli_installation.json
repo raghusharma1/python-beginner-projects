@@ -1,0 +1,109 @@
+{
+  "test_name": "Download and Verify RoostGPT CLI Installation",
+  "description": "This scenario tests the ability to download and verify the RoostGPT CLI from the provided 'Products' page, ensuring proper functionality of the CLI installation instructions.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/products"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/products.",
+    "2. Verify that the page has loaded by checking the page title and URL.",
+    "3. Locate the download link or button for the RoostGPT CLI.",
+    "4. Click the download button and confirm the download starts successfully.",
+    "5. Monitor the download progress and ensure the file is fully downloaded.",
+    "6. Verify the downloaded file's properties (e.g., file name, file size).",
+    "7. Install the CLI by following the provided documentation on the page.",
+    "8. Validate the CLI installation by running a 'help' command (e.g., `roostgpt --help`).",
+    "9. Test basic CLI functionality by executing a sample command provided in the documentation.",
+    "10. Introduce deliberate misconfigurations (e.g., incorrect command syntax) to observe error handling.",
+    "11. Update environment variables or paths as required by the CLI and validate changes.",
+    "12. Test compatibility of the CLI installation on multiple operating systems (Windows, macOS, Linux).",
+    "13. Restart the system to ensure the CLI installation persists.",
+    "14. Test uninstalling the CLI and observe the behavior when attempting to execute commands after removal.",
+    "15. Reinstall the CLI to confirm the process is repeatable without errors.",
+    "16. Validate CLI integration with external tools (if applicable, based on the documentation).",
+    "17. Test CLI help documentation for accessibility and correctness.",
+    "18. Verify session logs or command history maintained by the CLI."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='download-cli']",
+      "text": "Download CLI",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/products"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[href*='/documentation/cli']",
+      "text": "CLI Documentation",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/products"
+    }
+  ],
+  "expected_results": [
+    "The RoostGPT CLI download starts successfully.",
+    "The file downloads completely without corruption.",
+    "The CLI installs successfully and is operational.",
+    "Error handling for invalid commands works correctly.",
+    "CLI functionality is consistent across environments."
+  ],
+  "edge_cases": [
+    "Download fails due to network issues.",
+    "Downloaded file is corrupted.",
+    "Insufficient permissions to install the CLI.",
+    "Incorrect file path during environment variable configuration.",
+    "Command syntax errors during CLI usage."
+  ],
+  "data_requirements": [
+    "OS versions: Windows 10, macOS Big Sur, Ubuntu 20.04",
+    "Valid CLI commands as per documentation.",
+    "Invalid CLI commands (e.g., typos, unsupported options).",
+    "Paths for environment variables.",
+    "Expected file size and checksum of the downloaded CLI."
+  ],
+  "dependencies": [
+    "Internet connection for downloading the CLI.",
+    "Documentation for CLI installation and usage.",
+    "Administrator permissions on the system for installation."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/download-cli",
+      "method": "GET",
+      "expected_response": "200 OK"
+    }
+  ],
+  "performance_metrics": [
+    "Time taken for the CLI file to download.",
+    "CLI command execution time.",
+    "Resource utilization during CLI operations."
+  ],
+  "accessibility_requirements": [
+    "Ensure all download buttons are keyboard navigable.",
+    "Provide alternative text for download links.",
+    "Ensure CLI documentation adheres to WCAG guidelines."
+  ],
+  "metadata": {
+    "uuid": "b0857cd7-78af-4003-98f3-63cc43249414",
+    "created_at": "2025-07-21T08:27:27.092847",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "file-upload",
+      "complex-scenario",
+      "workflow",
+      "file-download",
+      "auto-generated",
+      "network-resilience",
+      "performance",
+      "ui-test",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}
