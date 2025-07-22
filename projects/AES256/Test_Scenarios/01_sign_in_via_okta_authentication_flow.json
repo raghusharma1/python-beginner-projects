@@ -1,0 +1,92 @@
+{
+  "test_name": "Sign In via Okta Authentication Flow",
+  "description": "This scenario verifies the functionality of signing into the application using Okta as an authentication provider. It ensures proper redirection, login flow, and session persistence after authentication.",
+  "type": "authentication",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://www.okta.com/?internal_link=wic_login"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/login.",
+    "2. Verify the presence of the 'Sign in via Okta' link on the page.",
+    "3. Assert that the 'Sign in via Okta' link is visible and enabled.",
+    "4. Click on the 'Sign in via Okta' link.",
+    "5. Verify that the browser is redirected to https://www.okta.com/?internal_link=wic_login.",
+    "6. On the Okta page, enter valid credentials (username and password).",
+    "7. Submit the login form on the Okta page.",
+    "8. Verify redirection back to https://dev.roost.ai/login with a valid session token.",
+    "9. Assert that the user is logged in by checking for user-specific elements (e.g., dashboard elements, user avatar).",
+    "10. Perform a hard browser refresh and verify session persistence.",
+    "11. Log out of the application and verify redirection to the login page.",
+    "12. Repeat the login process and attempt to log in with an invalid password.",
+    "13. Assert that an error message (e.g., 'Invalid credentials') is displayed on the Okta page.",
+    "14. Navigate back to the login page and verify that the 'Sign in via Okta' link still works.",
+    "15. Repeat the login with a valid Okta account to confirm successful reauthentication."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='https://www.okta.com/?internal_link=wic_login']",
+      "text": "Okta",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the Okta login page when clicking on the 'Sign in via Okta' link.",
+    "User is successfully authenticated and redirected back to the application.",
+    "Session persists across browser refresh.",
+    "Invalid login credentials produce an appropriate error message.",
+    "Logout clears the session and redirects back to the login page."
+  ],
+  "edge_cases": [
+    "Attempt to log in with a non-existent Okta account.",
+    "Network failure during the redirection to Okta.",
+    "Okta service is down (simulate a 500 error).",
+    "Session token gets expired during active usage.",
+    "Attempt to bypass login and directly access a secure page."
+  ],
+  "data_requirements": [
+    "valid_username: 'testuser@okta.com'",
+    "valid_password: 'SecurePass123!'",
+    "invalid_password: 'WrongPass123'",
+    "non_existent_username: 'doesnotexist@okta.com'",
+    "expired_session_token: 'expired_token_123'"
+  ],
+  "dependencies": [
+    "Okta should be configured as an authentication provider for the application.",
+    "Test Okta account must exist with valid credentials.",
+    "Application should handle redirection and session token from Okta."
+  ],
+  "api_interactions": [
+    "/oauth2/v1/authorize",
+    "/oauth2/v1/token"
+  ],
+  "performance_metrics": [
+    "Time taken to load the login page.",
+    "Redirection latency to and from Okta."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 compliance for all interactive elements.",
+    "Ensure keyboard navigability for the 'Sign in via Okta' link."
+  ],
+  "metadata": {
+    "uuid": "1fabac67-3c04-47f6-992a-b39fbb6ed3e8",
+    "created_at": "2025-07-22T08:01:08.453984",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "ui-test",
+      "performance",
+      "auto-generated",
+      "authentication",
+      "api-integration",
+      "accessibility"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "test_name": "Complete Test Configuration Setup Workflow",
+  "description": "This scenario tests the end-to-end workflow of configuring test parameters such as Test Name, Test Type, Code Language, Test Framework, etc., ensuring proper validation, state persistence, and error handling.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/gptCLIForm.",
+    "2. Verify that the 'Roost Token' input field is visible and enabled.",
+    "3. Enter a valid Roost Token into the 'Roost Token' field.",
+    "4. Verify the presence of 'Test Configuration' dropdown elements and ensure they are enabled.",
+    "5. Select 'Test Name' from the dropdown and input an appropriate test name (e.g., 'SampleUnitTest').",
+    "6. Select 'Test Type' dropdown and choose 'Unit Test'.",
+    "7. Select 'Code Language' dropdown and choose 'Java'.",
+    "8. Select 'Test Framework' dropdown and choose 'JUnit5'.",
+    "9. Select 'Java Version' dropdown and choose 'Java SE 21 (Default)'.",
+    "10. Select 'Maven Version' dropdown and choose 'Maven 3.8.6 (Default)'.",
+    "11. Submit the form and verify that the form inputs are validated and saved correctly.",
+    "12. Reload the page and verify that the previously entered configuration values persist.",
+    "13. Attempt to modify the 'Test Name' field to an invalid value (e.g., '!InvalidTestName') and submit the form.",
+    "14. Verify that an appropriate error message is displayed for the invalid input.",
+    "15. Test field-specific validation (e.g., ensure dropdowns reject unsupported values).",
+    "16. Test session persistence when navigating away from and returning to the page.",
+    "17. Verify that all dropdown options are correctly populated.",
+    "18. Validate the interaction between dependent fields (e.g., 'Code Language' affects 'Test Framework').",
+    "19. Logout and log back into the application to verify that the configuration persists across sessions.",
+    "20. Confirm that the configuration can be reset and start fresh."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='roost-token']",
+      "text": "Roost Token",
+      "action": "type",
+      "value": "sample-valid-token",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='test-name']",
+      "text": "Test Name",
+      "action": "select",
+      "value": "SampleUnitTest",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='test-type']",
+      "text": "Test Type",
+      "action": "select",
+      "value": "Unit Test",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='code-language']",
+      "text": "Code Language",
+      "action": "select",
+      "value": "Java",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='test-framework']",
+      "text": "Test Framework",
+      "action": "select",
+      "value": "JUnit5",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='java-version']",
+      "text": "Java Version",
+      "action": "select",
+      "value": "Java SE 21 (Default)",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "dropdown",
+      "selector": "select[data-testid='maven-version']",
+      "text": "Maven Version",
+      "action": "select",
+      "value": "Maven 3.8.6 (Default)",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "All dropdown options populate correctly.",
+    "Valid inputs are saved and persist across reloads.",
+    "Error messages appear for invalid inputs (e.g., '!InvalidTestName').",
+    "Dependent fields (e.g., 'Code Language' and 'Test Framework') interact as expected.",
+    "Configuration persists across user sessions."
+  ],
+  "edge_cases": [
+    "Enter an invalid Roost Token and verify that an error message appears.",
+    "Attempt to select unsupported dropdown values and verify rejection.",
+    "Submit the form with all fields left empty.",
+    "Reload the page during active form submission and verify data integrity.",
+    "Enter excessively long strings into the 'Test Name' field and check validation."
+  ],
+  "data_requirements": [
+    "valid_roost_token: 'sample-valid-token'",
+    "invalid_roost_token: '123-invalid-token'",
+    "test_name: ['SampleUnitTest', '!InvalidTestName', 'Name*With$SpecialChars']",
+    "valid_dropdown_values: ['Unit Test', 'Java', 'JUnit5']",
+    "invalid_dropdown_values: ['InvalidType', 'UnsupportedLanguage']"
+  ],
+  "dependencies": [
+    "User must be logged in successfully.",
+    "Roost Token must have been provisioned to the user account.",
+    "Dropdown options for all fields must be correctly populated."
+  ],
+  "api_interactions": [
+    {
+      "endpoint": "/api/test-config",
+      "method": "POST",
+      "description": "Save test configuration settings.",
+      "mock_response": "{ 'status': 'success', 'message': 'Configuration saved successfully.' }"
+    },
+    {
+      "endpoint": "/api/test-config",
+      "method": "GET",
+      "description": "Fetch saved test configuration.",
+      "mock_response": "{ 'status': 'success', 'config': { 'testName': 'SampleUnitTest', 'testType': 'Unit Test', 'codeLanguage': 'Java' } }"
+    }
+  ],
+  "performance_metrics": [
+    "Page load time under 2 seconds.",
+    "Form submission response time under 1 second.",
+    "Dropdown rendering time under 500ms."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 Level AA compliance.",
+    "Keyboard navigation for all dropdown elements.",
+    "Screen reader compatibility for form fields."
+  ],
+  "metadata": {
+    "uuid": "0dfa25eb-2099-4014-91f3-900491b81fe7",
+    "created_at": "2025-07-22T08:01:08.462505",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "complex-scenario",
+      "ui-test",
+      "performance",
+      "auto-generated",
+      "api-integration",
+      "error-handling",
+      "data-validation",
+      "workflow"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "medium"
+  }
+}
