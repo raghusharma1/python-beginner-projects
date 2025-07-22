@@ -1,0 +1,75 @@
+{
+  "test_name": "Privacy Policy Link Navigation",
+  "description": "This scenario verifies that the 'Privacy Policy' link navigates to the correct URL and that the page is accessible.",
+  "type": "navigation",
+  "complexity": "medium",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://roost.ai/privacy-policy"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/login.",
+    "2. Verify the presence of the 'Privacy Policy' link on the page.",
+    "3. Assert that the 'Privacy Policy' link is visible and enabled.",
+    "4. Hover over the 'Privacy Policy' link and ensure it visually changes (e.g., underline appears).",
+    "5. Click on the 'Privacy Policy' link.",
+    "6. Verify that the browser navigates to https://roost.ai/privacy-policy.",
+    "7. Assert the page title of the Privacy Policy page matches 'Privacy Policy'.",
+    "8. Verify that there are no 404 errors or broken elements on the Privacy Policy page.",
+    "9. Navigate back to the login page using the browser's back button.",
+    "10. Verify that the browser successfully returns to https://dev.roost.ai/login."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/privacy']",
+      "text": "Privacy Policy",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "The 'Privacy Policy' link is visible and clickable.",
+    "Clicking the link navigates the user to the Privacy Policy page.",
+    "The Privacy Policy page loads without errors.",
+    "Navigating back returns the user to the login page."
+  ],
+  "edge_cases": [
+    "The Privacy Policy link points to a non-existent URL.",
+    "Network failure during navigation to the Privacy Policy page.",
+    "The Privacy Policy page fails WCAG accessibility checks.",
+    "The Privacy Policy page takes longer than 3 seconds to load.",
+    "The browser's back button does not return to the login page."
+  ],
+  "data_requirements": [],
+  "dependencies": [
+    "The Privacy Policy page must exist and be accessible.",
+    "The 'Privacy Policy' link must be correctly configured on the login page.",
+    "Browser must allow navigation back to previous pages."
+  ],
+  "api_interactions": [],
+  "performance_metrics": [
+    "Time taken to load the Privacy Policy page."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 compliance for the Privacy Policy page.",
+    "Ensure the 'Privacy Policy' link is navigable via keyboard."
+  ],
+  "metadata": {
+    "uuid": "ba14c18b-3cdd-4516-af6b-b4afe6b4ab9d",
+    "created_at": "2025-07-22T08:01:08.458254",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "ui-test",
+      "performance",
+      "auto-generated",
+      "navigation",
+      "accessibility"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "medium"
+  }
+}
