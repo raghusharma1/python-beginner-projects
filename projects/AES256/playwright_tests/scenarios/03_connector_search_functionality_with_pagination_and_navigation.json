@@ -1,0 +1,118 @@
+{
+  "test_name": "Connector Search Functionality with Pagination and Navigation",
+  "description": "This scenario tests the search functionality for connectors on the page, combined with pagination navigation, ensuring connector search results update correctly and navigation between pages is functional.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/connectors.",
+    "2. Verify that the search box is visible and enabled.",
+    "3. Type 'Test Connector' into the search box.",
+    "4. Assert that the search box updates with the typed value.",
+    "5. Click on the 'Search' button, if available.",
+    "6. Verify that search results update to show connectors matching 'Test Connector'.",
+    "7. Interact with the pagination controls to navigate to the second page.",
+    "8. Verify that the second page's connectors match the search criteria.",
+    "9. Navigate back to the first page using the 'First' button.",
+    "10. Assert that the search results persist on the first page.",
+    "11. Clear the search box and verify that all connectors are displayed.",
+    "12. Navigate to the last page using the 'Last' button.",
+    "13. Verify that the connectors on the last page are correctly displayed.",
+    "14. Use the '<<' (left arrow) pagination button to navigate back one page.",
+    "15. Verify that the correct connectors for the previous page are displayed.",
+    "16. Test edge cases by entering invalid characters (e.g., '!@#$') in the search box.",
+    "17. Verify that proper error messages or empty results are displayed for invalid inputs.",
+    "18. Reload the page and verify that state is reset and default connectors are shown."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "[data-testid='Connector-search-box']",
+      "text": "",
+      "action": "type",
+      "value": "Test Connector",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid='paginator-first-page-button']",
+      "text": "First",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid='arrow-left']",
+      "text": "<<",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid='paginator-last-page-button']",
+      "text": "Last",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    }
+  ],
+  "expected_results": [
+    "Search box accepts exactly the text 'Test Connector'.",
+    "Search results update to show connectors matching 'Test Connector'.",
+    "Second page of connectors matches the search criteria after pagination.",
+    "Search results persist after navigating back to the first page.",
+    "Default connectors are displayed after clearing the search box.",
+    "Invalid input characters result in proper error messages or empty results."
+  ],
+  "edge_cases": [
+    "Enter an empty string in the search box and click 'Search'.",
+    "Enter special characters into the search box (e.g., '!@#$%^').",
+    "Navigate to pages with no connectors matching the search criteria.",
+    "Test navigation beyond the available number of pages.",
+    "Reload the page while connectors are filtered to verify state persistence."
+  ],
+  "data_requirements": [
+    "search_query_valid: 'Test Connector'",
+    "search_query_invalid: '!@#$%^'",
+    "search_query_empty: ''",
+    "search_query_nonexistent: 'NonexistentConnector'"
+  ],
+  "dependencies": [
+    "Connectors must exist in the system.",
+    "Pagination controls must be functional.",
+    "Search functionality must be implemented correctly."
+  ],
+  "api_interactions": [
+    "Mock API responses for search functionality to return valid, invalid, and empty results.",
+    "Monitor API calls for pagination controls to ensure proper endpoint usage."
+  ],
+  "performance_metrics": [
+    "Measure rendering speed of search results.",
+    "Measure load time for pagination navigation.",
+    "Evaluate responsiveness after clearing the search box."
+  ],
+  "accessibility_requirements": [
+    "Test keyboard navigation for the search box and pagination controls (WCAG 2.1 Guideline 2.1).",
+    "Verify that the search box has proper labels or aria attributes (WCAG 2.1 Guideline 1.3).",
+    "Ensure pagination controls are accessible via screen readers (WCAG 2.1 Guideline 4.1)."
+  ],
+  "metadata": {
+    "uuid": "f69ffc67-a059-47d3-a955-e4200449797a",
+    "created_at": "2025-07-25T07:10:41.867882",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "api-integration",
+      "ui-test",
+      "workflow",
+      "accessibility",
+      "performance",
+      "complex-scenario"
+    ],
+    "estimated_execution_time": 90,
+    "flakiness_potential": "medium"
+  }
+}
