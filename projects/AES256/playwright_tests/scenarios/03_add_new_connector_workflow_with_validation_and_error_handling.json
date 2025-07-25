@@ -1,0 +1,138 @@
+{
+  "test_name": "Add New Connector Workflow with Validation and Error Handling",
+  "description": "This scenario tests the addition of a new connector, ensuring data is validated properly, error messages are displayed for invalid inputs, and the new connector is successfully added. It also checks state persistence and UI updates after submission.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/connectors.",
+    "2. Verify the visibility of the 'Add Connector' button.",
+    "3. Click on the 'Add Connector' button.",
+    "4. Wait for a form or modal to appear for adding the new connector.",
+    "5. Verify all required fields in the form are visible (e.g., Connector Name, URL).",
+    "6. Enter valid data into the 'Connector Name' field.",
+    "7. Enter an invalid URL into the URL field and attempt to submit the form.",
+    "8. Verify that an error message is displayed for the invalid URL.",
+    "9. Correct the URL to a valid one and resubmit the form.",
+    "10. Verify that the form submits successfully and the new connector is displayed in the connector list.",
+    "11. Verify that the new connector is persisted by refreshing the page and checking if the connector still exists.",
+    "12. Search for the newly added connector using the search box.",
+    "13. Verify that the search results include the new connector.",
+    "14. Attempt to add another connector with the same name and verify that an error message is displayed for duplicate entries.",
+    "15. Delete the newly created connector and verify it is removed from the list.",
+    "16. Refresh the page and verify that the deleted connector does not persist."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='add-connector-button']",
+      "text": "Add Connector",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "add-connector-button"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[placeholder='Connector Name']",
+      "text": "",
+      "action": "type",
+      "value": "Test Connector",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "connector-name-input"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[placeholder='URL']",
+      "text": "",
+      "action": "type",
+      "value": "invalid-url",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "connector-url-input"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='submit-connector']",
+      "text": "Submit",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "submit-connector"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='Connector-search-box']",
+      "text": "",
+      "action": "type",
+      "value": "Test Connector",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "Connector-search-box"
+    }
+  ],
+  "expected_results": [
+    "The 'Add Connector' button is visible and functional.",
+    "An error message is displayed for invalid URLs during connector creation.",
+    "The new connector is successfully added and displayed in the list after submission.",
+    "The connector persists on page refresh.",
+    "The search results correctly display the newly added connector.",
+    "An error message is displayed when attempting to add a connector with a duplicate name.",
+    "The deleted connector is no longer visible in the list and does not persist on page refresh."
+  ],
+  "edge_cases": [
+    "Attempt to submit the form with all fields empty.",
+    "Enter a connector URL that exceeds the maximum length allowed.",
+    "Try adding a connector with special characters in the name.",
+    "Submit the form while the server API is down.",
+    "Attempt to delete a connector that does not exist."
+  ],
+  "data_requirements": [
+    "valid_connector_name: 'Test Connector'",
+    "valid_connector_url: 'https://example.com/connector'",
+    "invalid_connector_url: 'invalid-url'",
+    "duplicate_connector_name: 'Test Connector'",
+    "connector_name_with_special_chars: '!@#$%^&*()'"
+  ],
+  "dependencies": [
+    "The 'Add Connector' button must be functional.",
+    "Server API endpoints for adding and deleting connectors must be active.",
+    "The page must allow real-time list updates upon connector addition or deletion."
+  ],
+  "api_interactions": [
+    "POST /connectors - Add a new connector.",
+    "GET /connectors - Retrieve the list of existing connectors.",
+    "DELETE /connectors/{id} - Delete an existing connector."
+  ],
+  "performance_metrics": [
+    "Time taken to add a new connector.",
+    "Search response time for the newly added connector.",
+    "Page load time after adding or deleting a connector."
+  ],
+  "accessibility_requirements": [
+    "Ensure all form fields have associated labels.",
+    "Verify that error messages are announced to screen readers.",
+    "Check keyboard accessibility for all interactive elements.",
+    "Ensure sufficient color contrast for error messages.",
+    "Verify that the modal for adding connectors can be navigated using the keyboard."
+  ],
+  "metadata": {
+    "uuid": "0526d36e-5f3b-40f9-bca3-d8799ae8b624",
+    "created_at": "2025-07-25T11:38:14.908495",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "api-integration",
+      "data-validation",
+      "form-submission",
+      "workflow",
+      "auto-generated",
+      "accessibility",
+      "complex-scenario",
+      "performance",
+      "error-handling",
+      "ui-test"
+    ],
+    "estimated_execution_time": 80,
+    "flakiness_potential": "medium"
+  }
+}

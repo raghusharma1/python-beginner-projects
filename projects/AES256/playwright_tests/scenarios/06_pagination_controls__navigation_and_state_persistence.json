@@ -1,0 +1,107 @@
+{
+  "test_name": "Pagination Controls: Navigation and State Persistence",
+  "description": "This scenario tests the functionality of pagination controls for navigating through multiple pages of test plans.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/tests.",
+    "2. Verify the visibility of pagination controls (First, Last, Previous, Next).",
+    "3. Click on 'Next' button to navigate to the second page.",
+    "4. Verify that the URL contains the correct query parameter for page 2.",
+    "5. Verify that the test plans displayed belong to page 2.",
+    "6. Click the 'Last' button to navigate to the last page.",
+    "7. Verify that the URL updates to reflect the last page.",
+    "8. Click the 'Previous' button to navigate back one page.",
+    "9. Verify the URL and test plans correspond to the previous page.",
+    "10. Click the 'First' button to return to the first page.",
+    "11. Verify that the URL and test plans correspond to the first page.",
+    "12. Perform a search query and ensure that pagination updates reflect the filtered results.",
+    "13. Test pagination using keyboard navigation (e.g., Tab key).",
+    "14. Reload the page and ensure that the current pagination state persists."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-icon']",
+      "text": "\u00bb",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "arrow-icon"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-first-page-button']",
+      "text": "First",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "paginator-first-page-button"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-last-page-button']",
+      "text": "Last",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "paginator-last-page-button"
+    }
+  ],
+  "expected_results": [
+    "Pagination controls allow navigation between pages.",
+    "The URL updates to reflect the current page number.",
+    "Pagination state persists after page reload.",
+    "Test plans displayed match the current page."
+  ],
+  "edge_cases": [
+    "Attempt to navigate to a page number beyond the total pages.",
+    "Reload the page while on a non-first page and verify state persistence.",
+    "Test keyboard navigation for pagination buttons.",
+    "Test pagination with no test plans (empty state).",
+    "Search for terms that result in fewer pages and verify pagination updates."
+  ],
+  "data_requirements": [
+    "total_pages: 5",
+    "current_page: 1",
+    "search_query: 'New Plan'",
+    "filtered_results: 2",
+    "invalid_page_number: -1"
+  ],
+  "dependencies": [
+    "Pagination controls must be visible and functional.",
+    "Multiple pages of test plans must exist.",
+    "Search functionality must be integrated with pagination."
+  ],
+  "api_interactions": [
+    "GET /api/test-plans?page=2 - Fetch test plans for page 2.",
+    "GET /api/test-plans?page=last - Fetch test plans for the last page."
+  ],
+  "performance_metrics": [
+    "Time taken for pagination response from the server.",
+    "Time taken to render paginated test plans on the UI."
+  ],
+  "accessibility_requirements": [
+    "Ensure pagination buttons are focusable and usable via keyboard.",
+    "Screen reader announces the current page."
+  ],
+  "metadata": {
+    "uuid": "441b218f-f0de-4f45-8d66-6b61b16b6b4e",
+    "created_at": "2025-07-25T11:38:14.912187",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "navigation",
+      "api-integration",
+      "auto-generated",
+      "accessibility",
+      "complex-scenario",
+      "performance",
+      "keyboard-navigation",
+      "ui-test"
+    ],
+    "estimated_execution_time": 70,
+    "flakiness_potential": "medium"
+  }
+}

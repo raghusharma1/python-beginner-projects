@@ -1,0 +1,98 @@
+{
+  "test_name": "Activity Filter Toggle Test",
+  "description": "This scenario tests the toggle functionality between 'Show My Activities' and 'Show All Activities' filters to ensure state management, data accuracy, and UI updates.",
+  "type": "workflow",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/events"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/events.",
+    "2. Verify the visibility of the 'Show My Activities' filter toggle.",
+    "3. Click on the 'Show My Activities' filter.",
+    "4. Assert that the table updates to display activities belonging to the logged-in user.",
+    "5. Verify that the toggle button is visually activated.",
+    "6. Click on the 'Show All Activities' filter.",
+    "7. Assert that the table updates to display all activities.",
+    "8. Verify that the toggle button switches state correctly.",
+    "9. Perform a search while the 'Show My Activities' filter is active.",
+    "10. Assert that search results only contain the logged-in user's activities matching the search term.",
+    "11. Perform a search while the 'Show All Activities' filter is active.",
+    "12. Assert that search results contain all matching activities regardless of user ownership.",
+    "13. Reload the page and verify persistence of the last toggle state.",
+    "14. Test concurrent toggling in multiple tabs and assert state consistency.",
+    "15. Toggle rapidly between the filters multiple times and verify performance stability."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='activity-view-toggle']",
+      "text": "Show My Activities",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events",
+      "datatest-id": "activity-view-toggle"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='activity-view-toggle']",
+      "text": "Show All Activities",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events",
+      "datatest-id": "activity-view-toggle"
+    }
+  ],
+  "expected_results": [
+    "Table updates to display activities belonging to the logged-in user when 'Show My Activities' is selected.",
+    "Table updates to display all activities when 'Show All Activities' is selected.",
+    "Filter toggle state persists after page reload.",
+    "Search results are correctly scoped to the selected filter."
+  ],
+  "edge_cases": [
+    "Rapid toggling between filters to test performance.",
+    "Test filter functionality with no activities available.",
+    "Verify toggle state when navigating away from the page and returning.",
+    "Test on a mobile device with limited screen real estate.",
+    "Simulate network failure during filter toggling."
+  ],
+  "data_requirements": [
+    "user_activities: ['java-filter-test', 'golang-unit-gowork-sandbox']",
+    "global_activities: ['activity-1', 'activity-2']",
+    "filter_state: 'Show My Activities'"
+  ],
+  "dependencies": [
+    "User must be logged in for 'Show My Activities' functionality.",
+    "Activities must exist in the system for filtering.",
+    "Filter toggle functionality must be implemented."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Monitor API endpoint for filter toggling and validate response payloads."
+  ],
+  "performance_metrics": [
+    "Measure UI update time after filter toggling.",
+    "Monitor API response time for filter change requests."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 compliance for toggle buttons.",
+    "Proper labeling and focus management for filter options."
+  ],
+  "metadata": {
+    "uuid": "82ed2266-77df-424f-87e1-50b0fed877ab",
+    "created_at": "2025-07-25T11:38:14.907093",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "network-resilience",
+      "api-integration",
+      "data-validation",
+      "auto-generated",
+      "workflow",
+      "accessibility",
+      "complex-scenario",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}
