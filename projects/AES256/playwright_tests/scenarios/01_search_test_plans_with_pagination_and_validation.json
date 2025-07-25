@@ -1,0 +1,116 @@
+{
+  "test_name": "Search Test Plans with Pagination and Validation",
+  "description": "Tests the ability to search for test plans, navigate through paginated results, and validate the returned results for accuracy.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/tests.",
+    "2. Verify the visibility of the 'Search for Test Plans' input field.",
+    "3. Type 'playwright' into the search field.",
+    "4. Assert that the search results update dynamically to show relevant test plans.",
+    "5. Verify that the paginator elements (First, Previous, page numbers, Next, Last) are visible and enabled.",
+    "6. Click on page number '2' in the paginator.",
+    "7. Assert that the results change to reflect the second page and that the URL remains the same.",
+    "8. Click on the 'Next' button.",
+    "9. Validate that the results correspond to the third page of the search results.",
+    "10. Click on the 'Last' button.",
+    "11. Assert that the final page of results is displayed.",
+    "12. Click on the 'First' button.",
+    "13. Assert that the first page of results is displayed again.",
+    "14. Clear the search input field.",
+    "15. Assert that all test plans are displayed with pagination reset to the first page.",
+    "16. Attempt a search with an invalid input string (e.g., 'invalid!@#').",
+    "17. Verify that no results are shown and an appropriate 'No results found' message is displayed.",
+    "18. Test with a partial string (e.g., 'play').",
+    "19. Assert that relevant results containing the substring 'play' are displayed.",
+    "20. Verify that the paginator works as expected while the search filter is active."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='tests-search-box']",
+      "text": "",
+      "action": "type",
+      "value": "playwright",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "tests-search-box"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-first-page-button']",
+      "text": "First",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "paginator-first-page-button"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-icon']",
+      "text": "\u00bb",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "arrow-icon"
+    }
+  ],
+  "expected_results": [
+    "Search results update dynamically based on input.",
+    "Paginator updates correctly when navigating between pages.",
+    "Clearing search input resets results to display all test plans.",
+    "Invalid search input displays 'No results found' message.",
+    "Partial strings return accurate, filtered results."
+  ],
+  "edge_cases": [
+    "Search with special characters.",
+    "Attempt pagination with no search results.",
+    "Search with excessively long input strings.",
+    "Search with numerical inputs only.",
+    "Simultaneous use of Search and Pagination."
+  ],
+  "data_requirements": [
+    "valid_search_term: 'playwright'",
+    "invalid_search_term: 'invalid!@#'",
+    "partial_search_term: 'play'",
+    "excessively_long_term: 'a'.repeat(1000)",
+    "numerical_search_term: '12345'"
+  ],
+  "dependencies": [
+    "Test plans must exist in the system.",
+    "Pagination must be enabled and functional.",
+    "Search functionality must be implemented."
+  ],
+  "api_interactions": [
+    "GET /api/test-plans?search=playwright",
+    "GET /api/test-plans?search=&page=2",
+    "GET /api/test-plans?page=1"
+  ],
+  "performance_metrics": [
+    "Search response time under 500ms.",
+    "Pagination response time under 300ms."
+  ],
+  "accessibility_requirements": [
+    "Input fields must be navigable via keyboard (WCAG 2.1, 2.4.3).",
+    "Paginator buttons must have aria-label attributes.",
+    "Search results must be readable via screen reader (WCAG 1.3.1)."
+  ],
+  "metadata": {
+    "uuid": "7b35f85c-56f9-45e8-a5d3-acb643345336",
+    "created_at": "2025-07-25T13:14:35.838869",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "complex-scenario",
+      "performance",
+      "ui-test",
+      "workflow",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 100,
+    "flakiness_potential": "medium"
+  }
+}

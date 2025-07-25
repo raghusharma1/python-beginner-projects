@@ -1,0 +1,116 @@
+{
+  "test_name": "Pagination Controls Functionality",
+  "description": "This test verifies the proper functioning of pagination controls on the Connectors page, including navigation to specific pages, handling edge cases, and evaluating accessibility.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/connectors.",
+    "2. Verify the visibility and enablement of all pagination controls (First, Last, arrow buttons, and individual page numbers).",
+    "3. Click the '2' pagination button and verify that the table updates to show the second page of results.",
+    "4. Click the 'Next' button ('\u00bb') and verify that the next page of results is displayed.",
+    "5. Click the 'Previous' button ('\u00ab') and verify that the previous page of results is displayed.",
+    "6. Click the 'First' button and ensure the first page of results is displayed.",
+    "7. Click the 'Last' button and verify the last page of results is displayed.",
+    "8. Attempt to navigate to a page with no results and verify proper error handling (e.g., no page navigation).",
+    "9. Test navigating through pages using keyboard shortcuts (Tab and Enter).",
+    "10. Verify that the pagination controls are accessible with proper ARIA attributes.",
+    "11. Reload the page while on a specific page (e.g., page 3) and verify that the pagination state persists.",
+    "12. Verify that pagination loads correctly when the screen size is reduced (responsive behavior).",
+    "13. Simulate a slow network and verify proper loading indicators or fallback UI during pagination.",
+    "14. Test concurrent interactions by clicking multiple pagination buttons quickly and verify application stability.",
+    "15. Monitor API requests triggered by pagination and validate the request/response flow."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-first-page-button']",
+      "text": "First",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "paginator-first-page-button"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-left']",
+      "text": "\u00ab",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "arrow-left"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-icon']",
+      "text": "\u00bb",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "arrow-icon"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-last-page-button']",
+      "text": "Last",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "paginator-last-page-button"
+    }
+  ],
+  "expected_results": [
+    "Pagination controls correctly navigate to the specified pages.",
+    "Reloading the page retains the current pagination state.",
+    "The application handles invalid page navigation gracefully.",
+    "Pagination is responsive across different screen sizes.",
+    "All pagination controls are accessible and functional using keyboard navigation."
+  ],
+  "edge_cases": [
+    "Attempt to navigate to a page number that exceeds the total number of pages.",
+    "Rapidly click pagination buttons to test for race conditions.",
+    "Test pagination behavior when the connectors list is empty.",
+    "Simulate a slow network and verify loading indicators during pagination.",
+    "Attempt to navigate to a page using keyboard shortcuts only."
+  ],
+  "data_requirements": [
+    "total_connectors: At least 50 connectors to enable multi-page navigation.",
+    "page_size: 10 connectors per page.",
+    "invalid_page_number: A page number greater than the total pages."
+  ],
+  "dependencies": [
+    "The list of connectors must have sufficient entries for pagination.",
+    "API endpoints for pagination must be functional and integrated.",
+    "Responsive UI adjustments for pagination controls must be implemented."
+  ],
+  "api_interactions": [
+    "Monitor API calls for pagination, verifying proper parameters and responses."
+  ],
+  "performance_metrics": [
+    "Pagination response time should be less than 300ms.",
+    "UI rendering for a new page should complete in less than 200ms."
+  ],
+  "accessibility_requirements": [
+    "Ensure all pagination controls are operable via keyboard (WCAG 2.1: 2.1.1).",
+    "Verify proper ARIA roles and labels for pagination buttons (WCAG 2.1: 4.1.2).",
+    "Confirm focus order is logical and intuitive during keyboard navigation (WCAG 2.1: 2.4.3)."
+  ],
+  "metadata": {
+    "uuid": "2034556f-eac4-49a4-8b52-2d438c739d61",
+    "created_at": "2025-07-25T13:14:35.943558",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "performance",
+      "keyboard-navigation",
+      "network-resilience",
+      "ui-test",
+      "navigation",
+      "auto-generated",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}

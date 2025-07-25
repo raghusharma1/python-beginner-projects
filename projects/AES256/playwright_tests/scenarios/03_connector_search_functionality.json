@@ -1,0 +1,94 @@
+{
+  "test_name": "Connector Search Functionality",
+  "description": "This scenario tests the ability to search for connectors using various input terms, validates the search results, and ensures the functionality works across multiple edge cases.",
+  "type": "data_validation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/connectors.",
+    "2. Verify the visibility of the search input field with placeholder 'Search for Connectors'.",
+    "3. Type a valid connector name into the search box (e.g., 'Connector123').",
+    "4. Press the 'Enter' key or wait for the search to auto-submit.",
+    "5. Verify that the results table updates to show only connectors matching the search term.",
+    "6. Clear the search term and verify that all connectors reappear in the list.",
+    "7. Enter a partial connector name (e.g., 'Conn') and verify that multiple matching results are displayed.",
+    "8. Enter a non-existent connector name (e.g., 'NonExistentConnector') and verify that the results table displays 'No connectors found' or similar message.",
+    "9. Test special characters in the search box (e.g., '@#$%^&*') and ensure the application handles them gracefully.",
+    "10. Perform a search for a connector, reload the page, and verify that the search term persists in the search box.",
+    "11. Check the impact of search functionality on pagination elements (e.g., ensure pagination updates to reflect filtered results).",
+    "12. Test search functionality using keyboard-only navigation (Tab and Enter).",
+    "13. Verify that the search box is accessible with proper ARIA attributes.",
+    "14. Enter a very long string into the search box and ensure it does not break the UI.",
+    "15. Type a valid connector name into the search box and verify any API requests made during the search."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='Connector-search-box']",
+      "text": "Search for Connectors",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "Connector-search-box"
+    }
+  ],
+  "expected_results": [
+    "Search results update dynamically as search terms are entered.",
+    "No results are shown when a non-existent connector is searched.",
+    "Pagination updates correctly based on the filtered results.",
+    "Search functionality is responsive and performs well even with special characters or long strings.",
+    "Search terms persist after a page reload."
+  ],
+  "edge_cases": [
+    "Search for a connector using special characters such as '@#$%^&*'.",
+    "Enter an excessively long search term that exceeds typical input length.",
+    "Search for a connector name that does not exist in the database.",
+    "Perform a search and navigate to a different page, then return to check if the search state is preserved.",
+    "Submit an empty search term and verify that all connectors are displayed."
+  ],
+  "data_requirements": [
+    "connector_name_valid: 'Connector123'",
+    "connector_name_partial: 'Conn'",
+    "connector_name_nonexistent: 'NonExistentConnector'",
+    "connector_name_special_chars: '@#$%^&*'",
+    "connector_name_long: 'ConnectorNameThatExceedsTypicalLength'"
+  ],
+  "dependencies": [
+    "The list of connectors must be pre-populated with at least 10 entries.",
+    "The search functionality must be implemented and integrated with the backend.",
+    "Pagination must be functional and correctly configured."
+  ],
+  "api_interactions": [
+    "Monitor API calls triggered by the search input, ensuring requests are correctly formatted and responses are properly handled."
+  ],
+  "performance_metrics": [
+    "Search response time should be less than 500ms.",
+    "UI rendering time after a search should be less than 200ms."
+  ],
+  "accessibility_requirements": [
+    "Ensure the search input is navigable using a keyboard (WCAG 2.1: 2.1.1).",
+    "Verify the search box has proper ARIA labels for screen readers (WCAG 2.1: 1.3.1).",
+    "Confirm the placeholder text 'Search for Connectors' provides clear guidance (WCAG 2.1: 3.3.2)."
+  ],
+  "metadata": {
+    "uuid": "c8073e7e-eabf-4277-a1ed-d79d27b3335a",
+    "created_at": "2025-07-25T13:14:35.920395",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "form-submission",
+      "performance",
+      "keyboard-navigation",
+      "ui-test",
+      "data_validation",
+      "auto-generated",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}
