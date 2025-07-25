@@ -1,0 +1,108 @@
+{
+  "test_name": "Filter Test Plans and Verify Results",
+  "description": "This scenario tests the filtering functionality on the Test Plans page to ensure users can filter test plans effectively based on different criteria. It verifies state persistence after applying filters and checks the accuracy of filtered results.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/tests.",
+    "2. Verify the visibility of the 'Test Plans' button in the header and click it.",
+    "3. Ensure the page loads with a list of available test plans.",
+    "4. Locate the search field with placeholder 'Search for Test Plans'.",
+    "5. Type the text 'API Tests' into the search field.",
+    "6. Press 'Enter' or wait for the search results to load.",
+    "7. Verify that the results displayed match the search term entered.",
+    "8. Apply additional filters via dropdowns or buttons (if present) to further refine the search.",
+    "9. Verify that the results dynamically update based on the selected filters.",
+    "10. Clear all applied filters and verify that the full list of test plans is displayed again.",
+    "11. Ensure that the state persists when refreshing the page (e.g., filters remain applied).",
+    "12. Test navigation links from each test plan item to ensure they direct to correct pages.",
+    "13. Repeat the search with invalid terms (e.g., 'InvalidTestPlan') and verify that 'No results found' or similar message is displayed.",
+    "14. Verify search input accepts special characters and does not break the UI.",
+    "15. Return to the default unfiltered view and verify all elements reset correctly."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/roostgpt/tests']",
+      "text": "Test Plans",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid='tests-search-box']",
+      "text": "",
+      "action": "type",
+      "value": "API Tests",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid='tests-search-box']",
+      "text": "",
+      "action": "type",
+      "value": "InvalidTestPlan",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "Search results correctly display test plans matching 'API Tests'.",
+    "Filtered results dynamically update based on selected criteria.",
+    "Clearing filters restores the full list of test plans.",
+    "'No results found' is displayed for invalid search terms.",
+    "The search input handles special characters gracefully."
+  ],
+  "edge_cases": [
+    "Enter extremely long search terms (e.g., 100+ characters) and verify the UI does not break.",
+    "Enter only special characters (e.g., '@#$%') and verify the results handle it gracefully.",
+    "Attempt to apply conflicting filters simultaneously.",
+    "Test search functionality with empty input and verify the results are not altered.",
+    "Refresh the page mid-search and verify state persistence."
+  ],
+  "data_requirements": [
+    "Valid test plan names for filtering (e.g., 'API Tests', 'UI Tests').",
+    "Invalid test plan names (e.g., 'InvalidTestPlan').",
+    "Special characters for input testing (e.g., '@#$%').",
+    "Boundary input lengths (e.g., 1 character, 100+ characters)."
+  ],
+  "dependencies": [
+    "Test plans must exist in the database with names like 'API Tests' and 'UI Tests'.",
+    "Server-side search functionality must be enabled and working.",
+    "Filtering system must support dynamic criteria application."
+  ],
+  "api_interactions": [
+    "GET /api/testplans?search=API Tests",
+    "GET /api/testplans?filter=... (for filtering criteria)"
+  ],
+  "performance_metrics": [
+    "Search response time should be under 2 seconds.",
+    "Filter application time should be under 1 second."
+  ],
+  "accessibility_requirements": [
+    "Ensure the search input field is accessible via keyboard navigation.",
+    "Verify that results are announced via screen readers when updated.",
+    "Ensure proper color contrast for 'No results found' message."
+  ],
+  "metadata": {
+    "uuid": "0b11a0d5-8eef-4b09-8d6d-1d62b1ba3647",
+    "created_at": "2025-07-25T07:10:41.907168",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "ui-test",
+      "api-integration",
+      "concurrency",
+      "workflow",
+      "accessibility",
+      "performance",
+      "complex-scenario"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}

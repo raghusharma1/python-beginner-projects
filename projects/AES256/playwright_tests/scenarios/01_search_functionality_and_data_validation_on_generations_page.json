@@ -1,0 +1,101 @@
+{
+  "test_name": "Search Functionality and Data Validation on Generations Page",
+  "description": "This test verifies the Search functionality available on the Generations page by inputting various valid and invalid data. The test ensures the filtering logic works as expected and validates error handling for edge cases.",
+  "type": "data_validation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/events"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/events.",
+    "2. Locate the 'Search for Activities' input box using [data-testid='events-search-box'].",
+    "3. Verify the placeholder text 'Search for Activities' is displayed.",
+    "4. Type a valid search term into the input box (e.g., 'Test Plan').",
+    "5. Press Enter and wait for search results to populate.",
+    "6. Validate that the search results match the term 'Test Plan'.",
+    "7. Clear the input box and type an invalid search term (e.g., '@#$%^').",
+    "8. Press Enter and verify that the search results indicate 'No data found'.",
+    "9. Clear the input box and type an empty string, then press Enter.",
+    "10. Verify that the page reloads and all activities are displayed.",
+    "11. Test responsiveness by resizing the browser window to a smaller viewport and ensure the search box remains accessible.",
+    "12. Refresh the page and confirm that the search box retains its default placeholder text.",
+    "13. Attempt to paste a long string (e.g., 1000 characters) into the search box and validate truncation behavior if applicable.",
+    "14. Verify any error message displayed for exceeding the maximum input length.",
+    "15. Perform a search for a term that matches multiple results and validate the pagination of results if implemented.",
+    "16. Repeat the steps above on a different browser (e.g., Chrome, Firefox).",
+    "17. Confirm that filtering logic works consistently across browsers."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='events-search-box']",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events",
+      "value": "Search term",
+      "datatest-id": "events-search-box"
+    }
+  ],
+  "expected_results": [
+    "Search results display matching terms for valid input.",
+    "Invalid input (special characters) displays 'No data found' message.",
+    "Empty input reloads all available activities.",
+    "Input box gracefully handles long strings without crashing or unexpected behavior.",
+    "Search functionality operates consistently across browsers."
+  ],
+  "edge_cases": [
+    "Input contains only special characters like '@#$%^'.",
+    "Input exceeds maximum character length (e.g., 1000 characters).",
+    "Input contains a mix of valid and invalid characters (e.g., 'Test@#$Plan').",
+    "Empty search input is submitted.",
+    "Search input contains script tags to test XSS vulnerabilities."
+  ],
+  "data_requirements": [
+    "Valid search term: 'Test Plan'",
+    "Invalid search term: '@#$%^'",
+    "Empty search term: ''",
+    "Long string input: 'a' * 1000",
+    "Mixed input: '<script>alert(1)</script>'"
+  ],
+  "dependencies": [
+    "The page must be accessible and loaded without errors.",
+    "Search logic must be implemented on the backend.",
+    "Default activities must exist in the database."
+  ],
+  "api_interactions": [
+    "Monitor API call to fetch activities based on search term.",
+    "Mock API error response for invalid input.",
+    "Validate API response time for search queries."
+  ],
+  "performance_metrics": [
+    "Search results load within 2 seconds.",
+    "Input box responds without lag for large input strings."
+  ],
+  "accessibility_requirements": [
+    "ARIA attributes are correctly defined for the search box.",
+    "Input box is keyboard-navigable and accessible via screen reader.",
+    "Placeholder text provides sufficient context for users with disabilities."
+  ],
+  "metadata": {
+    "uuid": "ac74e39d-d756-4f53-8d12-96a869c1d14f",
+    "created_at": "2025-07-25T07:10:41.851149",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "error-handling",
+      "auto-generated",
+      "ui-test",
+      "api-integration",
+      "data-validation",
+      "data_validation",
+      "form-submission",
+      "accessibility",
+      "responsive",
+      "performance",
+      "complex-scenario"
+    ],
+    "estimated_execution_time": 85,
+    "flakiness_potential": "medium"
+  }
+}

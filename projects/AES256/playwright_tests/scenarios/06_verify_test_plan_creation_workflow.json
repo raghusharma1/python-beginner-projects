@@ -1,0 +1,90 @@
+{
+  "test_name": "Verify Test Plan Creation Workflow",
+  "description": "This scenario tests the ability to create a new test plan through the platform. It involves filling out required fields and submitting the form to ensure proper validation, data persistence, and UI responses.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/tests.",
+    "2. Verify the presence of an 'Add Test Plan' button and click it.",
+    "3. Ensure a modal or new page opens for test plan creation.",
+    "4. Fill in the required fields (e.g., test plan name, description, type, creator).",
+    "5. Select the AI model to be associated with the test plan from a dropdown menu.",
+    "6. Choose the test type from a predefined list (e.g., 'API Test', 'UI Test').",
+    "7. Submit the form and verify a success message is displayed.",
+    "8. Confirm that the newly created test plan is added to the list of test plans.",
+    "9. Search for the newly added test plan using the search functionality.",
+    "10. Verify that the test plan appears in the search results."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/roostgpt/tests']",
+      "text": "Test Plans",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid='add-test-plan-button']",
+      "text": "Add Test Plan",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "Newly added test plan appears successfully in the list.",
+    "Search functionality finds the newly created test plan.",
+    "Any validation errors show appropriate messages."
+  ],
+  "edge_cases": [
+    "Submit the form without filling any fields and verify validation messages.",
+    "Submit the form with invalid data formats (e.g., special characters in names).",
+    "Create a duplicate test plan with the same name and verify the error message.",
+    "Attempt to submit the form with missing optional fields.",
+    "Test form submission under a network failure and verify error recovery."
+  ],
+  "data_requirements": [
+    "Valid test plan data (name, description, type, creator).",
+    "Invalid test plan data (e.g., missing fields, invalid characters)."
+  ],
+  "dependencies": [
+    "Test plan creation API endpoint must be functional.",
+    "Validation rules for test plan creation must be defined."
+  ],
+  "api_interactions": [
+    "POST /api/testplans (for test plan creation).",
+    "GET /api/testplans?search=... (for verifying creation)."
+  ],
+  "performance_metrics": [
+    "Form submission response time should be under 2 seconds.",
+    "List update time after creation should be under 1 second."
+  ],
+  "accessibility_requirements": [
+    "Ensure all form fields have associated labels.",
+    "Verify that screen readers announce validation errors."
+  ],
+  "metadata": {
+    "uuid": "21b6becf-aed3-419c-8ff4-c3a44b973cdc",
+    "created_at": "2025-07-25T07:10:41.916260",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "ui-test",
+      "api-integration",
+      "data-validation",
+      "workflow",
+      "form-submission",
+      "accessibility",
+      "performance",
+      "network-resilience",
+      "complex-scenario"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "medium"
+  }
+}

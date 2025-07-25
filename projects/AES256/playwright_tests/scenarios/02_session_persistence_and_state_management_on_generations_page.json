@@ -1,0 +1,92 @@
+{
+  "test_name": "Session Persistence and State Management on Generations Page",
+  "description": "This test validates that the Generations page retains user state (e.g., search input, filters) across browser refresh and navigation.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/events"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/events.",
+    "2. Type a search term into the input box (e.g., 'Recent Activities').",
+    "3. Observe the filtered results and verify that they match the search term.",
+    "4. Refresh the browser page.",
+    "5. Verify that the search term persists and the results remain filtered.",
+    "6. Clear the search box and confirm all activities reload correctly.",
+    "7. Resize the browser window and confirm the layout adjusts accordingly.",
+    "8. Navigate to a different tab or page (e.g., '/roostgpt/tests') and perform an action.",
+    "9. Return to the Generations page via the navbar link.",
+    "10. Verify that the search term and results persist despite navigation."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[href='/roostgpt/tests']",
+      "text": "Test Plans",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events",
+      "datatest-id": ""
+    },
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='events-search-box']",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events",
+      "datatest-id": "events-search-box",
+      "value": "Recent Activities"
+    }
+  ],
+  "expected_results": [
+    "Search term persists across browser refresh.",
+    "Search term persists when navigating away and returning to the page.",
+    "Filtered results remain consistent."
+  ],
+  "edge_cases": [
+    "Browser refresh during a network outage.",
+    "Navigate away while a search operation is still loading.",
+    "Perform a search, close the browser, and reopen the page.",
+    "Attempt to use browser back/forward buttons."
+  ],
+  "data_requirements": [
+    "Search term: 'Recent Activities'",
+    "Valid filter options if applicable."
+  ],
+  "dependencies": [
+    "Session storage must be implemented for search persistence.",
+    "Filtered data must exist in the database."
+  ],
+  "api_interactions": [
+    "Monitor API call for state management.",
+    "Validate session storage is used correctly."
+  ],
+  "performance_metrics": [
+    "Page reloads within 3 seconds.",
+    "Search results are retained without significant lag."
+  ],
+  "accessibility_requirements": [
+    "Correct ARIA attributes for search box.",
+    "Keyboard navigation between tabs works as expected."
+  ],
+  "metadata": {
+    "uuid": "8852b310-24e3-4dcb-9f6a-a8a4abb7b7de",
+    "created_at": "2025-07-25T07:10:41.859361",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "auto-generated",
+      "ui-test",
+      "cross-browser",
+      "api-integration",
+      "workflow",
+      "form-submission",
+      "accessibility",
+      "performance",
+      "network-resilience",
+      "complex-scenario"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "medium"
+  }
+}

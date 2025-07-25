@@ -1,0 +1,112 @@
+{
+  "test_name": "Connector Actions Validation",
+  "description": "This scenario tests the functionality of various actions (Test, Info, Edit, Delete) available for connectors and ensures proper error handling and state management.",
+  "type": "error_handling",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/connectors.",
+    "2. Verify that action buttons (Test, Info, Edit, Delete) are visible for each connector.",
+    "3. Click the 'Test' button for a connector and verify successful execution.",
+    "4. Assert that the test results are displayed, if applicable.",
+    "5. Click the 'Info' button and verify that connector details are displayed.",
+    "6. Test edge cases by clicking 'Info' for a nonexistent connector.",
+    "7. Click the 'Edit' button for a connector.",
+    "8. Verify that the connector can be updated with valid information.",
+    "9. Assert that the updated connector information is saved correctly.",
+    "10. Test invalid data entry in the edit form (e.g., empty fields).",
+    "11. Click the 'Delete' button and verify that a confirmation dialog appears.",
+    "12. Confirm deletion and verify that the connector is removed from the list.",
+    "13. Test recovery actions by attempting to delete a nonexistent connector.",
+    "14. Reload the page and verify state persistence for edited/deleted connectors."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "[data-testid='test-button']",
+      "text": "Test",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid='info-button']",
+      "text": "Info",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid='edit-button']",
+      "text": "Edit",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid='delete-button']",
+      "text": "Delete",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors"
+    }
+  ],
+  "expected_results": [
+    "Connector action buttons are visible and clickable.",
+    "Test button executes the connector test process successfully.",
+    "Info button displays correct connector details.",
+    "Edit button allows updates to connector information, persisting correctly.",
+    "Delete button removes the connector from the list after confirmation."
+  ],
+  "edge_cases": [
+    "Attempt to edit a connector with empty or invalid fields.",
+    "Delete a connector without confirming the action in the dialog.",
+    "Click 'Info' for a nonexistent connector.",
+    "Attempt to execute 'Test' for a deleted connector.",
+    "Verify proper error messages for all invalid actions."
+  ],
+  "data_requirements": [
+    "valid_connector_data: { 'name': 'Connector1', 'type': 'TypeA' }",
+    "invalid_connector_data: { 'name': '', 'type': 'InvalidType' }",
+    "delete_confirmation: true",
+    "nonexistent_connector: 'ConnectorX'"
+  ],
+  "dependencies": [
+    "Connectors must exist in the system with proper actions implemented.",
+    "Edit functionality must allow data entry and save operations.",
+    "Delete functionality must implement confirmation dialogs."
+  ],
+  "api_interactions": [
+    "Mock API responses for Test, Info, Edit, and Delete actions.",
+    "Monitor API calls to ensure proper handling of invalid requests."
+  ],
+  "performance_metrics": [
+    "Measure execution time for Test action.",
+    "Evaluate response time for Info button click.",
+    "Benchmark loading speed after connector edit."
+  ],
+  "accessibility_requirements": [
+    "Verify that action buttons are accessible via screen readers (WCAG 2.1 Guideline 4.1).",
+    "Ensure proper focus management for dialog boxes (WCAG 2.1 Guideline 2.4)."
+  ],
+  "metadata": {
+    "uuid": "d45e1f5b-50bd-4ab6-ae38-a9bcd0aa9fc3",
+    "created_at": "2025-07-25T07:10:41.884886",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "error-handling",
+      "auto-generated",
+      "ui-test",
+      "api-integration",
+      "error_handling",
+      "accessibility",
+      "performance",
+      "complex-scenario"
+    ],
+    "estimated_execution_time": 70,
+    "flakiness_potential": "medium"
+  }
+}
