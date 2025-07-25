@@ -1,0 +1,94 @@
+{
+  "test_name": "Validate Navigation Between Tabs (RoostGPT, Connectors, Test Plans)",
+  "description": "Tests navigation between various tabs to ensure seamless user experience and proper state persistence.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests",
+    "https://dev.roost.ai/roostgpt",
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/tests.",
+    "2. Verify the visibility of the navigation tab 'Test Plans'.",
+    "3. Click on the \u2018RoostGPT\u2019 tab.",
+    "4. Assert that the URL changes to https://dev.roost.ai/roostgpt.",
+    "5. Verify that the 'RoostGPT' tab is active.",
+    "6. Click on the 'Connectors' tab.",
+    "7. Assert that the URL changes to https://dev.roost.ai/connectors.",
+    "8. Verify that the 'Connectors' tab is active.",
+    "9. Navigate back to the 'Test Plans' tab.",
+    "10. Verify that the URL changes back to https://dev.roost.ai/roostgpt/tests.",
+    "11. Assert that the state of the page (e.g., search field input, pagination) persists.",
+    "12. Repeat the steps across all tabs to validate state persistence and navigation consistency.",
+    "13. Test switching tabs rapidly and ensure no visual glitches occur.",
+    "14. Close the browser and reopen the URL.",
+    "15. Verify that the page loads to the last active tab."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "a[data-testid='roostGPT-tab']",
+      "text": "RoostGPT",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "roostGPT-tab"
+    },
+    {
+      "element_type": "link",
+      "selector": "a[data-testid='connectors-tab']",
+      "text": "Connectors",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "connectors-tab"
+    }
+  ],
+  "expected_results": [
+    "Navigation between tabs updates the URL correctly.",
+    "Active tabs are highlighted.",
+    "Page state persists when navigating back to 'Test Plans'.",
+    "No visual glitches occur during rapid tab switching."
+  ],
+  "edge_cases": [
+    "Attempt navigation with expired session.",
+    "Switch tabs during an ongoing search.",
+    "Test slow internet connections.",
+    "Validate tab navigation on mobile devices."
+  ],
+  "data_requirements": [
+    "active_tab_index: 0",
+    "previous_tab_state: {searchTerm: 'playwright', pagination: 2}"
+  ],
+  "dependencies": [
+    "All tabs must be functional.",
+    "State management must be implemented."
+  ],
+  "api_interactions": [
+    "GET /api/test-plans"
+  ],
+  "performance_metrics": [
+    "Tab switch time under 200ms."
+  ],
+  "accessibility_requirements": [
+    "Ensure keyboard navigation through tabs.",
+    "Tabs must have aria attributes for accessibility."
+  ],
+  "metadata": {
+    "uuid": "db693f11-62bb-4f4c-b1d6-fcb9441806f8",
+    "created_at": "2025-07-25T13:14:35.880521",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "complex-scenario",
+      "performance",
+      "ui-test",
+      "navigation",
+      "auto-generated",
+      "accessibility",
+      "api-integration"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}
