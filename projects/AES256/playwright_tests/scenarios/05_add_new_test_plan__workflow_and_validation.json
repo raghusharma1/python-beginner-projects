@@ -1,0 +1,128 @@
+{
+  "test_name": "Add New Test Plan: Workflow and Validation",
+  "description": "This scenario tests the workflow to add a new test plan using the 'Add Test Plan' button. It covers form interactions, validation, and redirection after the test plan is added.",
+  "type": "workflow",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests",
+    "https://dev.roost.ai/roostgpt/new-test-plan"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/tests.",
+    "2. Verify the visibility and clickability of the 'Add Test Plan' button.",
+    "3. Click on the 'Add Test Plan' button.",
+    "4. Verify redirection to the form page at /roostgpt/new-test-plan.",
+    "5. Verify the presence of required input fields (e.g., test plan name, description, etc.).",
+    "6. Enter a valid test plan name into the 'Test Plan Name' input field.",
+    "7. Enter a valid description into the 'Description' input field.",
+    "8. Configure other optional fields, if any, with appropriate test data.",
+    "9. Submit the form by clicking the 'Save' button.",
+    "10. Intercept and validate the API call made to save the test plan (mock if necessary).",
+    "11. Verify that the user is redirected back to https://dev.roost.ai/roostgpt/tests.",
+    "12. Verify the new test plan appears in the list of Test Plans.",
+    "13. Search for the newly added test plan using the search functionality.",
+    "14. Verify that the search results display the newly added test plan.",
+    "15. Reload the page and confirm the persistence of the new test plan in the list.",
+    "16. Delete the newly added test plan to clean up the test data."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='add-test-plan-button']",
+      "text": "Add Test Plan",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[name='test-plan-name']",
+      "action": "type",
+      "value": "New Test Plan",
+      "url_on_page": "https://dev.roost.ai/roostgpt/new-test-plan",
+      "datatest-id": "test-plan-name-input"
+    },
+    {
+      "element_type": "input",
+      "selector": "textarea[name='description']",
+      "action": "type",
+      "value": "This is a test plan for validating workflows.",
+      "url_on_page": "https://dev.roost.ai/roostgpt/new-test-plan",
+      "datatest-id": "description-input"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[type='submit']",
+      "text": "Save",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/new-test-plan"
+    },
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='tests-search-box']",
+      "action": "type",
+      "value": "New Test Plan",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests",
+      "datatest-id": "tests-search-box"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the test plan creation page upon clicking 'Add Test Plan'.",
+    "Test plan is successfully added and appears in the list on the main page.",
+    "Newly added test plan is searchable using the search functionality.",
+    "All form validations pass for valid input data.",
+    "Page state persists after reloading."
+  ],
+  "edge_cases": [
+    "Submit the form with an empty 'Test Plan Name' field.",
+    "Submit the form with a very long test plan name exceeding the character limit.",
+    "Submit the form with special characters in the 'Test Plan Name' field.",
+    "Submit the form with an empty 'Description' field, if required.",
+    "Test what happens if the API call fails (e.g., 500 Internal Server Error)."
+  ],
+  "data_requirements": [
+    "test_plan_name: 'New Test Plan'",
+    "description: 'This is a test plan for validating workflows.'",
+    "invalid_test_plan_name: ''",
+    "long_test_plan_name: 'A'.repeat(256)",
+    "special_characters: '!@#$%^&*()'"
+  ],
+  "dependencies": [
+    "User must be authenticated and authorized to add test plans.",
+    "The 'Add Test Plan' button must be visible and enabled.",
+    "The API endpoint for creating test plans must be functional."
+  ],
+  "api_interactions": [
+    "POST /api/test-plans - Create a new test plan.",
+    "GET /api/test-plans - Retrieve the list of test plans."
+  ],
+  "performance_metrics": [
+    "Time taken to load the 'Add Test Plan' form page.",
+    "Time taken for the 'Save' button action to complete.",
+    "Time taken for the test plan list to refresh after adding a test plan."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 AA compliance for form labels and inputs.",
+    "Keyboard navigation through form fields and buttons.",
+    "Screen reader support for form inputs and validation messages."
+  ],
+  "metadata": {
+    "uuid": "18f42038-f3a3-4493-8dfe-bb33cc553a7d",
+    "created_at": "2025-07-25T11:38:14.911117",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "api-integration",
+      "data-validation",
+      "form-submission",
+      "workflow",
+      "auto-generated",
+      "accessibility",
+      "complex-scenario",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 80,
+    "flakiness_potential": "medium"
+  }
+}

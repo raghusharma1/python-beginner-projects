@@ -1,0 +1,129 @@
+{
+  "test_name": "Pagination Navigation and Edge Handling",
+  "description": "This scenario tests the functionality of navigating through paginated connector entries. It ensures that all pagination controls (First, Previous, Next, Last) work correctly and verifies edge cases such as navigating beyond available pages.",
+  "type": "navigation",
+  "complexity": "high",
+  "pages": [
+    "https://dev.roost.ai/connectors"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/connectors.",
+    "2. Verify the visibility of all pagination controls (First, Previous, Next, Last).",
+    "3. Click on the 'Next' button and verify that the next page of connectors is displayed.",
+    "4. Click on the 'Last' button and verify that the last page is reached.",
+    "5. Verify that the 'Next' button is disabled on the last page.",
+    "6. Click on the 'Previous' button and verify that the previous page is displayed.",
+    "7. Click on the 'First' button and verify that the first page is displayed.",
+    "8. Verify that the 'Previous' button is disabled on the first page.",
+    "9. Navigate to a specific page by clicking on its corresponding number.",
+    "10. Verify that the correct page is displayed after the page number is clicked.",
+    "11. Test rapid navigation by quickly clicking 'Next' multiple times.",
+    "12. Verify that pagination updates are not delayed during rapid navigation.",
+    "13. Refresh the page and verify that the current state persists to the first page.",
+    "14. Attempt to navigate to a non-existent page via URL manipulation.",
+    "15. Verify that an appropriate error message or fallback occurs."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-first-page-button']",
+      "text": "First",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "paginator-first-page-button"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-left']",
+      "text": "\u00ab",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "arrow-left"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='arrow-icon']",
+      "text": "\u00bb",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "arrow-icon"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[data-testid='paginator-last-page-button']",
+      "text": "Last",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": "paginator-last-page-button"
+    },
+    {
+      "element_type": "button",
+      "selector": "button:contains('2')",
+      "text": "2",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/connectors",
+      "datatest-id": null
+    }
+  ],
+  "expected_results": [
+    "Pagination controls are visible and functional.",
+    "Clicking 'Next' navigates to the next page.",
+    "Clicking 'Last' navigates to the last page and disables 'Next'.",
+    "Clicking 'First' navigates to the first page and disables 'Previous'.",
+    "Rapid navigation via 'Next' does not cause delays.",
+    "Navigating to a specific page number displays the correct page.",
+    "Invalid page navigation displays an appropriate error or fallback."
+  ],
+  "edge_cases": [
+    "Attempt to navigate to a non-existent page number.",
+    "Click 'Next' on the last page and verify no action occurs.",
+    "Click 'Previous' on the first page and verify no action occurs.",
+    "Rapidly click 'Next' to ensure no lag or UI freezes.",
+    "Verify pagination controls for empty connector lists."
+  ],
+  "data_requirements": [
+    "total_connectors: Generate at least 25 connectors for multi-page testing.",
+    "empty_connector_list: A scenario with no connectors.",
+    "specific_page_number: Test navigation to the 3rd page.",
+    "invalid_page_number: Test navigation to page '999'.",
+    "boundary_page_number: Test navigation to the last page."
+  ],
+  "dependencies": [
+    "Pagination controls must be functional.",
+    "Connector list must support pagination.",
+    "At least 25 connectors must exist for multi-page testing."
+  ],
+  "api_interactions": [
+    "GET /connectors?page=number - Retrieve connectors for a specific page."
+  ],
+  "performance_metrics": [
+    "Time taken to load the next page of connectors.",
+    "Rendering speed of pagination controls.",
+    "Response time for rapid pagination."
+  ],
+  "accessibility_requirements": [
+    "Verify all pagination controls have accessible labels.",
+    "Ensure keyboard navigation works for pagination controls.",
+    "Check focus state for currently selected page.",
+    "Verify screen reader announcements for pagination updates.",
+    "Ensure that 'disabled' state is announced to screen readers."
+  ],
+  "metadata": {
+    "uuid": "95cd2193-a51f-4e93-adf6-490a089a8792",
+    "created_at": "2025-07-25T11:38:14.909608",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "navigation",
+      "api-integration",
+      "auto-generated",
+      "accessibility",
+      "complex-scenario",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}

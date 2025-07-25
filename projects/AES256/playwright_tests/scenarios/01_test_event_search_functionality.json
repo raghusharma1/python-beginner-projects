@@ -1,0 +1,95 @@
+{
+  "test_name": "Test Event Search Functionality",
+  "description": "This scenario tests the search functionality available on the events page to ensure that activities can be filtered by user input, results are accurate, and state persists.",
+  "type": "data_validation",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/events"
+  ],
+  "steps": [
+    "1. Navigate to https://dev.roost.ai/roostgpt/events.",
+    "2. Verify the visibility of the search input box with placeholder 'Search for Activities'.",
+    "3. Type a valid activity name into the search input box (e.g., 'java-filter-test').",
+    "4. Press the 'Enter' key or trigger the search action.",
+    "5. Verify that the table updates with filtered results matching the search term.",
+    "6. Clear the search input box and verify the table resets to show all activities.",
+    "7. Type an invalid or nonexistent activity name (e.g., 'nonexistent-test-name') and perform the search.",
+    "8. Verify that the table displays 'No results found' or an equivalent message.",
+    "9. Reload the page and verify that the search input and table state persist correctly.",
+    "10. Type special characters into the search input (e.g., '!@#$%^&*') and verify proper handling.",
+    "11. Test responsiveness by resizing the browser and verifying the search box remains functional.",
+    "12. Verify accessibility by navigating to the search box using keyboard tabbing.",
+    "13. Perform searches while toggling between the 'Show My Activities' and 'Show All Activities' filters.",
+    "14. Assert that results are correctly filtered according to the selected filter option.",
+    "15. Test concurrent searches in multiple tabs and verify state consistency."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "input[data-testid='events-search-box']",
+      "text": "Search for Activities",
+      "action": "type",
+      "value": "",
+      "url_on_page": "https://dev.roost.ai/roostgpt/events",
+      "datatest-id": "events-search-box"
+    }
+  ],
+  "expected_results": [
+    "Search results update to display activities matching the search term.",
+    "Search box remains functional across browser resizing.",
+    "Invalid search terms display an appropriate 'No results found' message.",
+    "Search input state persists after page reload.",
+    "Accessibility navigation works for the search box using keyboard tabbing."
+  ],
+  "edge_cases": [
+    "Search using special characters and ensure no errors are thrown.",
+    "Search using an excessively long string to test input limits.",
+    "Perform searches with empty input and verify results remain unfiltered.",
+    "Search while network connectivity is lost and verify error recovery.",
+    "Test multiple searches in rapid succession to check for performance bottlenecks."
+  ],
+  "data_requirements": [
+    "valid_activity_name: 'java-filter-test'",
+    "nonexistent_activity_name: 'nonexistent-test-name'",
+    "special_characters: '!@#$%^&*'",
+    "long_string: 'a'.repeat(500)",
+    "empty_string: ''"
+  ],
+  "dependencies": [
+    "Activities must exist in the system for accurate search results.",
+    "Search functionality must be enabled on the events page.",
+    "Browser compatibility settings must be configured."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Monitor API endpoint for search queries and validate response payloads."
+  ],
+  "performance_metrics": [
+    "Measure search result rendering time.",
+    "Monitor API response time for search requests."
+  ],
+  "accessibility_requirements": [
+    "WCAG 2.1 compliance for keyboard navigation.",
+    "Proper labeling for the search input box."
+  ],
+  "metadata": {
+    "uuid": "d2146cd4-4467-4ee3-b443-5579e41f4486",
+    "created_at": "2025-07-25T11:38:14.905999",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "data_validation",
+      "network-resilience",
+      "api-integration",
+      "form-submission",
+      "auto-generated",
+      "accessibility",
+      "complex-scenario",
+      "performance",
+      "keyboard-navigation",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}
