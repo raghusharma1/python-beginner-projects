@@ -1,0 +1,188 @@
+# Updated Test File: test_Aes256Main.py
+
+import pytest
+from unittest.mock import patch, call
+from AES256 import main, encrypt, decrypt  # Corrected import statement for the directory structure
+
+class TestAes256Main:
+
+    @pytest.mark.positive
+    @pytest.mark.valid
+    def test_encryption_with_valid_input(self):
+        password = "test_password"
+        secret_message = "This is a test message"
+        input_data = ["1", password, secret_message]
+        
+        # Mock input/output
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+        
+        calls = [
+            call("\n\nEncrypted:"),
+            call("---------------\n"),
+        ]
+        mocked_print.assert_has_calls(calls, any_order=True)
+        assert mocked_print.call_count > 2
+
+    @pytest.mark.positive
+    @pytest.mark.valid
+    def test_decryption_with_correct_inputs(self):
+        password = "test_password"
+        secret_message = "This is a test message"
+        encrypted = encrypt(secret_message, password)
+        
+        input_data = [
+            "2",
+            encrypted["cipher_text"],
+            encrypted["salt"],
+            encrypted["nonce"],
+            encrypted["tag"],
+            password,
+        ]
+        
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+
+        mocked_print.assert_any_call("\n\nDecrypted:")
+    
+    @pytest.mark.negative
+    def test_invalid_option_input(self):
+        input_data = ["3"]
+        
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+
+        mocked_print.assert_any_call("Enter 1 to encrypt and 2 to decrypt: ")
+    
+    @pytest.mark.negative
+    @pytest.mark.security
+    def test_decryption_with_incorrect_password(self):
+        password = "test_password"
+        wrong_password = "wrong_password"
+        secret_message = "This is a test message"
+        
+        encrypted = encrypt(secret_message, password)
+        
+        input_data = [
+            "2",
+            encrypted["cipher_text"],
+            encrypted["salt"],
+            encrypted["nonce"],
+            encrypted["tag"],
+            wrong_password,
+        ]
+        
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+
+        mocked_print.assert_any_call("Error: Invalid encrypted message format.")
+    
+    @pytest.mark.negative
+    @pytest.mark.security
+    def test_decryption_with_incomplete_parameters(self):
+        password = "test_password"
+        secret_message = "This is a test message"
+        encrypted = encrypt(secret_message, password)
+        
+        # Deliberately omitting "nonce" field
+        input_data = [
+            "2",
+            encrypted["cipher_text"],
+            encrypted["salt"],
+            "",
+            encrypted["tag"],
+            password,
+        ]
+        
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+
+        mocked_print.assert_any_call("Error: Invalid encrypted message format.")
+    
+    @pytest.mark.negative
+    @pytest.mark.security
+    def test_encryption_with_empty_password(self):
+        secret_message = "This is a test message"
+        input_data = ["1", "", secret_message]
+        
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+
+        mocked_print.assert_any_call("Error: Password cannot be empty.")
+    
+    @pytest.mark.negative
+    @pytest.mark.security
+    def test_decryption_with_empty_password(self):
+        password = "test_password"
+        secret_message = "This is a test message"
+        encrypted = encrypt(secret_message, password)
+        
+        input_data = [
+            "2",
+            encrypted["cipher_text"],
+            encrypted["salt"],
+            encrypted["nonce"],
+            encrypted["tag"],
+            "",
+        ]
+        
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+
+        mocked_print.assert_any_call("Error: Password cannot be empty.")
+    
+    @pytest.mark.regression
+    @pytest.mark.performance
+    def test_cross_platform_execution(self):
+        password = "test_password"
+        secret_message = "This is a test message"
+        encrypted = encrypt(secret_message, password)
+        
+        decrypted = decrypt(encrypted, password)
+        assert decrypted == secret_message  # Should work across any platform
+    
+    @pytest.mark.performance
+    def test_large_secret_message_encryption(self):
+        password = "test_password"
+        large_message = "A" * 10000  # 10,000 characters
+        
+        encrypted = encrypt(large_message, password)
+        assert "cipher_text" in encrypted
+        assert "salt" in encrypted
+        assert "nonce" in encrypted
+        assert "tag" in encrypted
+        
+        decrypted = decrypt(encrypted, password)
+        assert decrypted == large_message
+    
+    @pytest.mark.security
+    @pytest.mark.negative
+    def test_non_base64_decryption_inputs(self):
+        password = "test_password"
+        secret_message = "This is a test message"
+        encrypted = encrypt(secret_message, password)
+        
+        # Corrupt one of the fields with non-Base64 strings
+        encrypted["cipher_text"] = "invalid_base64!"
+        
+        input_data = [
+            "2",
+            encrypted["cipher_text"],
+            encrypted["salt"],
+            encrypted["nonce"],
+            encrypted["tag"],
+            password,
+        ]
+        
+        with patch("builtins.input", side_effect=input_data), \
+             patch("builtins.print") as mocked_print:
+            main()
+
+        mocked_print.assert_any_call("Error: Invalid encrypted message format.")
