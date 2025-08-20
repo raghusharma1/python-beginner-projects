@@ -1,0 +1,157 @@
+# Corrected and complete test script including required imports
+
+import pytest
+from base64 import b64decode
+from Cryptodome.Cipher import AES
+from Cryptodome.Random import get_random_bytes
+from base64 import b64encode
+import hashlib
+
+# Assuming the encrypt function is in the same directory for the test or its parent directory,
+# enabling correct import. If the directory structure differs, necessary adjustments are made below.
+
+# Corrected import based on directory structure. Test assumes the 'projects' directory is in sys.path.
+from projects.AES256.AES256 import encrypt
+
+
+class Test_Aes256Encrypt:
+
+    @pytest.mark.valid
+    def test_encrypt_with_valid_inputs(self):
+        # Arrange
+        plain_text = "Hello, World!"
+        password = "securePassword123"
+
+        # Act
+        result = encrypt(plain_text, password)
+
+        # Assert
+        assert "cipher_text" in result
+        assert "salt" in result
+        assert "nonce" in result
+        assert "tag" in result
+        assert result["cipher_text"]
+        assert result["salt"]
+        assert result["nonce"]
+        assert result["tag"]
+
+    @pytest.mark.invalid
+    def test_encrypt_with_empty_password(self):
+        # Arrange
+        plain_text = "Sample Data"
+        password = ""
+
+        # Act & Assert
+        with pytest.raises(ValueError, match="Password cannot be empty."):
+            encrypt(plain_text, password)
+
+    @pytest.mark.regression
+    def test_encrypt_with_random_salts(self):
+        # Arrange
+        plain_text = "Confidential Message"
+        password = "SecureKey"
+
+        # Act
+        result_1 = encrypt(plain_text, password)
+        result_2 = encrypt(plain_text, password)
+
+        # Assert
+        assert result_1["salt"] != result_2["salt"]
+        assert result_1["cipher_text"] != result_2["cipher_text"]
+        assert result_1["nonce"] != result_2["nonce"]
+        assert result_1["tag"] != result_2["tag"]
+
+    @pytest.mark.valid
+    def test_encrypt_with_special_characters(self):
+        # Arrange
+        plain_text = "!@#$%^&*()🚀"
+        password = "securePassword"
+
+        # Act
+        result = encrypt(plain_text, password)
+
+        # Assert
+        assert "cipher_text" in result
+        assert "salt" in result
+        assert "nonce" in result
+        assert "tag" in result
+        assert result["cipher_text"]
+        assert result["salt"]
+        assert result["nonce"]
+        assert result["tag"]
+
+    @pytest.mark.performance
+    def test_encrypt_with_long_plain_text(self):
+        # Arrange
+        plain_text = "A" * 100000  # 100,000 characters of "A"
+        password = "complexPassword"
+
+        # Act
+        result = encrypt(plain_text, password)
+
+        # Assert
+        assert "cipher_text" in result
+        assert "salt" in result
+        assert "nonce" in result
+        assert "tag" in result
+        assert result["cipher_text"]
+        assert result["salt"]
+        assert result["nonce"]
+        assert result["tag"]
+
+    @pytest.mark.security
+    def test_encrypt_with_edge_case_passwords(self):
+        # Arrange
+        plain_text = "Edge Case Data"
+        passwords = ["     ", "密码123", "😀🔥💻"]
+
+        for password in passwords:
+            # Act
+            result = encrypt(plain_text, password)
+
+            # Assert
+            assert "cipher_text" in result
+            assert "salt" in result
+            assert "nonce" in result
+            assert "tag" in result
+            assert result["cipher_text"]
+            assert result["salt"]
+            assert result["nonce"]
+            assert result["tag"]
+
+    @pytest.mark.security
+    def test_encrypt_aes_block_size_compliance(self):
+        # Arrange
+        plain_text = "AES Test Data"
+        password = "AESPassword"
+
+        # Act
+        result = encrypt(plain_text, password)
+
+        # Assert
+        salt = b64decode(result["salt"])
+        assert len(salt) == AES.block_size
+
+    @pytest.mark.regression
+    @pytest.mark.parametrize("platform_name", ["Windows", "Linux", "Darwin"])
+    def test_encrypt_cross_os_behavior(self, platform_name, monkeypatch):
+        # Arrange
+        plain_text = "Cross OS Test"
+        password = "PlatformPassword"
+
+        # Mock platform.system() to simulate different OS environments
+        monkeypatch.setattr("platform.system", lambda: platform_name)
+
+        # Act
+        result = encrypt(plain_text, password)
+
+        # Assert
+        assert "cipher_text" in result
+        assert "salt" in result
+        assert "nonce" in result
+        assert "tag" in result
+        assert result["cipher_text"]
+        assert result["salt"]
+        assert result["nonce"]
+        assert result["tag"]
+
